@@ -30,7 +30,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-    mpKeepAliveTimer->start(500);
+    mpKeepAliveTimer->start(100);
         
     gettimeofday(&startTime,NULL);
 }
@@ -56,7 +56,6 @@ void TMainWidget::onKeepAlive() {
                                    frame.cols,
                                    frame.rows,
                                    QImage::Format_RGB888));
-    //FrameMap = FrameMap.scaledToHeight(height());
     
     update();
 }
@@ -72,7 +71,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      
-     p.drawPixmap(30, 20, FrameMap.width()*1.1, FrameMap.height()*1.1,FrameMap );
+     p.drawPixmap(30, 20, FrameMap.width()*1.15, FrameMap.height()*1.15,FrameMap );
 
     
     QPixmap video("img/video.png");  // video testing
