@@ -17,9 +17,9 @@ using namespace cv;
 VideoCapture cap(0);
 
 TMainWidget::TMainWidget(QWidget *parent) :
-    QWidget(parent),transparent(transparency),sourceCodeUrl(surl)
+    QWidget(parent)
 {
-    //FrameMap = new QPixmap();     
+   
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
 
     for (unsigned int i=0; i<sizeof(progresses)/sizeof(int); i++) {
@@ -68,7 +68,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 120;
     int HeightOffset = 100;
     
-     p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
+     p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      //p.drawPixmap(0, 0, width(), height(), bg);
      p.drawPixmap(0, 0, FrameMap.width(), height(),FrameMap );
 
