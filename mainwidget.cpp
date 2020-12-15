@@ -66,7 +66,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     QPainter p(this);
 
     int SpaceHeight = 160;
-    int HeightOffset = 50;
+    int HeightOffset = 40;
     if(ET==100)QApplication::quit();
     ET++;
     
@@ -95,7 +95,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     QPixmap battery("img/battery.png");  //  battery
     p.drawPixmap( width()-110 , height()/200 , 90 , 90 , battery);
-    p.drawText( width()-170 , height()/200+58 , " 45% ");
+    p.drawText( width()-170 , height()/200+58 , QString("Frames: %1 %").arg(ET));
    
     
     
