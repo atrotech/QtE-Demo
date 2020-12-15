@@ -90,8 +90,8 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     p.setPen(Qt::black);                      //  source
     p.setFont(QFont("Arial", 18));
-    p.drawText((FrameMap.width()/2)-100, FrameMap.height()-40 , " Source: test test ");
-    p.fillRect((FrameMap.width()/2)-100, FrameMap.height()-40 ,12,100,QBrush(QColor(255,255,255)));
+    p.drawText((FrameMap.width()/2)-150, FrameMap.height()-40 , " Source: test test ");
+    p.fillRect((FrameMap.width()/2)-150, FrameMap.height()-40 ,300,20,QBrush(QColor(255,255,255)));
     
     QPixmap battery("img/battery.png");  //  battery
     p.drawPixmap( width()-110 , height()/200 , 90 , 90 , battery);
