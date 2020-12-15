@@ -72,7 +72,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      
-     p.drawPixmap(0, 0, FrameMap.width(), FrameMap.height(),FrameMap );
+     p.drawPixmap(20, 20, FrameMap.width(), FrameMap.height(),FrameMap );
 
     
     QPixmap video("img/video.png");  // video testing
