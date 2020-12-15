@@ -95,7 +95,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     
     QPixmap battery("img/battery.png");  //  battery
-    p.drawPixmap( width()-110 ,10 , 90 , 90 , battery);
+    p.drawPixmap( width()-110 ,10, battery);
     p.drawText( width()-170 , 40 , QString("%1%").arg(ET));
    
     
