@@ -1,3 +1,4 @@
+cd ../
 echo "starting..."
 sudo rm -rf QtE-Demo
 echo "environment cleared"
