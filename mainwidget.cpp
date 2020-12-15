@@ -91,11 +91,11 @@ void TMainWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::red);                      //  source
     p.setFont(QFont("Arial", 18));
     p.fillRect((FrameMap.width()/2)-150, height()-20 ,300,20,QBrush(QColor(255,255,255)));
-    p.drawText((FrameMap.width()/2)-150, height()-15 , " Source: IN");
+    p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
     
     
     QPixmap battery("img/battery.png");  //  battery
-    p.drawPixmap( width()-110 ,20 , 90 , 90 , battery);
+    p.drawPixmap( width()-110 ,10 , 90 , 90 , battery);
     p.drawText( width()-170 , 40 , QString("%1%").arg(ET));
    
     
