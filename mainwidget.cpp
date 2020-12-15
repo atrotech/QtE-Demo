@@ -65,8 +65,8 @@ void TMainWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-    int SpaceHeight = 120;
-    int HeightOffset = 100;
+    int SpaceHeight = 160;
+    int HeightOffset = 80;
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      //p.drawPixmap(0, 0, width(), height(), bg);
