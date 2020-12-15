@@ -65,7 +65,8 @@ void TMainWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-
+    int SpaceHeight = 120;
+    int HeightOffset = 100;
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      //p.drawPixmap(0, 0, width(), height(), bg);
@@ -73,16 +74,16 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
     
     QPixmap video("img/video.png");  // video testing
-    p.drawPixmap( width()-150 , height()/5-(height()/5)/2 , 150 , 150 , video);
+    p.drawPixmap( width()-150 , 1*SpaceHeight + HeightOffset, 150 , 150 , video);
     
     QPixmap data("img/data.png");  // data testing
-    p.drawPixmap( width()-150 , 2*height()/5-(height()/5)/2 , 150 , 150 , data);
+    p.drawPixmap( width()-150 , 2*SpaceHeight + HeightOffset , 150 , 150 , data);
     
     QPixmap report("img/report.png");  // report 
-    p.drawPixmap( width()-150 , 3*height()/5-(height()/5)/2 , 150 , 150 , report);
+    p.drawPixmap( width()-150 , 3*SpaceHeight + HeightOffset , 150 , 150 , report);
     
     QPixmap power("img/power.png");  //  power
-    p.drawPixmap( width()-150 , 4*height()/5-(height()/5)/2 , 150 , 150 , power);
+    p.drawPixmap( width()-150 , 4*SpaceHeight + HeightOffset , 150 , 150 , power);
     
     
     p.setPen(Qt::black);                      //  source
