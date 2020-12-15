@@ -72,7 +72,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      
-     p.drawPixmap(0, 0, FrameMap.width(), height(),FrameMap );
+     p.drawPixmap(0, 0, FrameMap.width(), FrameMap.height(),FrameMap );
 
     
     QPixmap video("img/video.png");  // video testing
@@ -90,7 +90,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     p.setPen(Qt::red);                      //  source
     p.setFont(QFont("Arial", 18));
-    p.fillRect((FrameMap.width()/2)-150, height()-20 ,300,20,QBrush(QColor(255,255,255)));
+    p.fillRect((FrameMap.width()/2)-148, height()-22 ,300,20,QBrush(QColor(255,255,255)));
     p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
     
     
