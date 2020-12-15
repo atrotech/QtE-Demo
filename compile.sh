@@ -2,7 +2,7 @@ echo "starting..."
 sudo rm -rf QtE-Demo
 echo "environment cleared"
 echo "cloning..."
-sudo git clone https://github.com/nimadorostkar/QtE-Demo.git
+sudo git clone https://github.com/atrotech/QtE-Demo.git
 echo "cloning completed !"
 cd QtE-Demo
 echo "building..."

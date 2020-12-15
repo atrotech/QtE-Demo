@@ -16,7 +16,7 @@ using namespace cv;
 
 VideoCapture cap(0);
 
-TMainWidget::TMainWidget(QWidget *parent, bool transparency, const QString& surl) :
+TMainWidget::TMainWidget(QWidget *parent) :
     QWidget(parent),transparent(transparency),sourceCodeUrl(surl)
 {
     //FrameMap = new QPixmap();     

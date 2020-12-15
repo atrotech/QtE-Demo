@@ -15,7 +15,7 @@ class TMainWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit TMainWidget(QWidget *parent, bool transparency, const QString& surl);
+    explicit TMainWidget(QWidget *parent);
     ~TMainWidget() {}
 private slots:
     void onKeepAlive();

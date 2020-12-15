@@ -26,12 +26,9 @@
 #include "mainwidget.h"
 int main(int argc, char **argv) { 
 	QApplication app (argc, argv); 
-#if QT_VERSION >= 0x050000
-	TMainWidget w(0,false,"https://github.com/friendlyarm/QtE-Demo.git");
-#else
-	QWSServer::setCursorVisible(true);
-	TMainWidget w(0,false,"https://github.com/friendlyarm/QtE-Demo.git");
-#endif
+
+	TMainWidget w(0);
+
 	w.setWindowFlags(Qt::FramelessWindowHint);
 	w.showFullScreen();
 	return app.exec(); 
