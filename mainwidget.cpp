@@ -13,7 +13,7 @@
 
 using namespace cv;
 
-
+int ET = 0;
 VideoCapture cap(0);
 
 TMainWidget::TMainWidget(QWidget *parent) :
@@ -66,10 +66,12 @@ void TMainWidget::paintEvent(QPaintEvent *)
     QPainter p(this);
 
     int SpaceHeight = 160;
-    int HeightOffset = 80;
+    int HeightOffset = 50;
+    if(ET==100)QApplication::quit();
+    ET++;
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
-     //p.drawPixmap(0, 0, width(), height(), bg);
+     
      p.drawPixmap(0, 0, FrameMap.width(), height(),FrameMap );
 
     
