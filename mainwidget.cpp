@@ -37,10 +37,6 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
-    btnNormal = QPixmap(":/img/btn.png");
-    btnPush = QPixmap(":/img/btnFocus.png");
-
-
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
