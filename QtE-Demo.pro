@@ -18,6 +18,6 @@ INCLUDEPATH += /QtE-Demo/lib/includes
 LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_objdetect -lopencv_video -lopencv_videoio -lopencv_videostab
 
 # Input
-HEADERS += mainwidget.h 
-SOURCES += main.cpp mainwidget.cpp
+HEADERS += mainwidget.h lib/gpio.h lib/common.h
+SOURCES += main.cpp mainwidget.cpp lib/gpio.c lib/common.c
 RESOURCES += main.qrc

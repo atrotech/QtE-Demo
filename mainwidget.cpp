@@ -7,7 +7,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/imgcodecs.hpp>
 
-#include "lib/includes/libfahw-gpio.h"
+#include "lib/gpio.h"
 
 
 
