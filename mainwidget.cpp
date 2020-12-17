@@ -37,6 +37,9 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
+    BtnNormal(QPixmap(":/img/btn.png"));
+    BtnPush(QPixmap(":/img/btnFocus.png"));
+
 
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
@@ -74,8 +77,7 @@ void TMainWidget::onKeepAlive() {
 void TMainWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
-    QPixmap btnNormal(":/img/btn.png");  // Normal Button
-    QPixmap btnPush(":/img/btnFocus.png");  // Normal Button
+
 
     int SpaceHeight = 160;
     int HeightOffset = 40;
