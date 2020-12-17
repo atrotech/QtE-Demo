@@ -1,5 +1,7 @@
-#include "common.h"
-#include "gpio.h"
+
+
+#include "lib/common.h"
+#include "lib/gpio.h"
 
 static int pinGPIO[41];
 
