@@ -15,8 +15,7 @@ using namespace cv;
 
 int ET = 0;
 VideoCapture cap(0);
-QPixmap btnNormal(":/img/btn.png");  // Normal Button
-QPixmap btnPush(":/img/btnFocus.png");  // Normal Button
+
 
 TMainWidget::TMainWidget(QWidget *parent) :
     QWidget(parent)
@@ -75,6 +74,8 @@ void TMainWidget::onKeepAlive() {
 void TMainWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
+    QPixmap btnNormal(":/img/btn.png");  // Normal Button
+    QPixmap btnPush(":/img/btnFocus.png");  // Normal Button
 
     int SpaceHeight = 160;
     int HeightOffset = 40;
