@@ -157,8 +157,8 @@ EXPORT int boardInit()
     printf("BoardType:%d\n", board);
     if (initPinGPIO(board))
         setLastError("Fail to initPinGPIO");
-    if (initPwmGPIO(board))
-        setLastError("Fail to initPwmGPIO");
+   // if (initPwmGPIO(board))
+    //    setLastError("Fail to initPwmGPIO");
     return board;
 }
 
