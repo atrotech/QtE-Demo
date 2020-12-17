@@ -28,6 +28,10 @@ private:
     QPixmap FrameMap;
     QPixmap btnNormal = QPixmap(":/img/Btn.png");
     QPixmap btnPush = QPixmap(":/img/BtnFocus.png");
+    QPixmap videoImg = QPixmap(":/img/video.png");
+    QPixmap powerImg = QPixmap(":/img/power.png");
+    QPixmap reportImg = QPixmap(":/img/report.png");
+    QPixmap dataImg = QPixmap(":/img/data.png");
 
     int progresses[3];
     struct timeval startTime;

@@ -100,7 +100,11 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
      if(getGPIOValue(ButtonD_pin)==0){p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnNormal);}
      else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);}
-    
+     
+     p.drawPixmap( width()-145 , 0 * SpaceHeight + HeightOffset + 5, videoImg);
+     p.drawPixmap( width()-145 , 1 * SpaceHeight + HeightOffset + 5, dataImg);
+     p.drawPixmap( width()-145 , 2 * SpaceHeight + HeightOffset + 5, reportImg);
+     p.drawPixmap( width()-145 , 3 * SpaceHeight + HeightOffset + 5, powerImg);
 
     
     

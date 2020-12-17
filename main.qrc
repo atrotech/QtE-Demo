@@ -2,5 +2,9 @@
     <qresource>
         <file>img/Btn.png</file>
         <file>img/BtnFocus.png</file>
+        <file>img/data.png</file>
+        <file>img/power.png</file>
+        <file>img/report.png</file>
+        <file>img/video.png</file>
     </qresource>
 </RCC>
