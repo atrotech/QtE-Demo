@@ -90,7 +90,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     
      if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
-     else{p.drawPixmap( 150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
+     else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
     
      if(getGPIOValue(ButtonB_pin)==0){p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
      else{p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
