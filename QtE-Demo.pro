@@ -11,13 +11,12 @@ DESTDIR = $$PWD
 INCLUDEPATH += /usr/local/include/opencv4 \
     ./resources
 
-INCLUDEPATH += /QtE-Demo/lib/
 
 # -lopencv_cudaimgproc -lopencv_cudaobjdetect
 
 LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_objdetect -lopencv_video -lopencv_videoio -lopencv_videostab
 
 # Input
-HEADERS += mainwidget.h lib/gpio.h lib/common.h
-SOURCES += main.cpp mainwidget.cpp lib/gpio.c lib/common.c
+HEADERS += mainwidget.h gpio.h common.h
+SOURCES += main.cpp mainwidget.cpp gpio.c common.c
 RESOURCES += main.qrc
