@@ -26,8 +26,8 @@ private:
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
-    QPixmap btnNormal = QPixmap("img/btn.png");
-    QPixmap btnPush = QPixmap("img/btnFocus.png");
+    QPixmap btnNormal = new QPixmap("img/btn.png");
+    QPixmap btnPush = new QPixmap("img/btnFocus.png");
 
     int progresses[3];
     struct timeval startTime;

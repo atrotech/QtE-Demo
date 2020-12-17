@@ -87,7 +87,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
-    
+     p.drawPixmap( 0 , 0, btnPush);
     
      if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
      else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
