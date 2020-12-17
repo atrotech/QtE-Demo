@@ -17,6 +17,6 @@ INCLUDEPATH += /usr/local/include/opencv4 \
 LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_objdetect -lopencv_video -lopencv_videoio -lopencv_videostab
 
 # Input
-HEADERS += mainwidget.h gpio.h common.h
-SOURCES += main.cpp mainwidget.cpp gpio.c common.c
+HEADERS += common.h gpio.h mainwidget.h
+SOURCES += common.c gpio.c main.cpp mainwidget.cpp
 RESOURCES += main.qrc
