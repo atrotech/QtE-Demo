@@ -84,7 +84,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     if(getGPIOValue(ButtonC_pin)==0)ET=3;
     if(getGPIOValue(ButtonD_pin)==0)ET=4;
     
-     p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
+     p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
 
