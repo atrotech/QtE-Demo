@@ -78,10 +78,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
-    ET=0;
-    if(getGPIOValue(ButtonA_pin)==0)ET=1;
-    if(getGPIOValue(ButtonB_pin)==0)ET=2;
-    if(getGPIOValue(ButtonC_pin)==0)ET=3;
+  
     if(getGPIOValue(ButtonD_pin)==0)QCoreApplication::quit();
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
@@ -114,8 +111,8 @@ void TMainWidget::paintEvent(QPaintEvent *)
     p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
     
     
-    QPixmap battery("img/battery.png");  //  battery
-    p.drawPixmap( width()-110 ,10, battery);
+    
+    p.drawPixmap( width()-110 ,10, BatteryImg);
     p.drawText( width()-170 , 40 , QString("%1%").arg(ET));
    
     

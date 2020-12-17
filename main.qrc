@@ -6,5 +6,6 @@
         <file>img/power.png</file>
         <file>img/report.png</file>
         <file>img/video.png</file>
+        <file>img/battery.png</file>
     </qresource>
 </RCC>

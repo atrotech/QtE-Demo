@@ -32,7 +32,7 @@ private:
     QPixmap powerImg = QPixmap(":/img/power.png");
     QPixmap reportImg = QPixmap(":/img/report.png");
     QPixmap dataImg = QPixmap(":/img/data.png");
-
+    QPixmap BatteryImg =  = QPixmap(":/img/battery.png");
     int progresses[3];
     struct timeval startTime;
 
