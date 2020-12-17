@@ -10,6 +10,7 @@
 
 #include <sys/time.h>
 #include "gpio.h"
+#include "common.h"
 
 class TMainWidget : public QWidget
 {
