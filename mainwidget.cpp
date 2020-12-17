@@ -72,8 +72,10 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 40;
     
     ET=0;
-    if(getGPIOValue(ButtonA_pin)==1)ET=7;
-    
+    if(getGPIOValue(ButtonA_pin)==0)ET=1;
+    if(getGPIOValue(ButtonB_pin)==0)ET=2;
+    if(getGPIOValue(ButtonC_pin)==0)ET=3;
+    if(getGPIOValue(ButtonD_pin)==0)ET=4;
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      

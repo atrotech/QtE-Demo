@@ -2,11 +2,8 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 #include <QtCore/QtGlobal>
-#if QT_VERSION >= 0x050000
 #include <QtWidgets>
-#else
-#include <QtGui>
-#endif
+
 
 #include <sys/time.h>
 #include "lib/gpio.h"
@@ -35,10 +32,10 @@ private:
     int progresses[3];
     struct timeval startTime;
 
-    int ButtonA_pin = GPIO_PIN(7);  //GPIOD8  = pin7
-    int ButtonB_pin = 61;   //GPIOB29 = pin11 
-    int ButtonC_pin = 62;   //GPIOB30 = pin13 
-    int ButtonD_pin = 63;   //GPIOB31 = pin15 
+    int ButtonA_pin = GPIO_PIN(7);    //GPIOD8  = pin7
+    int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11 
+    int ButtonC_pin = GPIO_PIN(13);   //GPIOB30 = pin13 
+    int ButtonD_pin = GPIO_PIN(15);   //GPIOB31 = pin15 
 
 };
 
