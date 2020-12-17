@@ -1,6 +1,6 @@
 <RCC>
-    <qresource prefix="/img">
-        <file>Btn.png</file>
-        <file>BtnFocus.png</file>
+    <qresource>
+        <file>img/Btn.png</file>
+        <file>img/BtnFocus.png</file>
     </qresource>
 </RCC>
