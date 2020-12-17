@@ -3,12 +3,7 @@
 
 #define __DEBUG
 
-#ifdef __DEBUG
-    #define DEBUG(format, args...) \
-        printf("FAHW-Lib: " format, ## args)
-#else
-    #define DEBUG(format, args...)
-#endif
+
 
 #include <string.h>
 #include <unistd.h> 
