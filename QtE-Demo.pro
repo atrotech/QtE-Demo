@@ -15,5 +15,5 @@ LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgc
 
 # Input
 HEADERS += common.h gpio.h mainwidget.h
-SOURCES += common.c gpio.c main.cpp mainwidget.cpp
+SOURCES += common.cpp gpio.cpp main.cpp mainwidget.cpp
 RESOURCES += main.qrc
