@@ -26,6 +26,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
         progresses[i]=0;
     }
     
+    boardInit();
     exportGPIOPin(ButtonA_pin);
     setGPIODirection(ButtonA_pin,GPIO_IN);
 
