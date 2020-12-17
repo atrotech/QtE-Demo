@@ -15,6 +15,8 @@ using namespace cv;
 
 int ET = 0;
 VideoCapture cap(0);
+QPixmap btnNormal("img/btn.png");  // Normal Button
+QPixmap btnPush("img/btnFocus.png");  // Normal Button
 
 TMainWidget::TMainWidget(QWidget *parent) :
     QWidget(parent)
