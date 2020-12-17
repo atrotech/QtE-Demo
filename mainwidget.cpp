@@ -37,8 +37,8 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
-    BtnNormal(QPixmap(":/img/btn.png"));
-    BtnPush(QPixmap(":/img/btnFocus.png"));
+    btnNormal(QPixmap(":/img/btn.png"));
+    btnPush(QPixmap(":/img/btnFocus.png"));
 
 
     mpKeepAliveTimer = new QTimer();

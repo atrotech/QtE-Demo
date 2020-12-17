@@ -26,8 +26,8 @@ private:
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
-    QPixmap BtnNormal;
-    QPixmap BtnPush;
+    QPixmap btnNormal;
+    QPixmap btnPush;
 
     int progresses[3];
     struct timeval startTime;
