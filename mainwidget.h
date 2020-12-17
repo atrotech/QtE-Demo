@@ -34,7 +34,7 @@ private:
     int progresses[3];
     struct timeval startTime;
 
-    int ButtonA_pin = 104;  //GPIOD8  = pin7
+    int ButtonA_pin = GPIO_PIN(7);  //GPIOD8  = pin7
     int ButtonB_pin = 61;   //GPIOB29 = pin11 
     int ButtonC_pin = 62;   //GPIOB30 = pin13 
     int ButtonD_pin = 63;   //GPIOB31 = pin15 
