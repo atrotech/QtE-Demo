@@ -3,6 +3,8 @@
 
 #define __DEBUG
 
+#define DEBUG(format, args...) \
+        printf("FAHW-Lib: " format, ## args)
 
 
 #include <string.h>
