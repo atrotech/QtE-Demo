@@ -1,5 +1,5 @@
 #include "common.h"
-#include "libfahw-gpio.h"
+#include "gpio.h"
 
 static int pinGPIO[41];
 

@@ -9,6 +9,7 @@
 #endif
 
 #include <sys/time.h>
+#include "lib/includes/libfahw-gpio.h"
 
 class TMainWidget : public QWidget
 {
@@ -33,10 +34,10 @@ private:
     int progresses[3];
     struct timeval startTime;
 
-    int ButtonA_pin = 104; 
-    int ButtonB_pin = 61; 
-    int ButtonC_pin = 62; 
-    int ButtonD_pin = 63; 
+    int ButtonA_pin = 104;  //GPIOD8  = pin7
+    int ButtonB_pin = 61;   //GPIOB29 = pin11 
+    int ButtonC_pin = 62;   //GPIOB30 = pin13 
+    int ButtonD_pin = 63;   //GPIOB31 = pin15 
 
 };
 
