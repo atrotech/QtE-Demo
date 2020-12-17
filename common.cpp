@@ -1,6 +1,6 @@
 #define _GNU_SOURCE
 #include "common.h"
-//#include "libfahw.h"
+#include "gpio.h"
 
 int writeValueToFile(char* fileName, char* buff) 
 {
