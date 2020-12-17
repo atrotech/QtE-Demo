@@ -9,7 +9,7 @@
 #endif
 
 #include <sys/time.h>
-#include "lib/includes/libfahw-gpio.h"
+#include "lib/gpio.h"
 
 class TMainWidget : public QWidget
 {

@@ -11,7 +11,6 @@ DESTDIR = $$PWD
 INCLUDEPATH += /usr/local/include/opencv4 \
     ./resources
 
-INCLUDEPATH += /QtE-Demo/lib/includes
 
 # -lopencv_cudaimgproc -lopencv_cudaobjdetect
 
