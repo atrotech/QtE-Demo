@@ -9,7 +9,7 @@
 
 #include "lib/includes/libfahw-gpio.h"
 
-#define DRIVER_MODULE "matrix_gpio_int"
+
 
 using namespace cv;
 
@@ -25,6 +25,9 @@ TMainWidget::TMainWidget(QWidget *parent) :
     for (unsigned int i=0; i<sizeof(progresses)/sizeof(int); i++) {
         progresses[i]=0;
     }
+    
+    exportGPIOPin(ButtonA_pin);
+    setGPIODirection(ButtonA_pin,GPIO_IN);
 
 
     mpKeepAliveTimer = new QTimer();
@@ -66,8 +69,10 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
     int SpaceHeight = 160;
     int HeightOffset = 40;
-    if(ET==100)QApplication::quit();
-    ET++;
+    
+    ET=0;
+    if(getGPIOValue(ButtonA_pin)==1)ET=7;
+    
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,100,169)));
      

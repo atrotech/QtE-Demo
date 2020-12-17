@@ -33,6 +33,11 @@ private:
     int progresses[3];
     struct timeval startTime;
 
+    int ButtonA_pin = GPIO_PIN(7); 
+    int ButtonB_pin = GPIO_PIN(11); 
+    int ButtonC_pin = GPIO_PIN(13); 
+    int ButtonD_pin = GPIO_PIN(15); 
+
 };
 
 #endif // WIDGET_H
