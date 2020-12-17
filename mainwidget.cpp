@@ -76,7 +76,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
 
     int SpaceHeight = 160;
-    int HeightOffset = 40;
+    int HeightOffset = 60;
     
     ET=0;
     if(getGPIOValue(ButtonA_pin)==0)ET=1;
