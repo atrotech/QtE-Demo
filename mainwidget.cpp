@@ -82,7 +82,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     if(getGPIOValue(ButtonA_pin)==0)ET=1;
     if(getGPIOValue(ButtonB_pin)==0)ET=2;
     if(getGPIOValue(ButtonC_pin)==0)ET=3;
-    if(getGPIOValue(ButtonD_pin)==0)ET=4;
+    if(getGPIOValue(ButtonD_pin)==0)QCoreApplication::quit();
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
