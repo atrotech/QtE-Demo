@@ -88,17 +88,19 @@ void TMainWidget::paintEvent(QPaintEvent *)
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
 
     
-    QPixmap video("img/video.png");  // video testing
-    p.drawPixmap( width()-150 , HeightOffset, 150 , 150 , video);
+     if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
+     else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
     
-    QPixmap data("img/data.png");  // data testing
-    p.drawPixmap( width()-150 , SpaceHeight + HeightOffset , 150 , 150 , data);
+     if(getGPIOValue(ButtonB_pin)==0){p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
+     else{p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
     
-    QPixmap report("img/report.png");  // report 
-    p.drawPixmap( width()-150 , 2*SpaceHeight + HeightOffset , 150 , 150 , report);
+     if(getGPIOValue(ButtonC_pin)==0){p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
+     else{p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
     
-    QPixmap power("img/power.png");  //  power
-    p.drawPixmap( width()-150 , 3*SpaceHeight + HeightOffset , 150 , 150 , power);
+     if(getGPIOValue(ButtonD_pin)==0){p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset, 150 , 150 , btnNormal);}
+     else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset, 150 , 150 , btnPush);}
+    
+
     
     
     p.setPen(Qt::red);                      //  source
@@ -127,7 +129,9 @@ static inline double time_diff(struct timeval _tstart,struct timeval _tend) {
   return t2-t1;
 }
 
-void TMainWidget::customEvent(QEvent *e)
+void TMainWidget::customEvent()
 {
 
 }
+
+

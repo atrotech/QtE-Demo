@@ -26,8 +26,9 @@ private:
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
-    bool transparent;
-    QString sourceCodeUrl;
+    
+    QPixmap btnNormal("img/btn.png");  // Normal Button
+    QPixmap btnPush("img/btnFocus.png");  // Normal Button
 
     int progresses[3];
     struct timeval startTime;
