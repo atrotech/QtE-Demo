@@ -22,7 +22,7 @@ private slots:
 private:
     void resizeEvent(QResizeEvent*);
     void paintEvent(QPaintEvent *);
-    void CheckButtons();
+    char CheckButtons();
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
