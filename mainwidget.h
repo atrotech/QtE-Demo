@@ -23,6 +23,7 @@ private:
     void resizeEvent(QResizeEvent*);
     void paintEvent(QPaintEvent *);
     char CheckButtons();
+    bool Button(int btn);
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
