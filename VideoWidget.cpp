@@ -40,8 +40,7 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
-        
-    gettimeofday(&startTime,NULL);
+
 }
 
 
@@ -77,7 +76,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
   
     if(getGPIOValue(ButtonD_pin)==0)QCoreApplication::quit();
     
-     p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
+     p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
      
