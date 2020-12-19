@@ -117,7 +117,14 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
 char TMainWidget::CheckButtons()
 {
-    if(getGPIOValue(ButtonA_pin)==0){VideoWindow->show();this->hide();return 1;}
+    if(getGPIOValue(ButtonA_pin)==0)
+    {
+        VideoWindow->show();
+        this->hide();
+        VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
+	    VideoWindow->showFullScreen();
+        return 1;
+    }
     if(getGPIOValue(ButtonB_pin)==0){QCoreApplication::quit();return 2;}
     if(getGPIOValue(ButtonC_pin)==0){QCoreApplication::quit();return 3;}
     if(getGPIOValue(ButtonD_pin)==0){QCoreApplication::quit();return 4;}
