@@ -76,10 +76,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     char ButtonResult = 0;
     int SpaceHeight = 160;
     int HeightOffset = 60;
-    
-    ButtonResult = CheckButtons();
-    
-    
+
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
@@ -104,15 +101,16 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
     
     
-    p.setPen(Qt::red);                      //  source
-    p.setFont(QFont("Arial", 18));
-    p.fillRect((FrameMap.width()/2)-148, height()-22 ,300,20,QBrush(QColor(255,255,255)));
-    p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
+     p.setPen(Qt::red);                      //  source
+     p.setFont(QFont("Arial", 18));
+     p.fillRect((FrameMap.width()/2)-148, height()-22 ,300,20,QBrush(QColor(255,255,255)));
+     p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
+    
+     ButtonResult = CheckButtons();
     
     
-    
-    p.drawPixmap( width()-110 ,10, BatteryImg);
-    p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
+     p.drawPixmap( width()-110 ,10, BatteryImg);
+     p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
 }
 
 char TMainWidget::CheckButtons()
@@ -126,8 +124,8 @@ char TMainWidget::CheckButtons()
         this->hide();
         return 1;
     }
-    if(getGPIOValue(ButtonB_pin)==0){QCoreApplication::quit();return 2;}
-    if(getGPIOValue(ButtonC_pin)==0){QCoreApplication::quit();return 3;}
+    if(getGPIOValue(ButtonB_pin)==0){return 2;}
+    if(getGPIOValue(ButtonC_pin)==0){return 3;}
     if(getGPIOValue(ButtonD_pin)==0){QCoreApplication::quit();return 4;}
 }
 
