@@ -45,7 +45,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     
   
-    if(getGPIOValue(ButtonD_pin)==0){while(!getGPIOValue(ButtonD_pin));this->hide();}
+    if(getGPIOValue(ButtonD_pin)==0){while(!getGPIOValue(ButtonD_pin));QThread::msleep(500); this->hide();}
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
      
