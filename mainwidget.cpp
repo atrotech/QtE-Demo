@@ -121,6 +121,11 @@ char TMainWidget::CheckButtons()
     {
         VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
 	    VideoWindow->showFullScreen();
+        int height = screenGeometry.height();
+        int width = screenGeometry.width();
+        int x=(width - VideoWindow->width()) / 2.0;
+        int y=(height - VideoWindow->height()) / 2.0;
+        VideoWindow->setGeometry(x,y,VideoWindow->width(),VideoWindow->height());
         VideoWindow->show();
         this->hide();
         return 1;
