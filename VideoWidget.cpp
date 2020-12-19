@@ -1,5 +1,6 @@
 #include "VideoWidget.h"
 
+VideoCapture cap(0);
 
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
@@ -8,7 +9,6 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
    
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
     
-
     printf("Width: %d", width());
     printf("Height: %d", height());
     
