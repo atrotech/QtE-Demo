@@ -135,12 +135,14 @@ bool TMainWidget::Button(int btn)
     {
         while (getGPIOValue(btn)==0)
         {
-            QThread::msleep(10);
+            QThread::msleep(1);
             t++;
         }
         
     }
-    if (t>50){return true;}
+    if (t>50){
+        while (getGPIOValue(btn));
+        return true;}
     return false;
 }
 
