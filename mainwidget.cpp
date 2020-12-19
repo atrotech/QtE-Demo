@@ -115,18 +115,33 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
 char TMainWidget::CheckButtons()
 {
-    if(getGPIOValue(ButtonA_pin)==0)
+    if(Button(ButtonA_pin))
     {
         VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
 	    VideoWindow->showFullScreen();
         VideoWindow->setGeometry(0,0,width(),height());
         VideoWindow->show();
-        //this->hide();
         return 1;
     }
     if(getGPIOValue(ButtonB_pin)==0){return 2;}
     if(getGPIOValue(ButtonC_pin)==0){return 3;}
-    //if(getGPIOValue(ButtonD_pin)==0){QCoreApplication::quit();return 4;}
+    if(Button(ButtonD_pin)){QCoreApplication::quit();return 4;}
+}
+
+bool TMainWidget::Button(int btn)
+{
+    int t=0;
+    if(getGPIOValue(btn)==0)
+    {
+        while (getGPIOValue(btn)==0)
+        {
+            QThread::msleep(10);
+            t++;
+        }
+        
+    }
+    if (t>2000){return true;}
+    return false;
 }
 
 
