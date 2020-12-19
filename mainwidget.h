@@ -34,7 +34,7 @@ private:
     QPixmap dataImg = QPixmap(":/img/data.png");
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
     
-    TVideoWidget *VideoWindow = new TVideoWidget(0);
+    TVideoWidget *VideoWindow = new TVideoWidget(1);
 
     int ButtonA_pin = GPIO_PIN(7);    //GPIOD8  = pin7
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11 
