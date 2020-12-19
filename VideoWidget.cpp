@@ -12,8 +12,8 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
     printf("Width: %d", width());
     printf("Height: %d", height());
     
-    while(!getGPIOValue(ButtonD_pin));
     
+
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
