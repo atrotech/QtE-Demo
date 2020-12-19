@@ -141,7 +141,6 @@ bool TMainWidget::Button(int btn)
         
     }
     if (t>50){
-        while (getGPIOValue(btn));
         return true;}
     return false;
 }
