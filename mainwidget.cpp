@@ -41,7 +41,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
         
-    while(!getGPIOValue(ButtonD_pin));
+    
 }
 
 
