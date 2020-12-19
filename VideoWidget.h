@@ -3,6 +3,15 @@
 
 
 #include <sys/time.h>
+
+#include <signal.h>
+
+#include <opencv2/opencv.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgcodecs.hpp>
+
 #include "lib/gpio.h"
 #include "lib/common.h"
 
@@ -28,6 +37,8 @@ private:
     QPixmap reportImg = QPixmap(":/img/report.png");
     QPixmap dataImg = QPixmap(":/img/data.png");
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
+    
+    VideoCapture cap(0);
 
     int ButtonA_pin = GPIO_PIN(7);    //GPIOD8  = pin7
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11 

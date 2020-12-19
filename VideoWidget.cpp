@@ -1,20 +1,5 @@
-#include "mainwidget.h"
-#include <signal.h>
+#include "VideoWidget.h"
 
-#include <opencv2/opencv.hpp>
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/imgcodecs.hpp>
-
-#include "lib/gpio.h"
-
-
-
-using namespace cv;
-
-int ET = 0;
-VideoCapture cap(0);
 
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
@@ -22,6 +7,7 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 {
    
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
+    
 
     printf("Width: %d", width());
     printf("Height: %d", height());
