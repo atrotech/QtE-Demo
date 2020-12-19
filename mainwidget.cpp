@@ -121,7 +121,7 @@ char TMainWidget::CheckButtons()
 	    VideoWindow->showFullScreen();
         VideoWindow->setGeometry(0,0,width(),height());
         VideoWindow->show();
-        this->hide();
+        //this->hide();
         return 1;
     }
     if(getGPIOValue(ButtonB_pin)==0){return 2;}
