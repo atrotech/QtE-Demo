@@ -119,10 +119,10 @@ char TMainWidget::CheckButtons()
 {
     if(getGPIOValue(ButtonA_pin)==0)
     {
-        VideoWindow->show();
-        this->hide();
         VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
 	    VideoWindow->showFullScreen();
+        VideoWindow->show();
+        this->hide();
         return 1;
     }
     if(getGPIOValue(ButtonB_pin)==0){QCoreApplication::quit();return 2;}
