@@ -17,7 +17,7 @@ int ET = 0;
 VideoCapture cap(0);
 
 
-TMainWidget::TMainWidget(QWidget *parent) :
+TVideoWidget::TVideoWidget(QWidget *parent) :
     QWidget(parent)
 {
    
@@ -49,15 +49,12 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
 
 
-void TMainWidget::resizeEvent(QResizeEvent*) {
-    
-}
 
 
 
 
 
-void TMainWidget::onKeepAlive() {
+void TVideoWidget::onKeepAlive() {
     Mat frame;
     cap.read(frame); // read a new frame from video 
     
@@ -69,16 +66,16 @@ void TMainWidget::onKeepAlive() {
     update();
 }
 
-void TMainWidget::paintEvent(QPaintEvent *)
+void TVideoWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-    char ButtonResult = 0;
+
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
-    ButtonResult = CheckButtons();
-    
+  
+    if(getGPIOValue(ButtonD_pin)==0)QCoreApplication::quit();
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
@@ -113,14 +110,12 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     p.drawPixmap( width()-110 ,10, BatteryImg);
     p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
+   
+    
+ 
+
+
 }
 
-char TMainWidget::CheckButtons()
-{
-    if(getGPIOValue(ButtonA_pin)==0){VideoWindow->show();this->hide();return 1;}
-    if(getGPIOValue(ButtonB_pin)==0){QCoreApplication::quit();return 2;}
-    if(getGPIOValue(ButtonC_pin)==0){QCoreApplication::quit();return 3;}
-    if(getGPIOValue(ButtonD_pin)==0){QCoreApplication::quit();return 4;}
-}
 
 
