@@ -23,9 +23,8 @@ TMainWidget::TMainWidget(QWidget *parent) :
    
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
 
-    for (unsigned int i=0; i<sizeof(progresses)/sizeof(int); i++) {
-        progresses[i]=0;
-    }
+    printf("Width: %d", width());
+    printf("Height: %d", height());
     
     boardInit();
     exportGPIOPin(ButtonA_pin);
