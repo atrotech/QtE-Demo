@@ -1,6 +1,3 @@
-
-#ifndef WIDGET_H
-#define WIDGET_H
 #include <QtCore/QtGlobal>
 #include <QtWidgets>
 
@@ -40,5 +37,3 @@ private:
     
 
 };
-
-#endif // WIDGET_H
