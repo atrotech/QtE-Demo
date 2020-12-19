@@ -137,10 +137,11 @@ bool TMainWidget::Button(int btn)
         {
             QThread::msleep(10);
             t++;
+            if (t>200){return true;}
         }
         
     }
-    if (t>2000){return true;}
+    if (t>200){return true;}
     return false;
 }
 
