@@ -1,6 +1,6 @@
 #include "VideoWidget.h"
 
-VideoCapture cap(0);
+
 
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
@@ -40,14 +40,7 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 void TVideoWidget::onKeepAlive() {
-    Mat frame;
-    cap.read(frame); // read a new frame from video 
-    
-    FrameMap = QPixmap::fromImage(QImage((unsigned char*) frame.data,
-                                   frame.cols,
-                                   frame.rows,
-                                   QImage::Format_RGB888));
-    
+
     update();
 }
 
@@ -94,7 +87,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     
     
     p.drawPixmap( width()-110 ,10, BatteryImg);
-    p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
+    p.drawText( width()-110 , 10 , QString("%1%").arg(100));
    
     
  
