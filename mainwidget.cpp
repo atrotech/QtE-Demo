@@ -78,7 +78,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     
     //if(ActiveWindow!=0)return;
-
+     printf("ActiveWindow %d",ActiveWindow);
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
