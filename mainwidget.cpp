@@ -120,7 +120,7 @@ char TMainWidget::CheckButtons()
         {
             case 1:
             ActiveWindow = 1;
-            ideoWindow->setWindowFlags(Qt::FramelessWindowHint);
+            VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
             VideoWindow->showFullScreen();
             VideoWindow->setGeometry(0,0,width(),height());
             VideoWindow->show();
