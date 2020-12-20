@@ -125,7 +125,13 @@ char TMainWidget::CheckButtons()
     }
     if(getGPIOValue(ButtonB_pin)==0){return 2;}
     if(getGPIOValue(ButtonC_pin)==0){return 3;}
-    if(Button(ButtonD_pin)){QCoreApplication::quit();return 4;}
+    if(Button(ButtonD_pin)){
+        unexportGPIOPin(ButtonA_pin);
+        unexportGPIOPin(ButtonB_pin);
+        unexportGPIOPin(ButtonC_pin);
+        unexportGPIOPin(ButtonD_pin);
+        QCoreApplication::quit();
+        return 4;}
 }
 
 bool TMainWidget::Button(int btn)
