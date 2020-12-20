@@ -43,7 +43,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     int SpaceHeight = 160;
     int HeightOffset = 60;
-    
+    if(Button==4)this->hide();
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
      
