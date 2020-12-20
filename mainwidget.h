@@ -9,6 +9,7 @@
 #include "lib/gpio.h"
 #include "lib/common.h"
 
+
 class TMainWidget : public QWidget
 {
     Q_OBJECT
@@ -23,7 +24,7 @@ private:
     void resizeEvent(QResizeEvent*);
     void paintEvent(QPaintEvent *);
     char CheckButtons();
-    bool Button(int btn);
+    char PushedButton();
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
@@ -36,6 +37,8 @@ private:
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
     
     TVideoWidget *VideoWindow = new TVideoWidget(0);
+
+    char ActiveWindow = 0;
 
     int ButtonA_pin = GPIO_PIN(7);    //GPIOD8  = pin7
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11 

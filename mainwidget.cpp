@@ -65,6 +65,7 @@ void TMainWidget::onKeepAlive() {
                                    frame.cols,
                                    frame.rows,
                                    QImage::Format_RGB888));
+    ButtonResult = CheckButtons();
     
     update();
 }
@@ -76,24 +77,19 @@ void TMainWidget::paintEvent(QPaintEvent *)
     char ButtonResult = 0;
     int SpaceHeight = 160;
     int HeightOffset = 60;
+    
+    if(ActiveWindow)return;
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
      
     
-     if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);}
+     p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
+     p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnPush);
+     p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);
+     p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);
     
-     if(getGPIOValue(ButtonB_pin)==0){p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnPush);}
-    
-     if(getGPIOValue(ButtonC_pin)==0){p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);}
-    
-     if(getGPIOValue(ButtonD_pin)==0){p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnNormal);}
-     else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);}
-     
      p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, videoImg);
      p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, dataImg);
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, reportImg);
@@ -101,12 +97,12 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
     
     
-     p.setPen(Qt::red);                      //  source
+     p.setPen(Qt::black);                      //  source
      p.setFont(QFont("Arial", 18));
      p.fillRect((FrameMap.width()/2)-148, height()-22 ,300,20,QBrush(QColor(255,255,255)));
      p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
     
-     ButtonResult = CheckButtons();
+     
     
     
      p.drawPixmap( width()-110 ,10, BatteryImg);
@@ -115,40 +111,41 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
 char TMainWidget::CheckButtons()
 {
-    if(Button(ButtonA_pin))
-    {
-        VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
-	    VideoWindow->showFullScreen();
-        VideoWindow->setGeometry(0,0,width(),height());
-        VideoWindow->show();
-        return 1;
-    }
-    if(getGPIOValue(ButtonB_pin)==0){return 2;}
-    if(getGPIOValue(ButtonC_pin)==0){return 3;}
-    if(Button(ButtonD_pin)){
-        unexportGPIOPin(ButtonA_pin);
-        unexportGPIOPin(ButtonB_pin);
-        unexportGPIOPin(ButtonC_pin);
-        unexportGPIOPin(ButtonD_pin);
-        QCoreApplication::quit();
-        return 4;}
+    char btn = PushedButton();
+     if(ActiveWindow==0){
+        switch(btn)
+        {
+            case 1:
+            ActiveWindow = 1;
+            VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
+            VideoWindow->showFullScreen();
+            VideoWindow->setGeometry(0,0,width(),height());
+            VideoWindow->show();
+            break;
+            case 2:
+            ActiveWindow = 2;
+            break;
+            case 3:
+            ActiveWindow = 3;
+            break;
+            case 4:
+            QApplication::quit();
+            break;
+            
+        }
+     }
+    else if(ActiveWindow==1)VideoWindow->Button = btn;
+   
+    while(!PushedButton());
 }
 
-bool TMainWidget::Button(int btn)
+char TMainWidget::PushedButton()
 {
-    int t=0;
-    if(getGPIOValue(btn)==0)
-    {
-        while (getGPIOValue(btn)==0)
-        {
-            QThread::msleep(1);
-            t++;
-        }
-        
-    }
-    if (t>500){
-        return true;}
-    return false;
+    if(getGPIOValue(ButtonA_pin)==0)return 1;
+    if(getGPIOValue(ButtonB_pin)==0)return 2;
+    if(getGPIOValue(ButtonC_pin)==0)return 3;
+    if(getGPIOValue(ButtonD_pin)==0)return 4;
+    return 0;
 }
 
 

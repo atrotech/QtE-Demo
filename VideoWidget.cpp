@@ -44,15 +44,13 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
-  
-    if(getGPIOValue(ButtonD_pin)==0){this->hide();}
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
      
     
-     if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnNormal);}
+     /*if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnNormal);}
      else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);}
     
      if(getGPIOValue(ButtonB_pin)==0){p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnNormal);}
@@ -62,7 +60,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      else{p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);}
     
      if(getGPIOValue(ButtonD_pin)==0){p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnNormal);}
-     else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);}
+     else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);}*/
      
      p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, videoImg);
      p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, dataImg);
@@ -81,11 +79,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawPixmap( width()-110 ,10, BatteryImg);
     p.drawText( width()-110 , 10 , QString("%1%").arg(100));
    
-    
- 
-
-
 }
-
 
 
