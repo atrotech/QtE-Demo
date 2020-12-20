@@ -106,7 +106,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
      
     
     
-     p.drawPixmap( width()-110 ,10, BatteryImg);
+     p.drawPixmap( width()-110 ,0, BatteryImg);
      p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
 }
 
