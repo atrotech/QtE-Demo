@@ -107,7 +107,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     
     
      p.drawPixmap( width()-70 ,0, BatteryImg);
-     p.drawText( width()-60 , 40 , QString("%1%").arg(ET));
+     p.drawText( width()-55 , 38 , QString("%1%").arg(ET));
 }
 
 char TMainWidget::CheckButtons()
@@ -120,8 +120,9 @@ char TMainWidget::CheckButtons()
         {
             case 1:
             ActiveWindow = 1;
+            ideoWindow->setWindowFlags(Qt::FramelessWindowHint);
             VideoWindow->showFullScreen();
-            VideoWindow->setGeometry(0,0,640,480);
+            VideoWindow->setGeometry(0,0,width(),height());
             VideoWindow->show();
             break;
             case 2:
