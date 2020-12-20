@@ -69,7 +69,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     
     
     p.drawPixmap( width()-110 ,10, BatteryImg);
-    p.drawText( width()-110 , 10 , QString("%1%").arg(100));
+    p.drawText( width()-110 , 10 , QString("%1%").arg(Button));
    
 }
 

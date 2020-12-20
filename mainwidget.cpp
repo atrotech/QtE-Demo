@@ -136,6 +136,8 @@ char TMainWidget::CheckButtons()
         }
      }
     else if(ActiveWindow==1)VideoWindow->Button = btn;
+    else if(ActiveWindow==2)printf("Data %d",btn);
+    else if(ActiveWindow==3)printf("report %d",btn);
     if(btn==4){ActiveWindow=0;}
     while(PushedButton());
 }
