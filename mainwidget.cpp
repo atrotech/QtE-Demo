@@ -146,7 +146,7 @@ bool TMainWidget::Button(int btn)
         }
         
     }
-    if (t>50){
+    if (t>500){
         return true;}
     return false;
 }
