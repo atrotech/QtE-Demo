@@ -30,7 +30,6 @@ void TVideoWidget::onKeepAlive() {
 
 void TVideoWidget::paintEvent(QPaintEvent *)
 {
-    this->setGeometry(0,0,640,480);
     QPainter p(this);
 
     int SpaceHeight = 160;
