@@ -77,7 +77,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
-    if(ActiveWindow!=0)return;
+    //if(ActiveWindow!=0)return;
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
