@@ -36,6 +36,9 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
+    VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
+    VideoWindow->setGeometry(0,0,width(),height());
+
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
@@ -77,8 +80,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
-    //if(ActiveWindow!=0)return;
-     printf("ActiveWindow %d",ActiveWindow);
+    if(ActiveWindow!=0)return;
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,169,169)));
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
@@ -118,9 +120,6 @@ char TMainWidget::CheckButtons()
         {
             case 1:
             ActiveWindow = 1;
-            VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
-            VideoWindow->showFullScreen();
-            VideoWindow->setGeometry(0,0,width(),height());
             VideoWindow->show();
             break;
             case 2:
