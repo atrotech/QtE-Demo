@@ -37,7 +37,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
-    VideoWindow->setGeometry(0,0,width(),height());
+    
 
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);

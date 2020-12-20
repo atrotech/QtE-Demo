@@ -31,7 +31,7 @@ void TVideoWidget::onKeepAlive() {
 void TVideoWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
-
+    this->setGeometry(0,0,width(),height());
 
     int SpaceHeight = 160;
     int HeightOffset = 60;
@@ -41,18 +41,11 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      
      p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
      
-    
-     /*if(getGPIOValue(ButtonA_pin)==0){p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);}
-    
-     if(getGPIOValue(ButtonB_pin)==0){p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnPush);}
-    
-     if(getGPIOValue(ButtonC_pin)==0){p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset, btnNormal);}
-     else{p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);}
-    
-     if(getGPIOValue(ButtonD_pin)==0){p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnNormal);}
-     else{p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);}*/
+
+     p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
+     p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnPush);
+     p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);
+     p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);
      
      p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, videoImg);
      p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, dataImg);
