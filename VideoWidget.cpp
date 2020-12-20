@@ -30,11 +30,10 @@ void TVideoWidget::onKeepAlive() {
 
 void TVideoWidget::paintEvent(QPaintEvent *)
 {
+    this->setGeometry(0,0,640,480);
     QPainter p(this);
-    this->setGeometry(0,0,width(),height());
 
     int SpaceHeight = 160;
-    int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));

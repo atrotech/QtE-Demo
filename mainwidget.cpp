@@ -106,8 +106,8 @@ void TMainWidget::paintEvent(QPaintEvent *)
      
     
     
-     p.drawPixmap( width()-110 ,0, BatteryImg);
-     p.drawText( width()-110 , 10 , QString("%1%").arg(ET));
+     p.drawPixmap( width()-100 ,0, BatteryImg);
+     p.drawText( width()-90 , 20 , QString("%1%").arg(ET));
 }
 
 char TMainWidget::CheckButtons()
