@@ -65,7 +65,7 @@ void TMainWidget::onKeepAlive() {
                                    frame.cols,
                                    frame.rows,
                                    QImage::Format_RGB888));
-    ButtonResult = CheckButtons();
+    CheckButtons();
     
     update();
 }
@@ -74,7 +74,6 @@ void TMainWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
-    char ButtonResult = 0;
     int SpaceHeight = 160;
     int HeightOffset = 60;
     
