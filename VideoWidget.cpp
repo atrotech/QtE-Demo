@@ -23,14 +23,6 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 
-
-
-
-
-
-
-
-
 void TVideoWidget::onKeepAlive() {
 
     update();

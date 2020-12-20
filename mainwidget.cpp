@@ -111,6 +111,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
 char TMainWidget::CheckButtons()
 {
     char btn = PushedButton();
+    if(btn==0)return;
      if(ActiveWindow==0){
         switch(btn)
         {
@@ -135,7 +136,7 @@ char TMainWidget::CheckButtons()
      }
     else if(ActiveWindow==1)VideoWindow->Button = btn;
    
-    while(!PushedButton());
+    while(PushedButton());
 }
 
 char TMainWidget::PushedButton()
