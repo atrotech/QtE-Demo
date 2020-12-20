@@ -112,7 +112,7 @@ char TMainWidget::CheckButtons()
 {
     char btn = PushedButton();
     if(btn==0)return 0;
-    if(btn==4 && ActiveWindow!=0){ActiveWindow=0;return;}
+    if(btn==4 && ActiveWindow!=0){ActiveWindow=0;return 0;}
      if(ActiveWindow==0){
         switch(btn)
         {
