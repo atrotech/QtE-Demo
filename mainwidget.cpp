@@ -112,7 +112,7 @@ char TMainWidget::CheckButtons()
 {
     char btn = PushedButton();
     if(btn==0)return 0;
-    if(btn==4 && ActiveWindow!=0){ActiveWindow=0;return 0;}
+    
      if(ActiveWindow==0){
         switch(btn)
         {
@@ -136,7 +136,7 @@ char TMainWidget::CheckButtons()
         }
      }
     else if(ActiveWindow==1)VideoWindow->Button = btn;
-   
+    if(btn==4){ActiveWindow=0;}
     while(PushedButton());
 }
 
