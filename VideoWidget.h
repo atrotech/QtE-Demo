@@ -22,6 +22,7 @@ class TVideoWidget : public QWidget
 public:
     explicit TVideoWidget(QWidget *parent);
     ~TVideoWidget() {}
+    char Button = 0;
 private slots:
     void onKeepAlive();
 private:
@@ -36,5 +37,5 @@ private:
     QPixmap reportImg = QPixmap(":/img/report.png");
     QPixmap dataImg = QPixmap(":/img/data.png");
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
-    char Button = 0;
+    
 };
