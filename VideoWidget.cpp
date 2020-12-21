@@ -68,15 +68,15 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setFont(QFont("Arial", 28));
 
     p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(67));
-    p.drawPixmap( width()/3-50 , height()/4-40 , tickImg);
+    p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
-    p.drawPixmap( width()/3-35  , height()/4+90 , noneImg);
+    p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
     p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(67));
-    p.drawPixmap( width()/3-35  , height()/4+190 , cancelImg);
+    p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  ").arg(67));
-    p.drawPixmap( width()/3-35  , height()/4+290 , processImg);
+    p.drawPixmap( width()/3-50  , height()/4+265 , processImg);
 
 }
