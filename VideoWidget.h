@@ -39,9 +39,9 @@ private:
     QPixmap playImg = QPixmap(":/img/play.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
 
-    QPixmap saveImg = QPixmap(":/img/diskette.png");
-    QPixmap flashImg = QPixmap(":/img/flash-disk.png");
-    QPixmap playImg = QPixmap(":/img/play.png");
+    QPixmap cancelImg = QPixmap(":/img/cancel.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
+    QPixmap tickImg = QPixmap(":/img/tick.png");
+    QPixmap processImg = QPixmap(":/img/process.png");
 
 };
