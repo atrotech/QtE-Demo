@@ -65,5 +65,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
     p.drawText( width()/3 , height()/3 , QString("test abaad : %1  %2 ").arg(67).arg(" "));
+    p.drawText( width()/3 , height()/3 , QString("test abaad : %1  %2 ").arg(67).arg(" "));
+    p.drawText( width()/3 , height()/3 , QString("test abaad : %1  %2 ").arg(67).arg(" "));
+    p.drawText( width()/3 , height()/3 , QString("test abaad : %1  %2 ").arg(67).arg(" "));
 
 }
