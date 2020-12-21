@@ -62,7 +62,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawPixmap( width()-110 ,10, BatteryImg);
     p.drawText( width()-110 , 10 , QString("%1%").arg(Button));
 
-
+    p.setPen(Qt::red);                      
+    p.setFont(QFont("Arial", 25));
     p.drawText( width()/3 , height()/3 , QString("test abaad : %1  %2 ").arg(67).arg(" "));
 
 }
