@@ -87,21 +87,14 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::vidoTest()
 {
 
-  Bitmap* mybitmap = FrameMap;
-  int x=0;
-  int y=0;
-  Color pixelColor;
-  //Color pixelcolor[1000][1000];
-  for ( x = 0; x < FrameMap.width(); x++ )
-     {
-        for ( y = 0; y < FrameMap.height(); y++ )
-        {
-               //Color pixelColor[x][y] = mybitmap->GetPixel(x,y);
-           mybitmap->GetPixel(x,y, &pixelColor);
-           cout << "Pixel color " << x << ",  " << y; "is  " << pixelColor;
-           //cout << "Pixel color " << x << ",  " << y; "is  " << pixelColor[x][y];
-        }
-     }
-  printf("ddddd\n");
+  //QImage myImage;
+          // myImage.load("imagefile.jpg");
+           for (int i = 0; i<FrameMap.width(); ++i) {
+                       for (int j = 0; j<FrameMap.height(); ++j){
+                              QRgb pixel = FrameMap->pixel(i,j);}}
+                              printf(pixel);
+          
+
+  //printf("ddddd\n");
 
 }
