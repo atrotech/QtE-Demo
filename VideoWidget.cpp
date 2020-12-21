@@ -91,9 +91,9 @@ void TVideoWidget::vidoTest()
           // myImage.load("imagefile.jpg");
            for (int i = 0; i<FrameMap.width(); ++i) {
                        for (int j = 0; j<FrameMap.height(); ++j){
-                              QRgb pixel = FrameMap->pixel(i,j);}}
+                              QRgb pixel = FrameMap.pixel(i,j);}}
                               printf(pixel);
-          
+
 
   //printf("ddddd\n");
 
