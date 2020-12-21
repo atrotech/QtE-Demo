@@ -66,9 +66,9 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
-    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  %2 ").arg(67).arg(" "));
-    p.drawText( width()/3 , height()/4+100 , QString("  تست رنگ : %1  %2 ").arg(67).arg(" "));
-    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  %2 ").arg(67).arg(" g "));
-    p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  %2 ").arg(67).arg(" "));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  ").arg(67));
 
 }
