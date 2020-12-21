@@ -11,5 +11,9 @@
         <file>img/flash-disk.png</file>
         <file>img/play.png</file>
         <file>img/return.png</file>
+        <file>img/diskette.png</file>
+        <file>img/flash-disk.png</file>
+        <file>img/play.png</file>
+        <file>img/return.png</file>
     </qresource>
 </RCC>
