@@ -41,7 +41,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-    mpKeepAliveTimer->start(400);
+    mpKeepAliveTimer->start(500);
 
 
 }
