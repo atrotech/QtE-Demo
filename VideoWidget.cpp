@@ -86,6 +86,19 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::vidoTest()
 {
+  uint8_t* picData = FrameMap;
+
+uint8_t* pixel = picData;
+for(int i = 0; i < height; ++i) {
+  for(int j = 0; j < width; ++j, pixel += pixelSize) {
+       float r = pixel[0];
+       float g = pixel[1];
+       float b = pixel[2];
+       printf(r);
+       printf(g);
+       printf(b);
+  }
+}
   printf("ddddd\n");
 
 }
