@@ -40,7 +40,7 @@ private:
     QPixmap returnImg = QPixmap(":/img/return.png");
 
     QPixmap cancelImg = QPixmap(":/img/cancel.png");
-    QPixmap returnImg = QPixmap(":/img/return.png");
+    QPixmap noneImg = QPixmap(":/img/none.png");
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
 
