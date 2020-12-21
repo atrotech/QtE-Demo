@@ -12,7 +12,7 @@
         <file>img/play.png</file>
         <file>img/return.png</file>
         <file>img/cancel.png</file>
-        <file>img/return.png</file>
+        <file>img/none.png</file>
         <file>img/tick.png</file>
         <file>img/process.png</file>
     </qresource>
