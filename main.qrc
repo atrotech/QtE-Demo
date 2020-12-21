@@ -7,5 +7,9 @@
         <file>img/report.png</file>
         <file>img/video.png</file>
         <file>img/battery.png</file>
+        <file>img/diskette.png</file>
+        <file>img/flash-disk.png</file>
+        <file>img/play.png</file>
+        <file>img/return.png</file>
     </qresource>
 </RCC>

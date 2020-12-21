@@ -37,5 +37,9 @@ private:
     QPixmap reportImg = QPixmap(":/img/report.png");
     QPixmap dataImg = QPixmap(":/img/data.png");
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
-    
+    QPixmap powerImg = QPixmap(":/img/diskette.png");
+    QPixmap reportImg = QPixmap(":/img/flash-disk.png");
+    QPixmap dataImg = QPixmap(":/img/play.png");
+    QPixmap BatteryImg = QPixmap(":/img/return.png");
+
 };

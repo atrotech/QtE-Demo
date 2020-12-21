@@ -9,7 +9,6 @@
 
 #include "lib/gpio.h"
 
-//gggggg
 
 using namespace cv;
 
