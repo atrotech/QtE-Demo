@@ -86,13 +86,11 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::vidoTest()
 {
-
-  //QImage myImage;
-          // myImage.load("imagefile.jpg");
-           for (int i = 0; i<FrameMap.width(); ++i) {
-                       for (int j = 0; j<FrameMap.height(); ++j){
-                              QRgb pixel = FrameMap.pixel(i,j);}}
-                              printf(pixel);
+  for (int i = 0; i<FrameMap.width(); ++i) {
+              for (int j = 0; j<FrameMap.height(); ++j){
+                     c = FrameMap.pixel(i,j)
+                     colors = QColor(c).getRgbF()
+                     printf( "(%s,%s) = %s" % (i, j, colors) );
 
 
   //printf("ddddd\n");
