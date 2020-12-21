@@ -32,14 +32,11 @@ private:
     QPixmap FrameMap;
     QPixmap btnNormal = QPixmap(":/img/Btn.png");
     QPixmap btnPush = QPixmap(":/img/BtnFocus.png");
-    QPixmap videoImg = QPixmap(":/img/video.png");
-    QPixmap powerImg = QPixmap(":/img/power.png");
-    QPixmap reportImg = QPixmap(":/img/report.png");
-    QPixmap dataImg = QPixmap(":/img/data.png");
+
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
-    QPixmap powerImg = QPixmap(":/img/diskette.png");
-    QPixmap reportImg = QPixmap(":/img/flash-disk.png");
-    QPixmap dataImg = QPixmap(":/img/play.png");
-    QPixmap BatteryImg = QPixmap(":/img/return.png");
+    QPixmap saveImg = QPixmap(":/img/diskette.png");
+    QPixmap flashImg = QPixmap(":/img/flash-disk.png");
+    QPixmap playImg = QPixmap(":/img/play.png");
+    QPixmap returnImg = QPixmap(":/img/return.png");
 
 };
