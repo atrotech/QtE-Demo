@@ -34,6 +34,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
+    if(Button==1){Button=0;vidoTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
 
@@ -78,5 +79,13 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  ").arg(67));
     p.drawPixmap( width()/3-50  , height()/4+265 , processImg);
+
+}
+
+
+
+void TVideoWidget::vidoTest()
+{
+  printf("ddddd\n");
 
 }
