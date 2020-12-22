@@ -49,5 +49,4 @@ private:
     QPixmap processImg = QPixmap(":/img/process.png");
 
 
-
 };
