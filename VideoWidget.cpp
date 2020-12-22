@@ -78,11 +78,6 @@ void TVideoWidget::videoTest()
 
   //  color test
 
-  Vec3f pixel = InputFrame.at<Vec3f>(InputFrame.width(), InputFrame.height());
-
-  b = pixel[0];
-  g = pixel[1];
-  r = pixel[2];
 
 
 
