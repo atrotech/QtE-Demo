@@ -25,7 +25,7 @@ public:
     int Button = 0;
     int rows = 400;
     int cols = 4000;
-    Mat InputFrame = Mat::zeros(rows, cols, CV_8UC1);
+    Mat InputFrame = new Mat::zeros(rows, cols, CV_8UC1);
 
 private slots:
     void onKeepAlive();
