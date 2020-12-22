@@ -77,12 +77,16 @@ void TVideoWidget::videoTest()
   printf("area size: %d", area );
 
   //  color test
+  for (int i = 0; i<InputFrame.width(); ++i) {
+    for (int j = 0; j<InputFrame.height(); ++j){
+      pix = InputFrame.pixel(i,j);
+      colors = QColor(pix).getRgbF();
+      printf("(%s,%s) = %s" % (x, y, colors));}}
 
-  for x in range(0,20):
-    for y in range(0,20):
-        c = InputFrame.pixel(x,y)
-        colors = QColor(c).getRgbF()
-        printf( "(%s,%s) = %s" % (x, y, colors) )
+
+
+
+
 
 
 
