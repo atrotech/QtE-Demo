@@ -74,9 +74,9 @@ void TVideoWidget::videoTest()
 
   //  area test
 
-  unsigned char r = InputFrame.at<unsigned char>(1,1);
+  cv::Vec3b r = InputFrame.at<cv::Vec3b>(1,1);
 
-    printf("R%d G%d B%d",r,r,r);
+    printf("R%d G%d B%d",r[0],r[1],r[2]);
 
 
 
