@@ -76,7 +76,7 @@ void TVideoWidget::videoTest()
 
   unsigned char r = InputFrame.at<unsigned char>(1,1);
 
-    print("R%d G%d B%d",r,r,r)
+    print("R%d G%d B%d",r,r,r);
 
 
 
