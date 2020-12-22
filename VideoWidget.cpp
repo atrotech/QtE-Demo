@@ -36,7 +36,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;vidoTest();}
 
-     p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
+     p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
 
 
@@ -51,18 +51,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
 
-
-    p.setPen(Qt::red);                      //  source
-
-    p.drawPixmap( width()-110 ,10, BatteryImg);
-    p.drawText( width()-110 , 10 , QString("%1%").arg(Button));
-
-
-
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(Button));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
