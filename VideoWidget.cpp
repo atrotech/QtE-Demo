@@ -69,14 +69,15 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 }
 
 
+
 void TVideoWidget::videoTest()
 {
 
   for (int i = 0; i<InputFrame.width(); i++) {
     for (int j = 0; j<InputFrame.height(); j++){
       cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
-        printf("R%d G%d B%d",rgb[0],rgb[1],rgb[2]);}}
-
+        printf("R %d G %d B %d /n " , rgb[0], rgb[1], rgb[2]); } }
 
   QApplication::quit();
+
 }
