@@ -15,6 +15,8 @@
 #include "lib/gpio.h"
 #include "lib/common.h"
 
+using namespace cv;
+
 class TVideoWidget : public QWidget
 {
     Q_OBJECT
