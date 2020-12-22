@@ -72,25 +72,21 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::videoTest()
 {
 
-  //  area test
-
-  cv::Vec3b r = InputFrame.at<cv::Vec3b>(1,1);
-
-    printf("R%d G%d B%d",r[0],r[1],r[2]);
 
 
 
-
-  //  color test
-
-
+  cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(1,1);
+    printf("R%d G%d B%d",rgb[0],rgb[1],rgb[2]);
 
 
 
-  //  noise test
+    for (int i = 0; i<InputFrame.width(); ++i) {
+        for (int j = 0; j<InputFrame.height(); ++j){
+          QRgb pixel = InputFrame->pixel(i,j);
+          printf(pixel); }}
 
 
-  //  frame test
+
 
 
   QApplication::quit();
