@@ -77,6 +77,10 @@ void TVideoWidget::videoTest()
   printf("area size: %d", area );
 
   //  color test
+  for (int i = 0; i<InputFrame.width(); ++i) {
+    for (int j = 0; j<InputFrame.height(); ++j){
+      QRgb pixel = InputFrame->pixel(i,j);
+      printf(pixel); }}
 
 
   //  noise test
