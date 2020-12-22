@@ -23,6 +23,7 @@ public:
     explicit TVideoWidget(QWidget *parent);
     ~TVideoWidget() {}
     int Button = 0;
+    int area = 0;
     QPixmap InputFrame;
 private slots:
     void onKeepAlive();
