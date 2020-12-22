@@ -22,14 +22,13 @@ class TVideoWidget : public QWidget
 public:
     explicit TVideoWidget(QWidget *parent);
     ~TVideoWidget() {}
-    char Button = 0;
+    int Button = 0;
     QPixmap InputFrame;
 private slots:
     void onKeepAlive();
 private:
     void paintEvent(QPaintEvent *);
     void vidoTest();
-
 private:
     QTimer* mpKeepAliveTimer;
 
