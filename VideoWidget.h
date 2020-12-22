@@ -23,9 +23,7 @@ public:
     explicit TVideoWidget(QWidget *parent);
     ~TVideoWidget() {}
     int Button = 0;
-    int rows = 400;
-    int cols = 4000;
-    Mat InputFrame = new Mat::zeros(rows, cols, CV_8UC1);
+    Mat InputFrame;
 
 private slots:
     void onKeepAlive();

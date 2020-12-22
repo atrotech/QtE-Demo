@@ -1,7 +1,7 @@
 #include "VideoWidget.h"
 
 
-
+using namespace cv;
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
     QWidget(parent)
