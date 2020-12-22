@@ -24,8 +24,11 @@ public:
     ~TVideoWidget() {}
     int Button = 0;
     int area = 0;
-    int pix = 0;
     QPixmap InputFrame;
+    Vec3f pixel;
+    int r = 0;
+    int g = 0;
+    int b = 0;
 private slots:
     void onKeepAlive();
 private:
