@@ -28,7 +28,7 @@ private slots:
     void onKeepAlive();
 private:
     void paintEvent(QPaintEvent *);
-    void vidoTest();
+    void videoTest();
 private:
     QTimer* mpKeepAliveTimer;
 
