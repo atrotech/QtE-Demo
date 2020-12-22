@@ -86,10 +86,6 @@ void TVideoWidget::videoTest()
 
 
 
-
-
-
-
   //  noise test
 
 
