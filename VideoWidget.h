@@ -26,7 +26,7 @@ public:
     ~TVideoWidget() {}
     int Button = 0;
     Mat InputFrame;
-    int area = 0;
+
 private slots:
     void onKeepAlive();
 private:

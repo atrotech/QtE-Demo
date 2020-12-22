@@ -49,8 +49,6 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
 
 
-
-
 void TMainWidget::resizeEvent(QResizeEvent*) {
 
 }
@@ -67,7 +65,7 @@ void TMainWidget::onKeepAlive() {
                                    frame.cols,
                                    frame.rows,
                                    QImage::Format_RGB888));
-     
+
     VideoWindow->InputFrame = frame;
     CheckButtons();
 

@@ -72,10 +72,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
-  // area
-  area = InputFrame.rows * InputFrame.cols ;
-  printf(area)
-
 
   // color
   for (int i = 0; i<InputFrame.rows; i++) {
