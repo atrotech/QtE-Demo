@@ -71,6 +71,19 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
-  printf("width %d", InputFrame.width() );
+
+  //  area test
+  area = InputFrame.width() * InputFrame.height();
+  printf("area size: %d", area );
+
+  //  color test
+
+
+  //  noise test
+
+
+  //  frame test
+
+
   QApplication::quit();
 }
