@@ -79,8 +79,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::vidoTest()
 {
-
+  printf(" test ");
   printf("width %d", InputFrame.width() );
-
-
 }
