@@ -23,6 +23,7 @@ public:
     explicit TVideoWidget(QWidget *parent);
     ~TVideoWidget() {}
     char Button = 0;
+    QPixmap InputFrame;
 private slots:
     void onKeepAlive();
 private:
@@ -46,6 +47,6 @@ private:
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
 
-    QPixmap InputFrame;
+
 
 };
