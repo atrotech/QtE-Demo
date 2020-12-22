@@ -33,8 +33,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     int SpaceHeight = 160;
     int HeightOffset = 60;
-    if(Button==1){this->hide();Button=0;}
-    if(Button==4){Button=0;videoTest();}
+    if(Button==4){this->hide();Button=0;}
+    if(Button==1){Button=0;videoTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -72,4 +72,5 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::videoTest()
 {
   printf("width %d", InputFrame.width() );
+  QApplication::quit();
 }
