@@ -73,8 +73,24 @@ void TVideoWidget::videoTest()
 {
 
   //  area test
-  area = InputFrame.width() * InputFrame.height();
-  printf("area size: %d", area );
+
+  puint8_t* pixelPtr = (uint8_t*)InputFrame.data;
+  int cn = InputFrame.channels();
+  Scalar_<uint8_t> bgrPixel;
+
+  for(int i = 0; i < InputFrame.rows; i++)
+  {
+      for(int j = 0; j < InputFrame.cols; j++)
+      {
+          bgrPixel.val[0] = pixelPtr[i*InputFrame.cols*cn + j*cn + 0]; // B
+          bgrPixel.val[1] = pixelPtr[i*InputFrame.cols*cn + j*cn + 1]; // G
+          bgrPixel.val[2] = pixelPtr[i*InputFrame.cols*cn + j*cn + 2]; // R
+
+          print("R%d G%d B%d",bgrPixel.val[2],bgrPixel.val[1],bgrPixel.val[0])
+      }
+  }
+
+
 
   //  color test
 

@@ -67,7 +67,7 @@ void TMainWidget::onKeepAlive() {
                                    frame.cols,
                                    frame.rows,
                                    QImage::Format_RGB888));
-    VideoWindow->InputFrame = FrameMap;
+    VideoWindow->InputFrame = frame;
     CheckButtons();
 
     update();
