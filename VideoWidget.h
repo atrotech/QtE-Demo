@@ -25,7 +25,6 @@ public:
     int Button = 0;
     int area = 0;
     QPixmap InputFrame;
-    QRgb pixel;
 private slots:
     void onKeepAlive();
 private:

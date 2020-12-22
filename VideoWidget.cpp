@@ -77,11 +77,7 @@ void TVideoWidget::videoTest()
   printf("area size: %d", area );
 
   //  color test
-  for x in range(0,20):
-   for y in range(0,20):
-          c = InputFrame.pixel(x,y)
-          colors = QColor(c).getRgbF()
-          printf("(%s,%s) = %s" % (x, y, colors))
+  
 
 
   //  noise test
