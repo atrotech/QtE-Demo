@@ -31,7 +31,7 @@ private:
 
 private:
     QTimer* mpKeepAliveTimer;
-    QPixmap FrameMap;
+
     QPixmap btnNormal = QPixmap(":/img/Btn.png");
     QPixmap btnPush = QPixmap(":/img/BtnFocus.png");
 
@@ -45,5 +45,7 @@ private:
     QPixmap noneImg = QPixmap(":/img/none.png");
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
+
+    QPixmap InputFrame;
 
 };

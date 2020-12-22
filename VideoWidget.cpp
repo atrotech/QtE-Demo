@@ -38,7 +38,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,0,169)));
 
-     p.drawPixmap(30, 20, FrameMap.width()*1.17, FrameMap.height()*1.17,FrameMap );
 
 
      p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
@@ -54,11 +53,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 
     p.setPen(Qt::red);                      //  source
-    p.setFont(QFont("Arial", 18));
-    p.fillRect((FrameMap.width()/2)-148, height()-22 ,300,20,QBrush(QColor(255,255,255)));
-    p.drawText((FrameMap.width()/2)-150, height()-2 , " Source: IN");
-
-
 
     p.drawPixmap( width()-110 ,10, BatteryImg);
     p.drawText( width()-110 , 10 , QString("%1%").arg(Button));
@@ -88,7 +82,7 @@ void TVideoWidget::vidoTest()
 {
 
 
-  printf(FrameMap.width());
+  printf(InputFrame.width());
 
   //printf("ddddd\n");
 
