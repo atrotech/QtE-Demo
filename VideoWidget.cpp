@@ -91,7 +91,7 @@ void TVideoWidget::videoTest()
   // }
 
 
-
+int previousPixColor[3] = {0 , 0 , 0};
 
   for (int y = 0; y<InputFrame.cols; y++)
   {
@@ -108,7 +108,7 @@ void TVideoWidget::videoTest()
 
      //  printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
 
-    
+
 
 
   }
