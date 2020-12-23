@@ -88,6 +88,12 @@ void TVideoWidget::videoTest()
   }
 
 
+  printf(" \n ---------------");
+
+  printf(" cols: %d ", InputFrame.cols);
+  printf(" rows: %d ", InputFrame.rows);
+
+
 
   QApplication::quit();
 
