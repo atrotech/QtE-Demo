@@ -62,8 +62,8 @@ void TMainWidget::onKeepAlive() {
     cap.read(frame); // read a new frame from video
 
     FrameMap = QPixmap::fromImage(QImage((unsigned char*) frame.data,
-                                   frame.rows,
                                    frame.cols,
+                                   frame.rows,
                                    QImage::Format_RGB888));
 
     VideoWindow->InputFrame = frame;
