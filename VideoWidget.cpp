@@ -83,7 +83,7 @@ void TVideoWidget::videoTest()
 
   for (int i = 0; i<InputFrame.rows; i++)
   {
-    cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
+    cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,10);
     printf("x: %d ( R %d G %d B %d ) \n " , i, rgb[0], rgb[1], rgb[2]);
   }
 
