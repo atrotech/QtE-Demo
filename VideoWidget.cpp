@@ -105,7 +105,7 @@ for (int y = 0; y<InputFrame.cols; y++)
    }
    else
    {
-     printf("*y: %d change color\n " , y);
+     printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
    }
 
    previousPixColor[0] = pixColor[0] ;
