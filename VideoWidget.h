@@ -26,7 +26,6 @@ public:
     ~TVideoWidget() {}
     int Button = 0;
     Mat InputFrame;
-    int previousPixColor[3] = {0,0,0};
 
 private slots:
     void onKeepAlive();
