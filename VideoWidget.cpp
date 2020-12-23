@@ -98,15 +98,9 @@ int previousPixColor[3] = {0 , 0 , 0};
      cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
      int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
 
-     if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
-     {
-       printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
-     }
-     else
-     {
-       printf("--y: %d \n " , y);
-     }
+     printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
      previousPixColor[3] = {pixColor[0] , pixColor[1] , pixColor[2] };
+     printf("-y: %d (%d %d %d) \n " , y, previousPixColor[0], previousPixColor[1], previousPixColor[2]);
   }
 
 
