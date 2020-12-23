@@ -150,7 +150,7 @@ void TVideoWidget::videoTest()
    printf(" ---------- \n ");
    for (int i = 650; i<InputFrame.cols; i++)
    {
-      for (int j = 0; j<InputFrame.row; j++)
+      for (int j = 0; j<InputFrame.rows; j++)
       {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
         printf("black rgb:  ( %d  %d  %d ) \n " , rgb[0], rgb[1], rgb[2] );
