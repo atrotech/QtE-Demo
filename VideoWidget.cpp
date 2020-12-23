@@ -99,21 +99,15 @@ int previousPixColor[3] = {0 , 0 , 0};
      int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
      if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
      {
+       printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
      }
      else
      {
-      printf("y: %d \n " , y);
+       printf("----y: %d \n " , y);
      }
      int previousPixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
 
-     //  printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
-
-
-
-
   }
-
-
 
 
   QApplication::quit();
