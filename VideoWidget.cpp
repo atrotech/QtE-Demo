@@ -106,7 +106,6 @@ int previousPixColor[3] = {0 , 0 , 0};
        printf("----y: %d \n " , y);
      }
      int previousPixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
-
   }
 
 
