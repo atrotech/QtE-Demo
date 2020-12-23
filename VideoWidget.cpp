@@ -122,7 +122,6 @@ void TVideoWidget::videoTest()
 
 
 
-
      int previousPixColor[3] = {0 , 0 , 0};
      for (int y = 0; y<InputFrame.cols; y++)
      {
@@ -140,24 +139,6 @@ void TVideoWidget::videoTest()
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
 
-
-
-
-
-
-  //--------------------------- avrage black rgb -----------------------------
-
-   printf(" ---------- \n ");
-   for (int i = 650; i<InputFrame.cols; i++)
-   {
-      for (int j = 0; j<InputFrame.rows; j++)
-      {
-        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
-        printf("black rgb:  ( %d  %d  %d ) \n " , rgb[0], rgb[1], rgb[2] );
-      }
-   }
-
-  //--------------------------------------------------------------------------
 
 
 
