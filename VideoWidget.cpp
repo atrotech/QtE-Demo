@@ -87,9 +87,6 @@ void TVideoWidget::videoTest()
       printf("y: %d ( R %d G %d B %d ) \n " , y, rgb[0], rgb[1], rgb[2]);
   }
 
-  printf("\n ---------------------- ");
-  printf(InputFrame.rows);
-  printf(InputFrame.cols);
 
 
   QApplication::quit();
