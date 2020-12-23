@@ -76,8 +76,8 @@ void TVideoWidget::videoTest()
 
   // --------------------- color with i and j (all pixels) ------------------
 
-  // for (int i = 0; i<InputFrame.rows; i++) {
-  //   for (int j = 0; j<InputFrame.cols; j++){
+  // for (int i = 0; i<InputFrame.cols; i++) {
+  //   for (int j = 0; j<InputFrame.rows; j++){
   //     cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
   //       printf("R %d G %d B %d \n " , rgb[0], rgb[1], rgb[2]); } }
   // ------------------------------------------------------------------------
@@ -137,11 +137,23 @@ void TVideoWidget::videoTest()
         {
           printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
         }
-        previousPixColor[0] = pixColor[0], previousPixColor[1] = pixColor[1], previousPixColor[2] = pixColor[2] ;
+        previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
 
 
 
+
+
+
+  //--------------------------- avrage black rgb -----------------------------
+
+   printf("---------- \n \n ")
+   for (int i = 650; i<InputFrame.cols; i++) {
+      for (int j = 0; j<InputFrame.row; j++){
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
+          printf("black rgb:  ( %d , %d , %d ) \n " , rgb[0], rgb[1], rgb[2]); } }
+
+  //--------------------------------------------------------------------------
 
   QApplication::quit();
 
