@@ -99,26 +99,48 @@ void TVideoWidget::videoTest()
 
   // ------------------- show change color point ----------------------------
 
-  int previousPixColor[3] = {0 , 0 , 0};
-  for (int y = 0; y<InputFrame.cols; y++)
-  {
-     cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
-     int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
+  // int previousPixColor[3] = {0 , 0 , 0};
+  // for (int y = 0; y<InputFrame.cols; y++)
+  // {
+  //    cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
+  //    int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
+  //
+  //    if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
+  //    {
+  //      printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+  //    }
+  //    else
+  //    {
+  //      printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+  //    }
+  //    previousPixColor[0] = pixColor[0] ;
+  //    previousPixColor[1] = pixColor[1] ;
+  //    previousPixColor[2] = pixColor[2] ;
+  // }
+  // -------------------------------------------------------------------------
 
-     if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
+
+
+
+
+     int previousPixColor[3] = {0 , 0 , 0};
+     for (int y = 0; y<InputFrame.cols; y=y+5)
      {
-       printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
-     }
-     else
-     {
-       printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
-     }
-     previousPixColor[0] = pixColor[0] ;
-     previousPixColor[1] = pixColor[1] ;
-     previousPixColor[2] = pixColor[2] ;
-  }
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
+        int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
 
-
+        if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
+        {
+          printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+        }
+        else
+        {
+          printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+        }
+        previousPixColor[0] = pixColor[0] ;
+        previousPixColor[1] = pixColor[1] ;
+        previousPixColor[2] = pixColor[2] ;
+     }
 
 
 
