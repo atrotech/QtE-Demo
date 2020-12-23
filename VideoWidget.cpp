@@ -96,12 +96,9 @@ void TVideoWidget::videoTest()
   for (int y = 0; y<InputFrame.cols; y++)
   {
      cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
-     int r = rgb[0]/100 ;
-     int g = rgb[1]/100 ;
-     int b = rgb[2]/100 ;
-     printf("y: %d  (%d,%d,%d) \n " , y, r, g, b );
+     int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
+     printf("y:%d  (%d) \n " , y, pixColor[] );
   }
-
 
 
 
