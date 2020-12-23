@@ -90,23 +90,19 @@ void TVideoWidget::videoTest()
   //     printf("y: %d ( R %d G %d B %d ) \n " , y, rgb[0], rgb[1], rgb[2]);
   // }
 
+
+
+
   for (int y = 0; y<InputFrame.cols; y++)
   {
      cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
      int r = rgb[0]/100 ;
      int g = rgb[1]/100 ;
      int b = rgb[2]/100 ;
-     printf("y: %d ( R %d G %d B %d ) \n " , y, r, g, b );
+     printf("y: %d  (%d,%d,%d) \n " , y, r, g, b );
   }
 
 
-  printf(" \n ---------------");
-
-  printf("\n");
-  printf(" cols: %d ", InputFrame.cols);
-  printf("\n");
-  printf(" rows: %d ", InputFrame.rows);
-  printf("\n");
 
 
 
