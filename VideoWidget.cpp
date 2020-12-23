@@ -147,7 +147,7 @@ void TVideoWidget::videoTest()
 
   //--------------------------- avrage black rgb -----------------------------
 
-   printf("---------- \n \n ")
+   printf("---------- \n \n ");
    for (int i = 650; i<InputFrame.cols; i++) {
       for (int j = 0; j<InputFrame.row; j++){
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(i,j);
