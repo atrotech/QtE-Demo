@@ -158,7 +158,7 @@ void TVideoWidget::videoTest()
 
      // -------- Blue Rgb Average --------
      pixQuantity = 0;
-     for (int x = 280; x<340; x++)
+     for (int x = 470; x<520; x++)
      {
        for (int y = 100; y<InputFrame.rows-50; y++)
        {
