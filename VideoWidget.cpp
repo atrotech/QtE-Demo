@@ -88,7 +88,7 @@ void TVideoWidget::videoTest()
         {
           if(x-previousX < 5)
           {
-           printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
+           // printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
           }
           else
           {
