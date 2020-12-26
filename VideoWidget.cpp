@@ -82,7 +82,7 @@ void TVideoWidget::videoTest()
 
         if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
         {
-           printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
+          //  printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
         }
         else
         {
@@ -92,7 +92,7 @@ void TVideoWidget::videoTest()
           }
           else
           {
-            printf("x: %d (%d %d %d)   *change color point ( distance: %d ) \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
+            //  printf("x: %d (%d %d %d)   *change color point ( distance: %d ) \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
             distanceAverage = distanceAverage + (x-previousX);
           }
           previousX = x;
