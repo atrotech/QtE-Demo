@@ -175,9 +175,11 @@ void TVideoWidget::videoTest()
 
 
      // -------- save to file -----------
-     ofstream output("output_test.txt");
-     output << "this is a Rect : ";
-     output.close();
+     ofstream testFile;
+     testFile.open("testFile.txt");
+     testFile << "\t\t\t" << blueRgbAverage[0] << ", " << blueRgbAverage[1] << "\n";
+     testFile.close();
+
 
 
 
