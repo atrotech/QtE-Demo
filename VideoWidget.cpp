@@ -36,6 +36,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;videoTest();}
+    if(Button==2){Button=0;saveReportTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -75,7 +76,6 @@ void TVideoWidget::videoTest()
 {
 
 
-
      for (int x = 0; x<InputFrame.cols; x++)
      {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,x);
@@ -83,17 +83,17 @@ void TVideoWidget::videoTest()
 
         if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
         {
-          //  printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
+        //  printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
         }
         else
         {
           if(x-previousX < 5)
           {
-           // printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
+          // printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
           }
           else
           {
-            //  printf("x: %d (%d %d %d)   *change color point ( distance: %d ) \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
+          //  printf("x: %d (%d %d %d)   *change color point ( distance: %d ) \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
             distanceAverage = distanceAverage + (x-previousX);
           }
           previousX = x;
@@ -105,10 +105,7 @@ void TVideoWidget::videoTest()
 
 
 
-
-
-
-     // -------- Black Rgb Average --------
+// ------------------ Black Rgb Average --------------------
      for (int x = 660; x<InputFrame.cols-50; x++)
      {
        for (int y = 100; y<InputFrame.rows-50; y++)
@@ -121,9 +118,7 @@ void TVideoWidget::videoTest()
      printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
-
-
-     // -------- Green Rgb Average --------
+// ------------------- Green Rgb Average ------------------
      pixQuantity = 0;
      for (int x = 280; x<340; x++)
      {
@@ -138,9 +133,7 @@ void TVideoWidget::videoTest()
      printf(" \n --------------------- \n ");
 
 
-
-
-     // -------- Red Rgb Average --------
+ // ----------------- Red Rgb Average ------------------
      pixQuantity = 0;
      for (int x = 560; x<620; x++)
      {
@@ -155,9 +148,7 @@ void TVideoWidget::videoTest()
      printf(" \n --------------------- \n ");
 
 
-
-
-     // -------- Blue Rgb Average --------
+// --------------- Blue Rgb Average ---------------------
      pixQuantity = 0;
      for (int x = 470; x<520; x++)
      {
@@ -172,10 +163,7 @@ void TVideoWidget::videoTest()
      printf(" \n --------------------- \n ");
 
 
-
-
-
-     // -------- save to file -----------
+// ------------------ save to file --------------------
      ofstream MyFile("value.txt");
      MyFile << "Files can be tricky, but it is fun enough!";
      MyFile.close();
@@ -183,9 +171,23 @@ void TVideoWidget::videoTest()
 
 
 
+  QApplication::quit();
+}
+
+
+
+
+
+
+
+
+void TVideoWidget::saveReportTest()
+{
+
+
+
 
 
 
   QApplication::quit();
-
 }

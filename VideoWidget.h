@@ -46,6 +46,7 @@ private slots:
 private:
     void paintEvent(QPaintEvent *);
     void videoTest();
+    void saveReportTest();
 private:
     QTimer* mpKeepAliveTimer;
 
