@@ -93,7 +93,7 @@ void TVideoWidget::videoTest()
           else
           {
             printf("x: %d (%d %d %d)   *change color point, distance: %d  \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
-            distanceAverage = distanceAverage + (y-previousY);
+            distanceAverage = distanceAverage + (x-previousX);
           }
           previousX = x;
         }
