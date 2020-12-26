@@ -74,7 +74,6 @@ void TVideoWidget::videoTest()
 {
 
 
-
      int previousPixColor[3] = {0 , 0 , 0};
      for (int y = 0; y<InputFrame.cols; y++)
      {
@@ -91,7 +90,6 @@ void TVideoWidget::videoTest()
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
-
 
 
 
