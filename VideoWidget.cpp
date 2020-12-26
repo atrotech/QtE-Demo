@@ -112,7 +112,7 @@ void TVideoWidget::videoTest()
        for (int y = 100; y<InputFrame.rows; y++)
        {
          cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-         blackRgbAverage[3] = { blackRgbAverage[0]+rgb[0] , blackRgbAverage[1]+rgb[1] , blackRgbAverage[2]+rgb[2] };
+         blackRgbAverage[0]+=rgb[0] , blackRgbAverage[1]+=rgb[1] , blackRgbAverage[2]+=rgb[2] ;
        }
      }
      printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0] ,blackRgbAverage[1] ,blackRgbAverage[2] );
