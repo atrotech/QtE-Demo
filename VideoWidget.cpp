@@ -77,7 +77,6 @@ void TVideoWidget::videoTest()
 
      int previousPixColor[3] = {0 , 0 , 0};
      int previousY = 0;
-     int distanceAverage = 0;
      for (int y = 0; y<InputFrame.cols; y++)
      {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
