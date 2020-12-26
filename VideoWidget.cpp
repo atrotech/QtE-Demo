@@ -115,7 +115,8 @@ void TVideoWidget::videoTest()
          blackRgbAverage[0]+=rgb[0] , blackRgbAverage[1]+=rgb[1] , blackRgbAverage[2]+=rgb[2] ;
        }
      }
-     printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0] ,blackRgbAverage[1] ,blackRgbAverage[2] );
+     blackPixQuantity = ( InputFrame.cols-660 * InputFrame.rows-100 );
+     printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0]/blackPixQuantity ,blackRgbAverage[1]/blackPixQuantity ,blackRgbAverage[2]/blackPixQuantity );
 
 
 
