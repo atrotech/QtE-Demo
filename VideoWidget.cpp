@@ -75,17 +75,19 @@ void TVideoWidget::videoTest()
 
 
      int previousPixColor[3] = {0 , 0 , 0};
+     int previousY = 0;
      for (int y = 0; y<InputFrame.cols; y++)
      {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
         int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
 
-        if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
+        if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] && (y-previousY)>10 )
         {
           printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
         }
         else
         {
+          previousY = y;
           printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
