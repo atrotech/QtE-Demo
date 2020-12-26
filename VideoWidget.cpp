@@ -121,7 +121,6 @@ void TVideoWidget::videoTest()
 
 
 
-
      int previousPixColor[3] = {0 , 0 , 0};
      for (int y = 0; y<InputFrame.cols; y++)
      {
