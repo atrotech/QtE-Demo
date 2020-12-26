@@ -176,14 +176,14 @@ void TVideoWidget::videoTest()
 
 
      // -------- save to file -----------
-     ofstream testFile;
-     testFile.open("testFile.txt");
-     testFile << "\t\t\t" << blueRgbAverage[0] << ", " << blueRgbAverage[1] << "\n";
-     testFile.close();
+     // Create and open a text file
+     ofstream MyFile("filename.txt");
 
+     // Write to the file
+     MyFile << "Files can be tricky, but it is fun enough!";
 
-
-
+     // Close the file
+     MyFile.close();
 
 
 
