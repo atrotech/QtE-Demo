@@ -36,7 +36,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;videoTest();}
-    if(Button==2){Button=0;saveReportTest();}
+    if(Button==3){Button=0;saveReportTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
