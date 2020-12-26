@@ -165,7 +165,7 @@ void TVideoWidget::videoTest()
 
 // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
-     MyFile << "Files can be tricky, but it is fun enough!";
+     MyFile << " Blue Rgb Average: " << blueRgbAverage[0] << "\n";
      MyFile.close();
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
 
