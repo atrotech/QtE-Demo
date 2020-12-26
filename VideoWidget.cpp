@@ -89,7 +89,7 @@ void TVideoWidget::videoTest()
         {
           previousY = y;
           printf("y: %d (%d %d %d)   *change color point \n " , y, pixColor[0], pixColor[1], pixColor[2]);
-          printf(previousY);
+          printf("PY: %d " , previousY);
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
