@@ -75,29 +75,27 @@ void TVideoWidget::videoTest()
 
 
 
-     int previousPixColor[3] = {0 , 0 , 0};
-     int previousY = 0;
-     for (int y = 0; y<InputFrame.cols; y++)
+     for (int x = 0; x<InputFrame.cols; x++)
      {
-        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,y);
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,x);
         int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
 
         if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
         {
-           printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+           printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
         }
         else
         {
-          if(y-previousY < 5)
+          if(x-previousX < 5)
           {
-           printf("y: %d (%d %d %d) \n " , y, pixColor[0], pixColor[1], pixColor[2]);
+           printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
           }
           else
           {
-            printf("y: %d (%d %d %d)   *change color point, distance: %d  \n " , y, pixColor[0], pixColor[1], pixColor[2], y-previousY );
+            printf("x: %d (%d %d %d)   *change color point, distance: %d  \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
             int distanceAverage = distanceAverage + (y-previousY);
           }
-          previousY = y;
+          previousX = x;
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
