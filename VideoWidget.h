@@ -16,7 +16,7 @@
 #include "lib/common.h"
 
 #include <iostream>
-#include <ofstream>
+#include <fstream>
 
 using namespace cv;
 
