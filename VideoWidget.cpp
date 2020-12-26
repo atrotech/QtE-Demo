@@ -172,6 +172,10 @@ void TVideoWidget::videoTest()
 
 
 
+     // -------- save to file --------
+     ofstream File("value.txt");
+     File << " tttttttt ";
+     File.close();
 
 
 
