@@ -104,6 +104,9 @@ void TVideoWidget::videoTest()
 
 
 
+
+
+
      for (int x = 660; x<InputFrame.cols; x++)
      {
        for (int y = 100; y<InputFrame.rows; y++)
@@ -115,7 +118,6 @@ void TVideoWidget::videoTest()
 
        }
      }
-
 
 
 
