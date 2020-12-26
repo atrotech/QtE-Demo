@@ -172,7 +172,14 @@ void TVideoWidget::videoTest()
 
 
 
-  
+     // -------- save to file -----------
+     cv::ofstream outfile ("value.txt");
+     outfile << " textttttttt ";
+     outfile.close();
+
+
+
+
 
 
 
