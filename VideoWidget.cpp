@@ -174,7 +174,8 @@ void TVideoWidget::videoTest()
 
      // -------- save to file -----------
      std::ofstream output("output_test.txt");
-     output << "this is a Rect : " std::endl;
+     output << "this is a Rect : ";
+     std::endl;
      output.close();
 
 
