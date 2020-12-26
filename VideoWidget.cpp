@@ -173,9 +173,8 @@ void TVideoWidget::videoTest()
 
 
      // -------- save to file -----------
-     std::ofstream output("output_test.txt");
-     output << "this is a Rect : ";
-     std::endl;
+     cv::ofstream output("output_test.txt");
+     output << "this is a Rect : "<< pixQuantity << cv::endl;
      output.close();
 
 
