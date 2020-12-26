@@ -117,10 +117,8 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
+     printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
-
-
 
 
 
@@ -135,8 +133,44 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Green Rgb Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
+     printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
+
+
+
+
+     // -------- Red Rgb Average --------
+     pixQuantity = 0;
+     for (int x = 560; x<620; x++)
+     {
+       for (int y = 100; y<InputFrame.rows-50; y++)
+       {
+         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+         redRgbAverage[0]+=rgb[0] , redRgbAverage[1]+=rgb[1] , redRgbAverage[2]+=rgb[2] ;
+         pixQuantity++ ;
+       }
+     }
+     printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
+     printf(" \n --------------------- \n ");
+
+
+
+
+     // -------- Blue Rgb Average --------
+     pixQuantity = 0;
+     for (int x = 280; x<340; x++)
+     {
+       for (int y = 100; y<InputFrame.rows-50; y++)
+       {
+         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+         blueRgbAverage[0]+=rgb[0] , blueRgbAverage[1]+=rgb[1] , blueRgbAverage[2]+=rgb[2] ;
+         pixQuantity++ ;
+       }
+     }
+     printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
+     printf(" \n --------------------- \n ");
+
+
 
 
 
