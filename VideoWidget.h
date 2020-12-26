@@ -30,7 +30,6 @@ public:
     int previousPixColor[3] = {0 , 0 , 0};
     int previousX = 0;
     int blackRgbAverage[3] = {0 , 0 , 0};
-    int blackPixQuantity = 0;
 
 private slots:
     void onKeepAlive();

@@ -108,17 +108,16 @@ void TVideoWidget::videoTest()
 
 
 
-     for (int x = 660; x<InputFrame.cols; x++)
+     for (int x = 660; x<InputFrame.cols-50; x++)
      {
-       for (int y = 100; y<InputFrame.rows; y++)
+       for (int y = 100; y<InputFrame.rows-50; y++)
        {
          cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
          blackRgbAverage[0]+=rgb[0] , blackRgbAverage[1]+=rgb[1] , blackRgbAverage[2]+=rgb[2] ;
        }
      }
-     blackPixQuantity = ( InputFrame.cols-660 * InputFrame.rows-100 );
-     printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0]/blackPixQuantity ,blackRgbAverage[1]/blackPixQuantity ,blackRgbAverage[2]/blackPixQuantity );
-      printf(" \n --------------------- \n ");
+     printf("Black Rgb Average: (%d %d %d) \n " ,blackRgbAverage[0]/(x*y) ,blackRgbAverage[1]/(x*y) ,blackRgbAverage[2]/(x*y) );
+     printf(" \n --------------------- \n ");
 
 
 
