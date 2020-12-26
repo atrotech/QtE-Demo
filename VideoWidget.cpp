@@ -2,6 +2,7 @@
 
 
 using namespace cv;
+using namespace std;
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
     QWidget(parent)
