@@ -110,7 +110,7 @@ void TVideoWidget::videoTest()
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
-     finalDistanceAverage=distanceAverage/7
+     finalDistanceAverage=distanceAverage/7;
      printf(" \n Distance Average: %d \n ", finalDistanceAverage);
      printf(" \n --------------------- \n ");
 
