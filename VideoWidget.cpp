@@ -203,16 +203,16 @@ void TVideoWidget::videoTest()
      // Create a text string, which is used to output the text file
      string value;
      // Read from the text file
-     ifstream MyReadFile("value.txt");
+     ifstream MyFile("value.txt");
 
      // Use a while loop together with the getline() function to read the file line by line
-     while (getline (MyReadFile, value))
+     while (getline (MyFile, value))
      {
        // Output the text from the file
        printf("read value:  %d " ,value );
      }
      // Close the file
-     MyReadFile.close();
+     MyFile.close();
 
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
 
