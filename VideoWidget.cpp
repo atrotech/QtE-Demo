@@ -128,6 +128,8 @@ void TVideoWidget::videoTest()
      printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
+
+
 // ------------------- Green Rgb Average ------------------
      pixQuantity = 0;
      for (int x = 280; x<340; x++)
@@ -175,9 +177,9 @@ void TVideoWidget::videoTest()
 
 
 
-
-
-
+// --------------- Total RGB Average ---------------------
+     totalRgbAverage = (blueRgbAverage[0]/pixQuantity + redRgbAverage[0]/pixQuantity + greenRgbAverage[0]/pixQuantity)/3
+     printf("Blue RGB Average: (%d) \n " ,totalRgbAverage );
 
 
 
