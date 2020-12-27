@@ -204,8 +204,8 @@ void TVideoWidget::videoTest()
       if (inputFile.open(QIODevice::ReadOnly))
       {
           QTextStream in(&inputFile);
-          in.readLine();
-          int a = line.toInt();
+
+          int a = in.readLine().toInt();
           printf("var = %d",a);
           inputFile.close();
       }else{printf("nashod");}
