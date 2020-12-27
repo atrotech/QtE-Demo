@@ -196,7 +196,7 @@ void TVideoWidget::videoTest()
 
  // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
-     MyFile << "nimaaa" ;
+     MyFile << noise ;
      MyFile.close();
 
 
