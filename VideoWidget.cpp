@@ -56,7 +56,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(finalDistanceAverage));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
@@ -110,8 +110,8 @@ void TVideoWidget::videoTest()
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
-     distanceAverage=distanceAverage/7
-     printf(" \n Distance Average: %d \n ", distanceAverage);
+     finalDistanceAverage=distanceAverage/7
+     printf(" \n Distance Average: %d \n ", finalDistanceAverage);
      printf(" \n --------------------- \n ");
 
 
