@@ -59,7 +59,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ :  1% 2% 3%  ").arg(totalRgbAverage[0]).arg(totalRgbAverage[1]).arg(totalRgbAverage[2]));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
     p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(67));
@@ -141,6 +141,7 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
+     int gGreen = greenRgbAverage[1]/pixQuantity;
      printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
@@ -156,6 +157,7 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
+     int rRed = redRgbAverage[0]/pixQuantity;
      printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
@@ -171,6 +173,7 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
+     int bBlue = blueRgbAverage[2]/pixQuantity;
      printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
@@ -178,12 +181,8 @@ void TVideoWidget::videoTest()
 
 
 // --------------- Total RGB Average ---------------------
-     totalRgbAverage = (blueRgbAverage[0]/pixQuantity + redRgbAverage[0]/pixQuantity + greenRgbAverage[0]/pixQuantity)/3;
-     printf("Blue RGB Average: (%d) \n " ,totalRgbAverage );
-
-
-
-
+     totalRgbAverage[3] = { rRed ,gGreen ,bBlue } ;
+     printf("Total RGB Average: (%d,%d,%d) \n " ,totalRgbAverage[0],totalRgbAverage[1],totalRgbAverage[2] );
 
 
 
