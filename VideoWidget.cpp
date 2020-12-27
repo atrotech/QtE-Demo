@@ -170,7 +170,7 @@ void TVideoWidget::videoTest()
        }
      }
      blueRgbAverage[3] = {blueRgbAverage[0]/pixQuantity , blueRgbAverage[1]/pixQuantity , blueRgbAverage[2]/pixQuantity};
-     printf("Blue RGB Average: (%d %d %d) \n " , blueRgbAverage[3] );
+     printf("Blue RGB Average: (%d) \n " , blueRgbAverage[3] );
      printf(" \n --------------------- \n ");
 
 
