@@ -199,13 +199,13 @@ void TVideoWidget::videoTest()
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
 
-     newfile.open("value.txt",ios::in); //open a file to perform read operation using file object
-     if (newfile.is_open()){ //checking whether the file is open
+     MyFile.open("value.txt",ios::in); //open a file to perform read operation using file object
+     if (MyFile.is_open()){ //checking whether the file is open
        string tp;
-       while(getline(newfile, tp)){ //read data from file object and put it into string.
+       while(getline(MyFile, tp)){ //read data from file object and put it into string.
          cout << tp << "\n"; //print the data of the string
        }
-     newfile.close(); //close the file object.
+     MyFile.close(); //close the file object.
      }
 
 
