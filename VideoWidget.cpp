@@ -56,7 +56,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(Button));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1  ").arg(67));
@@ -110,7 +110,8 @@ void TVideoWidget::videoTest()
         }
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
-     printf(" \n Distance Average: %d \n ", distanceAverage/7);
+     distanceAverage=distanceAverage/7
+     printf(" \n Distance Average: %d \n ", distanceAverage);
      printf(" \n --------------------- \n ");
 
 
@@ -169,9 +170,20 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     blueRgbAverage[3] = {blueRgbAverage[0]/pixQuantity , blueRgbAverage[1]/pixQuantity , blueRgbAverage[2]/pixQuantity};
-     printf("Blue RGB Average: (%d) \n " , blueRgbAverage );
+     printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ------------------ save to file --------------------
