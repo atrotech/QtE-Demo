@@ -178,7 +178,7 @@ void TVideoWidget::videoTest()
 
 
 // --------------- Total RGB Average ---------------------
-     totalRgbAverage = (blueRgbAverage[0]/pixQuantity + redRgbAverage[0]/pixQuantity + greenRgbAverage[0]/pixQuantity)/3
+     totalRgbAverage = (blueRgbAverage[0]/pixQuantity + redRgbAverage[0]/pixQuantity + greenRgbAverage[0]/pixQuantity)/3;
      printf("Blue RGB Average: (%d) \n " ,totalRgbAverage );
 
 
