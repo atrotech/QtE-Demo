@@ -74,6 +74,16 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
+  
+  int previousPixColor[3] = {0 , 0 , 0};
+  int previousX = 0;
+  int pixQuantity = 0;
+
+  int distanceAverage = 0;
+  int blackRgbAverage[3] = {0 , 0 , 0};
+  int greenRgbAverage[3] = {0 , 0 , 0};
+  int blueRgbAverage[3] = {0 , 0 , 0};
+  int redRgbAverage[3] = {0 , 0 , 0};
 
 
      for (int x = 0; x<InputFrame.cols; x++)

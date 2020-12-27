@@ -30,17 +30,6 @@ public:
     int Button = 0;
     Mat InputFrame;
 
-    int distanceAverage = 0;
-    int previousPixColor[3] = {0 , 0 , 0};
-    int previousX = 0;
-
-    int pixQuantity = 0;
-    int blackRgbAverage[3] = {0 , 0 , 0};
-    int greenRgbAverage[3] = {0 , 0 , 0};
-    int blueRgbAverage[3] = {0 , 0 , 0};
-    int redRgbAverage[3] = {0 , 0 , 0};
-
-
 private slots:
     void onKeepAlive();
 private:
