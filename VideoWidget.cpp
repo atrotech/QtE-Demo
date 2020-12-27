@@ -203,11 +203,11 @@ void TVideoWidget::videoTest()
      // Create a text string, which is used to output the text file
      ifstream MyFile("value.txt");
      string myText;
-     int data;
+     //int data;
 
      getline(MyFile,myText); //read number
-           data = atoi(myText.c_str()); //convert to integer
-           cout<<data<<endl; //print it out
+           //data = atoi(myText.c_str()); //convert to integer
+           cout<<myText;
 
 
 
