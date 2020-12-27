@@ -200,7 +200,7 @@ void TVideoWidget::videoTest()
      MyFile.close();
 
 
-      std::ifstream infile("thefile.txt");
+      std::ifstream infile("value.txt");
       int a, b;
       while (infile >> a)
       {
