@@ -59,7 +59,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1 ").arg(67));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1 ").arg(totalColorAverage));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
     p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(noise));
@@ -116,7 +116,7 @@ void TVideoWidget::videoTest()
 
 
 
-// ------------------ Black Rgb Average --------------------
+// ------------------ Black Rgb Average ---------------------------------------
      for (int x = 660; x<InputFrame.cols-50; x++)
      {
        for (int y = 100; y<InputFrame.rows-50; y++)
@@ -132,7 +132,7 @@ void TVideoWidget::videoTest()
 
 
 
-// ------------------- Green Rgb Average ------------------
+// ------------------- Green Rgb Average --------------------------------------
      pixQuantity = 0;
      for (int x = 280; x<340; x++)
      {
@@ -143,11 +143,12 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
-     printf(" \n --------------------- \n ");
+     int gGreen = greenRgbAverage[1]/pixQuantity ;
+     //printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
+     //printf(" \n --------------------- \n ");
 
 
- // ----------------- Red Rgb Average ------------------
+ // ----------------- Red Rgb Average -----------------------------------------
      pixQuantity = 0;
      for (int x = 560; x<620; x++)
      {
@@ -158,11 +159,12 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
-     printf(" \n --------------------- \n ");
+     int rRed = redRgbAverage[0]/pixQuantity ;
+     //printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
+     //printf(" \n --------------------- \n ");
 
 
-// --------------- Blue Rgb Average ---------------------
+// --------------- Blue Rgb Average -------------------------------------------
      pixQuantity = 0;
      for (int x = 470; x<520; x++)
      {
@@ -173,17 +175,16 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
-     printf(" \n --------------------- \n ");
+     int bBlue = blueRgbAverage[2]/pixQuantity ;
+     //printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
+     //printf(" \n --------------------- \n ");
 
 
 
 
 
- // --------------- Total RGB Average ---------------------
-
-
-
+// --------------- Total color RGB Average ------------------------------------
+     totalColorAverage = ( rRed + gGreen + bBlue )/3 ;
 
 
 
@@ -199,7 +200,6 @@ void TVideoWidget::videoTest()
      MyFile << " Blue Rgb Average: " << blueRgbAverage[0] << "\n";
      MyFile.close();
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
-
 
 
 
