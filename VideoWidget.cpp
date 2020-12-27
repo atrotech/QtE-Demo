@@ -193,7 +193,7 @@ void TVideoWidget::videoTest()
 
 
 
-  QApplication::quit();
+
 }
 
 

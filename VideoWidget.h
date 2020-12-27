@@ -53,7 +53,7 @@ private:
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
 
-    int distanceAverage = 5;
+    int distanceAverage = 0;
 
 
 };
