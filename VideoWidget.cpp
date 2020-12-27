@@ -200,7 +200,6 @@ void TVideoWidget::videoTest()
      MyFile.close();
 
 
-
      // Create a text string, which is used to output the text file
      int myText;
 
@@ -215,9 +214,6 @@ void TVideoWidget::videoTest()
 
      // Close the file
      MyReadFile.close();
-
-
-
 
 
 
