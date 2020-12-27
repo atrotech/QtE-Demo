@@ -201,19 +201,13 @@ void TVideoWidget::videoTest()
 
 
      // Create a text string, which is used to output the text file
-     int myText;
+     ifstream MyFile("value.txt");
+     string myText;
+     int data;
 
-     // Read from the text file
-     ifstream MyReadFile("value.txt");
-
-     // Use a while loop together with the getline() function to read the file line by line
-     while (getline(MyReadFile, myText)) {
-       // Output the text from the file
-       cout << myText;
-     }
-
-     // Close the file
-     MyReadFile.close();
+     getline(MyFile,myText); //read number
+           data = atoi(myText.c_str()); //convert to integer
+           cout<<data<<endl; //print it out
 
 
 
