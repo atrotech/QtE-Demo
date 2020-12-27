@@ -55,6 +55,7 @@ private:
 
     int distanceAverage = 0;
     int noise = 0;
+    int totalRgbAverage=0;
 
 
 };

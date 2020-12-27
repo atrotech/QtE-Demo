@@ -111,8 +111,8 @@ void TVideoWidget::videoTest()
         previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
      }
      distanceAverage=distanceAverage/7;
-     printf(" \n Distance Average: %d \n ", distanceAverage);
-     printf(" \n --------------------- \n ");
+     // printf(" \n Distance Average: %d \n ", distanceAverage);
+     // printf(" \n --------------------- \n ");
 
 
 
@@ -143,7 +143,6 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     int gGreen = greenRgbAverage[1]/pixQuantity;
      printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
@@ -159,7 +158,6 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     int rRed = redRgbAverage[0]/pixQuantity;
      printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
@@ -175,15 +173,17 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     int bBlue = blueRgbAverage[2]/pixQuantity;
      printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
      printf(" \n --------------------- \n ");
 
 
 
 
-// --------------- Total RGB Average ---------------------
-     
+
+ // --------------- Total RGB Average ---------------------
+
+
+
 
 
 
