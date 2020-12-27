@@ -209,7 +209,7 @@ void TVideoWidget::videoTest()
      while (getline (MyFile, value))
      {
        // Output the text from the file
-       printf("read value:  %s " ,value );
+       printf("read value:  %c " ,value );
      }
      // Close the file
      MyFile.close();
