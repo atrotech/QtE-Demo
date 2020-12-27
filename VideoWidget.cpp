@@ -199,15 +199,19 @@ void TVideoWidget::videoTest()
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
 
-     MyFile.open("value.txt",ios::in); //open a file to perform read operation using file object
-     if (MyFile.is_open()){ //checking whether the file is open
-       string tp;
-       while(getline(MyFile, tp)){ //read data from file object and put it into string.
-         cout << tp << "\n"; //print the data of the string
-       }
-     MyFile.close(); //close the file object.
-     }
 
+      QFile inputFile("value.txt");
+      if (inputFile.open(QIODevice::ReadOnly))
+      {
+         QTextStream in(&inputFile);
+         while (!in.atEnd())
+         {
+            QString line = in.readLine();
+
+            //printf();
+         }
+         inputFile.close();
+      }
 
 
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
