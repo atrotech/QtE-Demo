@@ -54,7 +54,7 @@ private:
     QPixmap processImg = QPixmap(":/img/process.png");
 
     int distanceAverage = 0;
-    int totalRgbAverage[3] = {0 , 0 , 0};
+    int noise = 0;
 
 
 };

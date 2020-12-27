@@ -59,10 +59,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ :  1% 2% 3%  ").arg(totalRgbAverage[0]).arg(totalRgbAverage[1]).arg(totalRgbAverage[2]));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1 ").arg(67));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(noise));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  ").arg(67));
@@ -83,6 +83,7 @@ void TVideoWidget::videoTest()
   int greenRgbAverage[3] = {0 , 0 , 0};
   int blueRgbAverage[3] = {0 , 0 , 0};
   int redRgbAverage[3] = {0 , 0 , 0};
+
 
 
      for (int x = 0; x<InputFrame.cols; x++)
@@ -125,8 +126,9 @@ void TVideoWidget::videoTest()
          pixQuantity++ ;
        }
      }
-     printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
-     printf(" \n --------------------- \n ");
+     noise = ( (blackRgbAverage[0]/pixQuantity) + (blackRgbAverage[1]/pixQuantity) + (blackRgbAverage[2]/pixQuantity) )/3;
+     // printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
+     // printf(" \n --------------------- \n ");
 
 
 
@@ -181,8 +183,14 @@ void TVideoWidget::videoTest()
 
 
 // --------------- Total RGB Average ---------------------
-     totalRgbAverage[3] = { rRed ,gGreen ,bBlue } ;
-     printf("Total RGB Average: (%d,%d,%d) \n " ,totalRgbAverage[0],totalRgbAverage[1],totalRgbAverage[2] );
+     
+
+
+
+
+
+
+
 
 
 
