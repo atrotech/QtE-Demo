@@ -211,10 +211,10 @@ void TVideoWidget::videoTest()
      while (getline(MyReadFile, myText)) {
        // Output the text from the file
        cout << myText;
-  }
+     }
 
-  // Close the file
-  MyReadFile.close();
+     // Close the file
+     MyReadFile.close();
 
 
 
