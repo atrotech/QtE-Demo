@@ -200,15 +200,12 @@ void TVideoWidget::videoTest()
      MyFile.close();
 
 
-      QFile inputFile("value.txt");
-      if (inputFile.open(QIODevice::ReadOnly))
+      std::ifstream infile("thefile.txt");
+      int a, b;
+      while (infile >> a)
       {
-          QTextStream in(&inputFile);
-
-          int a = in.readLine().toInt();
           printf("var = %d",a);
-          inputFile.close();
-      }else{printf("nashod");}
+      }
 
 
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
