@@ -199,7 +199,6 @@ void TVideoWidget::videoTest()
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
 
-
       std::ifstream infile("value.txt");
       int a, b;
       while (infile >> a)
