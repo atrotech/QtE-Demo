@@ -182,7 +182,6 @@ void TVideoWidget::videoTest()
 
 
 
-
 // --------------- Total color RGB Average ------------------------------------
      totalColorAverage = ( rRed + gGreen + bBlue )/3 ;
 
@@ -197,7 +196,7 @@ void TVideoWidget::videoTest()
 
 // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
-     MyFile << " Blue Rgb Average: " << blueRgbAverage[0] << "\n";
+     MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
 
