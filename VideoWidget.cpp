@@ -207,8 +207,8 @@ void TVideoWidget::videoTest()
          while (!in.atEnd())
          {
             QString line = in.readLine();
-
-            //printf();
+            int a = line.toInt();
+            printf("var = %d",a);
          }
          inputFile.close();
       }
