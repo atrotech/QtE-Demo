@@ -194,11 +194,10 @@ void TVideoWidget::videoTest()
 
 
 
-// ------------------ save to file --------------------
+ // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
-
 
      // Create a text string, which is used to output the text file
      string value;
@@ -206,14 +205,18 @@ void TVideoWidget::videoTest()
      ifstream MyFile("value.txt");
      // Use a while loop together with the getline() function to read the file line by line
      while (getline(MyFile, value))
-     {
+      {
        // Output the text from the file
        cout << value << "\n";
-     }
-     // Close the file
-     MyFile.close();
+      }
+      // Close the file
+      MyFile.close();
 
-     // read more:  https://www.w3schools.com/cpp/cpp_files.asp
+
+      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
+
+
+
 
 
 
