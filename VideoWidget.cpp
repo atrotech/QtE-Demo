@@ -204,12 +204,11 @@ void TVideoWidget::videoTest()
      string value;
      // Read from the text file
      ifstream MyFile("value.txt");
-
      // Use a while loop together with the getline() function to read the file line by line
-     while (getline (MyFile, value))
+     while (getline(MyFile, value))
      {
        // Output the text from the file
-       printf("read value:  %s " ,value );
+       cout << value << "\n";
      }
      // Close the file
      MyFile.close();
