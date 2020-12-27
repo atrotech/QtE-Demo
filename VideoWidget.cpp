@@ -199,6 +199,18 @@ void TVideoWidget::videoTest()
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
      MyFile.close();
 
+     string line;
+     ifstream MyFile ("value.txt");
+     if (MyFile.is_open())
+     {
+       while ( getline (MyFile,line) )
+       {
+         cout << line << '\n';
+       }
+      MyFile.close();
+      }
+      else cout << "Unable to open file";
+
 
 
      // read more:  https://www.w3schools.com/cpp/cpp_files.asp
