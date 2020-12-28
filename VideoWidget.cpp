@@ -106,8 +106,6 @@ void TVideoWidget::singleFrameTest()
 
 
 
-
-
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
