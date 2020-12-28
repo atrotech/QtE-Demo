@@ -72,7 +72,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void videoTest(){
 
-  this->singleFrameTest();
+  singleFrameTest();
 }
 
 
@@ -83,7 +83,7 @@ void TVideoWidget::singleFrameTest()
   float noise = 0;
   int difRGB[3] = {0,0,0};
   int BarsWidth[8];
-  int i=0;
+  int j=0;
 
 // ------------------------ distance Average ----------------------------------
    for (int x = 1; x<InputFrame.cols; x++)
@@ -94,7 +94,7 @@ void TVideoWidget::singleFrameTest()
       difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
       difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
-      if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10){BarsWidth[i++]=x;}
+      if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10){BarsWidth[j++]=x;}
     }
       printf(" difRGB[0] %d \n" , difRGB[0] );
 
