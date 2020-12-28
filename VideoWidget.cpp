@@ -191,7 +191,6 @@ void TVideoWidget::videoTest()
 
 
 
-
  // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
@@ -205,7 +204,8 @@ void TVideoWidget::videoTest()
       }
 
 
-     // read more:  https://www.w3schools.com/cpp/cpp_files.asp
+
+  // read more:  https://www.w3schools.com/cpp/cpp_files.asp
 
 
 
