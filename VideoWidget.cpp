@@ -56,13 +56,13 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distanceAverage));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست ابعاد : %1  ").arg(distDiffPer));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1 ").arg(totalColorAverage));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست رنگ : %1 ").arg(colorDiffPer));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(noise));
+    p.drawText( width()/3 , height()/4+200 , QString(" تست نویز  : %1  ").arg(noiseDiffPer));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" تست فریم  : %1  ").arg(67));
@@ -74,7 +74,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
-
   int previousPixColor[3] = {0 , 0 , 0};
   int previousX = 0;
   int pixQuantity = 0;
@@ -84,6 +83,9 @@ void TVideoWidget::videoTest()
   int blueRgbAverage[3] = {0 , 0 , 0};
   int redRgbAverage[3] = {0 , 0 , 0};
 
+  int distanceAverage = 0;
+  int totalColorAverage=0;
+  int noise = 0;
 
 
      for (int x = 0; x<InputFrame.cols; x++)
@@ -180,13 +182,8 @@ void TVideoWidget::videoTest()
      //printf(" \n --------------------- \n ");
 
 
-
-
 // --------------- Total color RGB Average ------------------------------------
      totalColorAverage = ( rRed + gGreen + bBlue )/3 ;
-
-
-
 
 
 
@@ -198,7 +195,7 @@ void TVideoWidget::videoTest()
 
 
 
-// -------------------------- read from file -----------------------------------
+ // -------------------------- read from file ---------------------------------
     std::ifstream MyReadFile("value.txt");
     int ReadValue;
     int i=0;
@@ -209,20 +206,11 @@ void TVideoWidget::videoTest()
     MyReadFile.close();
 
 
+ // --------------------- difference percentage -------------------------------
 
-    int distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
-    printf(" distanceAverage %d ---- refrenceValue[0] %d ---- distDiffPer %d \n ",distanceAverage,refrenceValue[0],distDiffPer);
-    //printf("distError ReadValue %d  \n", ReadValue);
-    //MyReadFile >> ReadValue;
-    //int colorError = (totalColorAverage - ReadValue);
-    //printf("colorError ReadValue %d  \n", ReadValue);
-    //MyReadFile >> ReadValue;
-    //int noiseError = (noise - ReadValue);
-    //printf("noiseError ReadValue %d  \n", ReadValue);
-
-
-
-
+    distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
+    colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
+    noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
 
 

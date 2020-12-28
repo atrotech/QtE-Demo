@@ -37,7 +37,7 @@ private:
     void paintEvent(QPaintEvent *);
     void videoTest();
     void saveReportTest();
-    void singleFrameTest();
+    //void singleFrameTest();
 private:
     QTimer* mpKeepAliveTimer;
 
@@ -55,13 +55,14 @@ private:
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
 
-    int distanceAverage = 0;
-    int totalColorAverage=0;
-    int noise = 0;
 
-    int singleMeasured[3];
-    int refrenceValue[3];
-    int videoError[3];
+    int distDiffPer = 0;
+    int colorDiffPer = 0;
+    int noiseDiffPer = 0;
+
+    //int singleMeasured[3];
+    //int refrenceValue[3];
+    //int videoError[3];
 
 
 };
