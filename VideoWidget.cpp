@@ -85,6 +85,7 @@ void TVideoWidget::singleFrameTest()
   int j=1;
 
 // ------------------------ distance Average ----------------------------------
+   BarsWidth[0]=0;
    for (int x = 1; x<InputFrame.cols; x++)
    {
       cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
@@ -97,9 +98,11 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);
-    printf("BarsWidth[x]: %d \n", BarsWidth[x]);}
-    singleMeasured[0] /= 7;
+    for(int x=0; x<8; x++){
+      singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);
+      printf("BarsWidth[x]: %d \n", BarsWidth[x]);
+    }
+    singleMeasured[0] /= 8;
     printf("singleMeasured[0]: %d \n", singleMeasured[0]);
  // -------------------------- save to file -----------------------------------
 
