@@ -211,7 +211,7 @@ void TVideoWidget::videoTest()
 
 
     int distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
-    printf(" distanceAverage %d ---- refrenceValue[0] %d ---- distDiffPer %d ",distanceAverage,refrenceValue[0],distDiffPer);
+    printf(" distanceAverage %d ---- refrenceValue[0] %d ---- distDiffPer %d \n ",distanceAverage,refrenceValue[0],distDiffPer);
     //printf("distError ReadValue %d  \n", ReadValue);
     //MyReadFile >> ReadValue;
     //int colorError = (totalColorAverage - ReadValue);
