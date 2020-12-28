@@ -71,7 +71,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 }
 
 void videoTest(){
-  
+
   singleFrameTest();
 }
 
@@ -93,7 +93,7 @@ void TVideoWidget::singleFrameTest()
         difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
         difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
         difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
-        if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10 )BarsWidth[i++]=x;
+        if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10 )BarsWidth[x++]=x;
       }
       printf(" difRGB[0] %d \n" ,difRGB[0]);
 
