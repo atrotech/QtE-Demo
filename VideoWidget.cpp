@@ -195,9 +195,9 @@ void TVideoWidget::videoTest()
 
     //defPer=(( distanceAverage - ReadValue ))/ ReadValue )*100
 
-    ofstream MyFile("value.txt");
-    MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
-    MyFile.close();
+    //ofstream MyFile("value.txt");
+    //MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
+    //MyFile.close();
 
     std::ifstream MyReadFile("value.txt");
     int ReadValue;
