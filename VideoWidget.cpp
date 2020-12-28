@@ -210,14 +210,14 @@ void TVideoWidget::videoTest()
 
  // --------------------- difference percentage -------------------------------
 
-    distDiffPer = 51;// (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
+    distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
     colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
     noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
     printf(" --------------------------- \n " );
     printf(" distanceAverage %d   \n",distanceAverage );
     printf(" refrenceValue[0] %d   \n",refrenceValue[0] );
-    printf(" distDiffPer %d   \n",distDiffPer );
+    printf(" distDiffPer %d   \n", distDiffPer );
 
 
 
