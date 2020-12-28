@@ -89,17 +89,17 @@ void TVideoWidget::singleFrameTest()
    {
       cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
       cv::Vec3b prevRGB = InputFrame.at<cv::Vec3b>(100,x-1);
-      printf(" currentRGB: %d %d %d\n",currentRGB[0],currentRGB[1],currentRGB[2]);
 
       difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
       difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
-      if( difRGB[0]>50 || difRGB[1]>50 || difRGB[1]>50){BarsWidth[j++]=x; x+=10; printf(" x: %d \n",x);}
+      if( difRGB[0]>50 || difRGB[1]>50 || difRGB[1]>50){BarsWidth[j++]=x;x+=10;}
     }
 
-
-
-
+ // ---------------------- Distance Average -----------------------------------
+    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
+    singleMeasured[0] /= 7;
+    printf("singleMeasured[0]: %d \n", singleMeasured[0]);
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
