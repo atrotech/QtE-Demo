@@ -199,12 +199,13 @@ void TVideoWidget::videoTest()
 
     std::ifstream MyReadFile("value.txt");
     int ReadValue;
+    
     MyReadFile >> ReadValue;
-    int distError = (distanceAverage - ReadValue)*100/ReadValue;
+    int distError = (distanceAverage - ReadValue);
     MyReadFile >> ReadValue;
-    int colorError = (totalColorAverage - ReadValue)*100/ReadValue;
+    int colorError = (totalColorAverage - ReadValue);
     MyReadFile >> ReadValue;
-    int noiseError = (noise - ReadValue)*100/ReadValue;
+    int noiseError = (noise - ReadValue);
 
     printf("Distance Error = %d \n",distError);
     printf("Color Error = %d \n",colorError);
