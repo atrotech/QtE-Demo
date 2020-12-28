@@ -72,7 +72,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void videoTest(){
 
-  singleFrameTest();
+  this->singleFrameTest();
 }
 
 
@@ -81,21 +81,22 @@ void TVideoWidget::singleFrameTest()
   float distanceAverage = 0;
   float totalColorAverage=0;
   float noise = 0;
-
+  int difRGB[3] = {0,0,0};
   int BarsWidth[8];
+  int i=0;
 
 // ------------------------ distance Average ----------------------------------
-     for (int x = 1; x<InputFrame.cols; x++)
-     {
-        cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
-        cv::Vec3b prevRGB = InputFrame.at<cv::Vec3b>(100,x-1);
-        int difRGB[3];
-        difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
-        difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
-        difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
-        if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10 )BarsWidth[x++]=x;
-      }
-      printf(" difRGB[0] %d \n" ,difRGB[0]);
+   for (int x = 1; x<InputFrame.cols; x++)
+   {
+      cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
+      cv::Vec3b prevRGB = InputFrame.at<cv::Vec3b>(100,x-1);
+
+      difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
+      difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
+      difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
+      if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10){BarsWidth[i++]=x;}
+    }
+      printf(" difRGB[0] %d \n" , difRGB[0] );
 
 
 
