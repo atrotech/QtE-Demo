@@ -82,7 +82,7 @@ void TVideoWidget::singleFrameTest()
   float noise = 0;
   int difRGB[3] = {0,0,0};
   int BarsWidth[8];
-  int j=0;
+  int j=1;
 
 // ------------------------ distance Average ----------------------------------
    for (int x = 1; x<InputFrame.cols; x++)
@@ -97,8 +97,9 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
-    singleMeasured[0] /= 1;
+    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);
+    printf("BarsWidth[x]: %d \n", BarsWidth[x]);}
+    singleMeasured[0] /= 7;
     printf("singleMeasured[0]: %d \n", singleMeasured[0]);
  // -------------------------- save to file -----------------------------------
 
