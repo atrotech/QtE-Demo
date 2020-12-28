@@ -88,6 +88,8 @@ void TVideoWidget::videoTest()
   int noise = 0;
 
 
+
+// ------------------------ distance Average ----------------------------------
      for (int x = 0; x<InputFrame.cols; x++)
      {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,x);

@@ -58,9 +58,9 @@ private:
 
     int refrenceValue[3];
 
-    int distDiffPer;
-    int colorDiffPer;
-    int noiseDiffPer;
+    int distDiffPer = 0;
+    int colorDiffPer = 0;
+    int noiseDiffPer = 0;
 
     //int singleMeasured[3];
     //int videoError[3];
