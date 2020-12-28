@@ -202,10 +202,15 @@ void TVideoWidget::videoTest()
 
     MyReadFile >> ReadValue;
     int distError = (distanceAverage - ReadValue);
+    printf("distError ReadValue %d  \n", ReadValue);
     MyReadFile >> ReadValue;
     int colorError = (totalColorAverage - ReadValue);
+    printf("colorError ReadValue %d  \n", ReadValue);
     MyReadFile >> ReadValue;
     int noiseError = (noise - ReadValue);
+    printf("noiseError ReadValue %d  \n", ReadValue);
+
+    printf("---------- \n");
 
     printf("Distance Error (distanceAverage) = %d %d \n",distError, distanceAverage);
     printf("Color Error (totalColorAverage) = %d %d \n",colorError, totalColorAverage);
