@@ -70,8 +70,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 }
 
-void videoTest(){
-
+void TVideoWidget::videoTest(){
   singleFrameTest();
 }
 
