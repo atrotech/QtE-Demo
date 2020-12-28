@@ -197,24 +197,14 @@ void TVideoWidget::videoTest()
     MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
     MyFile.close();
 
-    int myText;
-    ifstream MyReadFile("value.txt");
-    while (getline(MyReadFile, myText)) {
-      printf(" data value : %d  \n ", myText);
+    std::ifstream MyReadFile("value.txt");
+    int myValue;
+    while (MyReadFile >> myValue)
+    {
+      printf("data value : %d  \n ",myValue);
     }
     MyReadFile.close();
 
-
-      //std::ifstream infile("value.txt");
-      //int a, b;
-      //while (infile >> a)
-      //{
-      //    printf("var = %d",a);
-      //}
-
-
-
-  // read more:  https://www.w3schools.com/cpp/cpp_files.asp
 
 
 
