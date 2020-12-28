@@ -37,6 +37,7 @@ private:
     void paintEvent(QPaintEvent *);
     void videoTest();
     void saveReportTest();
+    void singleFrameTest();
 private:
     QTimer* mpKeepAliveTimer;
 
@@ -57,6 +58,10 @@ private:
     int distanceAverage = 0;
     int totalColorAverage=0;
     int noise = 0;
+
+    int singleMeasured[3];
+    int refrenceValue[3];
+    int videoError[3];
 
 
 };

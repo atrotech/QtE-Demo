@@ -193,29 +193,36 @@ void TVideoWidget::videoTest()
 
  // ------------------ save to file --------------------
 
+    //defPer=(( distanceAverage - ReadValue ))/ ReadValue )*100
+
     // ofstream MyFile("value.txt");
     // MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
     // MyFile.close();
 
     std::ifstream MyReadFile("value.txt");
     int ReadValue;
-
-    MyReadFile >> ReadValue;
-    int distError = (distanceAverage - ReadValue);
-    printf("distError ReadValue %d  \n", ReadValue);
-    MyReadFile >> ReadValue;
-    int colorError = (totalColorAverage - ReadValue);
-    printf("colorError ReadValue %d  \n", ReadValue);
-    MyReadFile >> ReadValue;
-    int noiseError = (noise - ReadValue);
-    printf("noiseError ReadValue %d  \n", ReadValue);
-
-    printf("---------- \n");
-
-    printf("Distance Error (distanceAverage) = %d %d \n",distError, distanceAverage);
-    printf("Color Error (totalColorAverage) = %d %d \n",colorError, totalColorAverage);
-    printf("Noise Error (noise) = %d %d \n",noiseError, noise);
+    int i=0;
+    while(MyReadFile >> ReadValue){
+      refrenceValue[i]=ReadValue;
+      i++;
+    }
     MyReadFile.close();
+
+    printf("ReadValue %d %d %d  \n", refrenceValue[0],refrenceValue[1], refrenceValue[2]);
+
+
+
+    //int distError = (distanceAverage - ReadValue);
+    //printf("distError ReadValue %d  \n", ReadValue);
+    //MyReadFile >> ReadValue;
+    //int colorError = (totalColorAverage - ReadValue);
+    //printf("colorError ReadValue %d  \n", ReadValue);
+    //MyReadFile >> ReadValue;
+    //int noiseError = (noise - ReadValue);
+    //printf("noiseError ReadValue %d  \n", ReadValue);
+
+
+
 
 
 
