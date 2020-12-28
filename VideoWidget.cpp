@@ -93,16 +93,9 @@ void TVideoWidget::singleFrameTest()
       difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
       difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
-      if( difRGB[0]>50 || difRGB[1]>50 || difRGB[1]>50){BarsWidth[j++]=x;}
+      if( difRGB[0]>50 || difRGB[1]>50 || difRGB[1]>50){BarsWidth[j++]=x; printf(" x: %d \n",x);}
     }
-      printf(" difRGB[0] %d \n" , BarsWidth[0] );
-      printf(" difRGB[1] %d \n" , BarsWidth[1] );
-      printf(" difRGB[2] %d \n" , BarsWidth[2] );
-      printf(" difRGB[3] %d \n" , BarsWidth[3] );
-      printf(" difRGB[4] %d \n" , BarsWidth[4] );
-      printf(" difRGB[5] %d \n" , BarsWidth[5] );
-      printf(" difRGB[6] %d \n" , BarsWidth[6] );
-      printf(" difRGB[7] %d \n" , BarsWidth[7] );
+
 
 
 
