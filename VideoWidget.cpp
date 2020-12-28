@@ -200,9 +200,10 @@ void TVideoWidget::videoTest()
     string myText;
     ifstream MyReadFile("value.txt");
     while (getline(MyReadFile, myText)) {
-      cout << myText;
+      printf("var = %d",myText);
     }
     MyReadFile.close();
+
 
       //std::ifstream infile("value.txt");
       //int a, b;
