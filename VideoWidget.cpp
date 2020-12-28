@@ -56,16 +56,16 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1 % ").arg(distDiffPer));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(distDiffPer));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1 % ").arg(colorDiffPer));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(colorDiffPer));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1 % ").arg(noiseDiffPer));
+    p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1  ").arg(noiseDiffPer));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
-    p.drawText( width()/3 , height()/4+300 , QString(" تست درصد اختلاف فریم : %1 % ").arg(67));
+    p.drawText( width()/3 , height()/4+300 , QString(" تست درصد اختلاف فریم : %1  ").arg(67));
     p.drawPixmap( width()/3-50  , height()/4+265 , processImg);
 
 }
@@ -213,9 +213,9 @@ void TVideoWidget::videoTest()
     colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
     noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
-    printf(" distDiffPer %f \n ", distDiffPer );
-    printf(" colorDiffPer %f \n ", colorDiffPer );
-    printf(" noiseDiffPer %f \n ", noiseDiffPer );
+    printf(" distDiffPer %F \n ", distDiffPer );
+    printf(" colorDiffPer %F \n ", colorDiffPer );
+    printf(" noiseDiffPer %F \n ", noiseDiffPer );
 
 
 
