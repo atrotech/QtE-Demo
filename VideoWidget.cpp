@@ -197,10 +197,10 @@ void TVideoWidget::videoTest()
     MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
     MyFile.close();
 
-    string myText;
+    int myText;
     ifstream MyReadFile("value.txt");
     while (getline(MyReadFile, myText)) {
-      printf("var = %d",myText);
+      printf(" data value : %d  \n ", myText);
     }
     MyReadFile.close();
 
