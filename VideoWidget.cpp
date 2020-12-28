@@ -70,121 +70,34 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 }
 
+void videoTest(){
 
-void TVideoWidget::videoTest()
+  TVideoWidget::singleFrameTest();
+}
+
+
+void TVideoWidget::singleFrameTest()
 {
-  int previousPixColor[3] = {0 , 0 , 0};
-  int previousX = 0;
-  int pixQuantity = 0;
+  float distanceAverage = 0;
+  float totalColorAverage=0;
+  float noise = 0;
 
-  int blackRgbAverage[3] = {0 , 0 , 0};
-  int greenRgbAverage[3] = {0 , 0 , 0};
-  int blueRgbAverage[3] = {0 , 0 , 0};
-  int redRgbAverage[3] = {0 , 0 , 0};
-
-  int distanceAverage = 0;
-  int totalColorAverage=0;
-  int noise = 0;
-
-
+  int BarsWidth[8];
 
 // ------------------------ distance Average ----------------------------------
-     for (int x = 0; x<InputFrame.cols; x++)
+     for (int x = 1; x<InputFrame.cols; x++)
      {
-        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(100,x);
-        int pixColor[3] = {rgb[0]/100 , rgb[1]/100 , rgb[2]/100};
-
-        if( pixColor[0] == previousPixColor[0] && pixColor[1] == previousPixColor[1] && pixColor[2] == previousPixColor[2] )
-        {
-        //  printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
-        }
-        else
-        {
-          if(x-previousX < 5)
-          {
-          // printf("x: %d (%d %d %d) \n " , x, pixColor[0], pixColor[1], pixColor[2]);
-          }
-          else
-          {
-          //  printf("x: %d (%d %d %d)   *change color point ( distance: %d ) \n " , x, pixColor[0], pixColor[1], pixColor[2], x-previousX );
-            distanceAverage = distanceAverage + (x-previousX);
-          }
-          previousX = x;
-        }
-        previousPixColor[0]=pixColor[0], previousPixColor[1]=pixColor[1], previousPixColor[2]=pixColor[2] ;
-     }
-     distanceAverage=distanceAverage/7;
-     // printf(" \n Distance Average: %d \n ", distanceAverage);
-     // printf(" \n --------------------- \n ");
+        cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
+        cv::Vec3b prevRGB = InputFrame.at<cv::Vec3b>(100,x-1);
+        int difRGB[3];
+        difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
+        difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
+        difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
+        if( difRGB[0]>10 || difRGB[1]>10 || difRGB[1]>10 )BarsWidth[i++]=x;
+      }
+      printf(" difRGB[0] %d \n" ,difRGB[0]);
 
 
-
-// ------------------ Black Rgb Average ---------------------------------------
-     for (int x = 660; x<InputFrame.cols-50; x++)
-     {
-       for (int y = 100; y<InputFrame.rows-50; y++)
-       {
-         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-         blackRgbAverage[0]+=rgb[0] , blackRgbAverage[1]+=rgb[1] , blackRgbAverage[2]+=rgb[2] ;
-         pixQuantity++ ;
-       }
-     }
-     noise = ( (blackRgbAverage[0]/pixQuantity) + (blackRgbAverage[1]/pixQuantity) + (blackRgbAverage[2]/pixQuantity) )/3;
-     // printf("Black RGB Average: (%d %d %d) \n " ,blackRgbAverage[0]/pixQuantity ,blackRgbAverage[1]/pixQuantity ,blackRgbAverage[2]/pixQuantity );
-     // printf(" \n --------------------- \n ");
-
-
-
-// ------------------- Green Rgb Average --------------------------------------
-     pixQuantity = 0;
-     for (int x = 280; x<340; x++)
-     {
-       for (int y = 100; y<InputFrame.rows-50; y++)
-       {
-         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-         greenRgbAverage[0]+=rgb[0] , greenRgbAverage[1]+=rgb[1] , greenRgbAverage[2]+=rgb[2] ;
-         pixQuantity++ ;
-       }
-     }
-     int gGreen = greenRgbAverage[1]/pixQuantity ;
-     //printf("Green RGB Average: (%d %d %d) \n " ,greenRgbAverage[0]/pixQuantity ,greenRgbAverage[1]/pixQuantity ,greenRgbAverage[2]/pixQuantity );
-     //printf(" \n --------------------- \n ");
-
-
- // ----------------- Red Rgb Average -----------------------------------------
-     pixQuantity = 0;
-     for (int x = 560; x<620; x++)
-     {
-       for (int y = 100; y<InputFrame.rows-50; y++)
-       {
-         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-         redRgbAverage[0]+=rgb[0] , redRgbAverage[1]+=rgb[1] , redRgbAverage[2]+=rgb[2] ;
-         pixQuantity++ ;
-       }
-     }
-     int rRed = redRgbAverage[0]/pixQuantity ;
-     //printf("Red RGB Average: (%d %d %d) \n " ,redRgbAverage[0]/pixQuantity ,redRgbAverage[1]/pixQuantity ,redRgbAverage[2]/pixQuantity );
-     //printf(" \n --------------------- \n ");
-
-
-// --------------- Blue Rgb Average -------------------------------------------
-     pixQuantity = 0;
-     for (int x = 470; x<520; x++)
-     {
-       for (int y = 100; y<InputFrame.rows-50; y++)
-       {
-         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-         blueRgbAverage[0]+=rgb[0] , blueRgbAverage[1]+=rgb[1] , blueRgbAverage[2]+=rgb[2] ;
-         pixQuantity++ ;
-       }
-     }
-     int bBlue = blueRgbAverage[2]/pixQuantity ;
-     //printf("Blue RGB Average: (%d %d %d) \n " ,blueRgbAverage[0]/pixQuantity ,blueRgbAverage[1]/pixQuantity ,blueRgbAverage[2]/pixQuantity );
-     //printf(" \n --------------------- \n ");
-
-
-// --------------- Total color RGB Average ------------------------------------
-     totalColorAverage = ( rRed + gGreen + bBlue )/3 ;
 
 
 
@@ -208,29 +121,13 @@ void TVideoWidget::videoTest()
 
 
  // --------------------- difference percentage -------------------------------
+    singleMeasured[0] = distanceAverage;
+    singleMeasured[1] = totalColorAverage;
+    singleMeasured[2] = noise;
 
-    distDiffPer = ((( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100);
-    colorDiffPer = ((( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100);
-    noiseDiffPer = ((( noise - refrenceValue[2] )/ refrenceValue[2] )*100);
-
-
-    printf(" distanceAverage %d \n ", distanceAverage );
-    printf(" refrenceValue[0] %d \n ", refrenceValue[0] );
-    printf(" --------------------- \n ");
-
-    printf(" totalColorAverage %d \n ", totalColorAverage );
-    printf(" refrenceValue[1] %d \n ", refrenceValue[1] );
-    printf(" --------------------- \n ");
-
-    printf(" noise %d \n ", noise );
-    printf(" refrenceValue[2] %d \n ", refrenceValue[2] );
-    printf(" --------------------- \n ");
-
-    printf(" distDiffPer %f \n ", distDiffPer );
-    printf(" colorDiffPer %f \n ", colorDiffPer );
-    printf(" noiseDiffPer %f \n ", noiseDiffPer );
-
-
+    distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
+    colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
+    noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
 
 

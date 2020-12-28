@@ -1,7 +1,6 @@
 #include <QtCore/QtGlobal>
 #include <QtWidgets>
 
-
 #include <sys/time.h>
 
 #include <signal.h>
@@ -18,6 +17,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+
+#include <cmath>
 
 using namespace cv;
 
@@ -37,7 +38,7 @@ private:
     void paintEvent(QPaintEvent *);
     void videoTest();
     void saveReportTest();
-    //void singleFrameTest();
+    void singleFrameTest();
 private:
     QTimer* mpKeepAliveTimer;
 
@@ -56,14 +57,13 @@ private:
     QPixmap processImg = QPixmap(":/img/process.png");
 
 
-    int refrenceValue[3];
+    float refrenceValue[3];
 
     float distDiffPer = 0;
     float colorDiffPer = 0;
     float noiseDiffPer = 0;
 
-    //int singleMeasured[3];
-    //int videoError[3];
+    int singleMeasured[3];
 
 
 };
