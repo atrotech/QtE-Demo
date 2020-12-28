@@ -201,9 +201,7 @@ void TVideoWidget::videoTest()
     int myValue;
     while (MyReadFile >> myValue)
     {
-      printf(" ---------------  \n ");
       printf(" data value : %d  \n ",myValue);
-      printf(" ---------------  \n ");
     }
     MyReadFile.close();
 
