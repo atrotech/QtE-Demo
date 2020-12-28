@@ -193,16 +193,22 @@ void TVideoWidget::videoTest()
 
  // ------------------ save to file --------------------
 
-    ofstream MyFile("value.txt");
-    MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
-    MyFile.close();
+    // ofstream MyFile("value.txt");
+    // MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
+    // MyFile.close();
 
     std::ifstream MyReadFile("value.txt");
-    int myValue;
-    while (MyReadFile >> myValue)
-    {
-      printf(" data value : %d  \n ",myValue);
-    }
+    int ReadValue;
+    MyReadFile >> ReadValue;
+    int distError = (distanceAverage - ReadValue)*100/ReadValue;
+    MyReadFile >> ReadValue;
+    int colorError = (totalColorAverage - ReadValue)*100/ReadValue;
+    MyReadFile >> ReadValue;
+    int noiseError = (noise - ReadValue)*100/ReadValue;
+
+    printf("Distance Error = %d \n",distError);
+    printf("Color Error = %d \n",colorError);
+    printf("Noise Error = %d \n",noiseError);
     MyReadFile.close();
 
 
