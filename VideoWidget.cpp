@@ -193,16 +193,23 @@ void TVideoWidget::videoTest()
 
  // ------------------ save to file --------------------
 
-     ofstream MyFile("value.txt");
-     MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
-     MyFile.close();
+    ofstream MyFile("value.txt");
+    MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
+    MyFile.close();
 
-     string myText;
-     ifstream MyReadFile("value.txt");
-     while (getline(MyReadFile, myText)) {
-       cout << myText;
-     }
-     MyReadFile.close();
+    string myText;
+    ifstream MyReadFile("value.txt");
+    while (getline(MyReadFile, myText)) {
+      cout << myText;
+    }
+    MyReadFile.close();
+
+      //std::ifstream infile("value.txt");
+      //int a, b;
+      //while (infile >> a)
+      //{
+      //    printf("var = %d",a);
+      //}
 
 
 
