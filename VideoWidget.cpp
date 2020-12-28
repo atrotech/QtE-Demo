@@ -218,7 +218,6 @@ void TVideoWidget::videoTest()
     printf(" distanceAverage %d   \n",distanceAverage );
     printf(" refrenceValue[0] %d   \n",refrenceValue[0] );
     printf(" distDiffPer %d   \n",distDiffPer );
-    printf(" --------------------------- \n " );
 
 
 
