@@ -89,6 +89,7 @@ void TVideoWidget::singleFrameTest()
    {
       cv::Vec3b currentRGB = InputFrame.at<cv::Vec3b>(100,x);
       cv::Vec3b prevRGB = InputFrame.at<cv::Vec3b>(100,x-1);
+      printf(" currentRGB: %d %d %d\n",currentRGB[0],currentRGB[1],currentRGB[2]);
 
       difRGB[0] = abs(prevRGB[0]-currentRGB[0]);
       difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
