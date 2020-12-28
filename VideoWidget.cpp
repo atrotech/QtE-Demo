@@ -213,9 +213,9 @@ void TVideoWidget::videoTest()
     colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
     noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
-    printf(" distDiffPer %d \n ", distDiffPer );
-    printf(" colorDiffPer %d \n ", colorDiffPer );
-    printf(" noiseDiffPer %d \n ", noiseDiffPer );
+    printf(" distDiffPer %f \n ", distDiffPer );
+    printf(" colorDiffPer %f \n ", colorDiffPer );
+    printf(" noiseDiffPer %f \n ", noiseDiffPer );
 
 
 
