@@ -192,8 +192,6 @@ void TVideoWidget::videoTest()
 
 
 
-
-
  // ------------------ save to file --------------------
      ofstream MyFile("value.txt");
      MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
