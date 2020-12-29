@@ -58,7 +58,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawPixmap( width()/9 , height()/8 , tableImg);
 
-    p.drawText( width()/3 , height()/4 ,     QString(" %1 ").arg(singleMeasured[0]));
+    p.drawText( width()/3 , height()/4 ,  QString(" %1 ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" %1 ").arg(singleMeasured[1]));
@@ -102,7 +102,7 @@ void TVideoWidget::singleFrameTest()
 
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
-    singleMeasured[0] /= 7;
+    currentValue[0] /= 7;
 
 // ------------------- Green Rgb Average --------------------------------------
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
@@ -139,7 +139,7 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[2] = colorRgb/pixQuantity ;
 
-    singleMeasured[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
+    currentValue[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
 
 // ----------------------- black area noise -----------------------------------
     colorRgb = 0; pixQuantity = 0;
@@ -151,7 +151,7 @@ void TVideoWidget::singleFrameTest()
         colorRgb += ((rgb[0] + rgb[1] + rgb[2])/3); pixQuantity++ ;
       }
     }
-    singleMeasured[2] = colorRgb/pixQuantity ;
+    currentValue[2] = colorRgb/pixQuantity ;
 
  // -------------------------- save to file -----------------------------------
 
@@ -169,13 +169,21 @@ void TVideoWidget::singleFrameTest()
     MyReadFile.close();
 
  // --------------------- difference percentage -------------------------------
-    singleMeasured[0] = abs((( singleMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
-    singleMeasured[1] = abs((( singleMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
-    singleMeasured[2] = abs((( singleMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
+    singleMeasured[0] = abs((( currentValue[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
+    singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
+    singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
+
+    printf(" currentValue[0] %f \n", currentValue[0]);
+    printf(" currentValue[1] %f \n", currentValue[1]);
+    printf(" currentValue[2] %f \n", currentValue[2]);
 
     printf(" singleMeasured[0] %f \n", singleMeasured[0]);
     printf(" singleMeasured[1] %f \n", singleMeasured[1]);
     printf(" singleMeasured[2] %f \n", singleMeasured[2]);
+
+    printf(" refrenceValue[0] %f \n", refrenceValue[0]);
+    printf(" refrenceValue[1] %f \n", refrenceValue[1]);
+    printf(" refrenceValue[2] %f \n", refrenceValue[2]);
 
 }
 
