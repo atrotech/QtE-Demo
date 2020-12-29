@@ -101,6 +101,9 @@ void TVideoWidget::singleFrameTest()
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
       if( difRGB[0]>50 || difRGB[1]>50 || difRGB[2]>50){BarsWidth[j++]=x;x+=10;}
     }
+    printf(" BarsWidth[6]: %d \n", BarsWidth[6]);
+    printf(" BarsWidth[7]: %d \n", BarsWidth[7]);
+    printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
 
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
