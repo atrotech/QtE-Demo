@@ -44,26 +44,20 @@ private:
 
     QPixmap btnNormal = QPixmap(":/img/Btn.png");
     QPixmap btnPush = QPixmap(":/img/BtnFocus.png");
-
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
     QPixmap saveImg = QPixmap(":/img/diskette.png");
     QPixmap flashImg = QPixmap(":/img/flash-disk.png");
     QPixmap playImg = QPixmap(":/img/play.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
-
     QPixmap cancelImg = QPixmap(":/img/cancel.png");
     QPixmap noneImg = QPixmap(":/img/none.png");
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
-
     QPixmap tableImg = QPixmap(":/img/table.png");
-
 
     float refrenceValue[3]={0,0,0};
     float currentValue[3]={0,0,0};
     float singleMeasured[3]={0,0,0};
-
-
 
 
 };

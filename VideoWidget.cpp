@@ -154,7 +154,6 @@ void TVideoWidget::singleFrameTest()
     currentValue[2] = colorRgb/pixQuantity ;
 
  // -------------------------- save to file -----------------------------------
-
     //ofstream MyFile("value.txt");
     //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
     //MyFile.close();
@@ -185,9 +184,8 @@ void TVideoWidget::singleFrameTest()
     printf(" refrenceValue[1] %f \n", refrenceValue[1]);
     printf(" refrenceValue[2] %f \n", refrenceValue[2]);
 
+
 }
-
-
 
 
 
