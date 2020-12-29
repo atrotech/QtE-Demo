@@ -102,7 +102,7 @@ void TVideoWidget::singleFrameTest()
       singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);
       printf("BarsWidth[x]: %d \n", BarsWidth[x]);
     }
-    singleMeasured[0] /= 8;
+    //singleMeasured[0] /= 8;
     printf("singleMeasured[0]: %d \n", singleMeasured[0]);
  // -------------------------- save to file -----------------------------------
 
