@@ -77,10 +77,6 @@ void TVideoWidget::videoTest(){
 
 void TVideoWidget::singleFrameTest()
 {
-  float distanceAverage = 0;
-  float totalColorAverage=0;
-  float noise = 0;
-
   int difRGB[3] = {0,0,0};
   int BarsWidth[9];
   int j=1;
@@ -172,10 +168,17 @@ void TVideoWidget::singleFrameTest()
 
  // --------------------- difference percentage -------------------------------
 
-    distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
-    colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
-    noiseDiffPer = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
+   float distanceAverage = singleMeasured[0];
+   float totalColorAverage = singleMeasured[1];
+   float noise = singleMeasured[2];
 
+    singleMeasured[0] = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
+    singleMeasured[1] = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
+    singleMeasured[2] = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
+
+    printf(" singleMeasured[0] %d \n", singleMeasured[0]);
+    printf(" singleMeasured[1] %d \n", singleMeasured[1]);
+    printf(" singleMeasured[2] %d \n", singleMeasured[2]);
 
 
 }

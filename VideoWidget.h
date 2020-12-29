@@ -58,12 +58,7 @@ private:
 
 
     float refrenceValue[3];
-
-    float distDiffPer = 0;
-    float colorDiffPer = 0;
-    float noiseDiffPer = 0;
-
-    int singleMeasured[3]={0,0,0};
+    float singleMeasured[3]={0,0,0};
 
 
 };
