@@ -171,9 +171,9 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = abs((( singleMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( singleMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
-    printf(" singleMeasured[0] %f \n", singleMeasured[0]);
-    printf(" singleMeasured[1] %f \n", singleMeasured[1]);
-    printf(" singleMeasured[2] %f \n", singleMeasured[2]);
+    printf(" singleMeasured[0] %.2f \n", singleMeasured[0]);
+    printf(" singleMeasured[1] %.2f \n", singleMeasured[1]);
+    printf(" singleMeasured[2] %.2f \n", singleMeasured[2]);
 
 }
 
