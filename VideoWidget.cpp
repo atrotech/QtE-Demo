@@ -59,7 +59,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(colorDiffPer));
+    p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(singleMeasured[1]));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
     p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1  ").arg(noiseDiffPer));
@@ -153,9 +153,8 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[2] = colorRgb/pixQuantity ;
 
-    int rgbAverage = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
-
-    printf(" rgbAverage : %d \n", rgbAverage);
+    singleMeasured[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
+    printf(" singleMeasured[1] : %d \n", singleMeasured[1]);
 
 
  // -------------------------- save to file -----------------------------------
