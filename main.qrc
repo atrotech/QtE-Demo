@@ -15,5 +15,6 @@
         <file>img/none.png</file>
         <file>img/tick.png</file>
         <file>img/process.png</file>
+        <file>img/table.png</file>
     </qresource>
 </RCC>
