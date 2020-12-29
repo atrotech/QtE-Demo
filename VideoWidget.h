@@ -56,6 +56,8 @@ private:
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
 
+    QPixmap tableImg = QPixmap(":/img/table.png");
+
 
     float refrenceValue[3];
     float singleMeasured[3]={0,0,0};
