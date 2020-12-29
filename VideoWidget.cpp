@@ -101,6 +101,7 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[0]=0;
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     singleMeasured[0] /= 7;
+    printf(" singleMeasured[0]  : %d \n",singleMeasured[0] );
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
