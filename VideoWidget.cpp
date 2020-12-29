@@ -100,6 +100,9 @@ void TVideoWidget::singleFrameTest()
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     singleMeasured[0] /= 7;
+ // ------------------------- noise Average -----------------------------------
+    printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
+
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
