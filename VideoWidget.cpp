@@ -56,7 +56,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(distDiffPer));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(colorDiffPer));
@@ -84,7 +84,7 @@ void TVideoWidget::singleFrameTest()
   int BarsWidth[9];
   int j=1;
 
-// ------------------------ distance Average ----------------------------------
+// ------------------------ change color point --------------------------------
    BarsWidth[0]=0;
    for (int x = 1; x<InputFrame.cols; x++)
    {
@@ -99,8 +99,7 @@ void TVideoWidget::singleFrameTest()
 
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
-    singleMeasured[0] /= 7;
-    printf("singleMeasured[0]: %d \n", singleMeasured[0]);
+    singleMeasured[0] /= 7; 
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
