@@ -101,8 +101,10 @@ void TVideoWidget::singleFrameTest()
     for(int x=0; x<7; x++){
       int deltaBarsWidth = BarsWidth[x+1] - BarsWidth[x];
       singleMeasured[0] += deltaBarsWidth;
+      printf("deltaBarsWidth: %d \n", deltaBarsWidth);
+      printf("singleMeasured[0]: %d \n", singleMeasured[0]);
     }
-    singleMeasured[0] /= 7;
+    //singleMeasured[0] /= 7;
     printf("singleMeasured[0]: %d \n", singleMeasured[0]);
  // -------------------------- save to file -----------------------------------
 
