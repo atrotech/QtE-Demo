@@ -62,7 +62,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(singleMeasured[1]));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1  ").arg(noiseDiffPer));
+    p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1  ").arg(singleMeasured[2]));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" تست درصد اختلاف فریم : %1  ").arg(67));
@@ -101,9 +101,6 @@ void TVideoWidget::singleFrameTest()
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
       if( difRGB[0]>50 || difRGB[1]>50 || difRGB[2]>50){BarsWidth[j++]=x;x+=10;}
     }
-    printf(" BarsWidth[6]: %d \n", BarsWidth[6]);
-    printf(" BarsWidth[7]: %d \n", BarsWidth[7]);
-    printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
 
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
@@ -120,7 +117,7 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[1] = colorRgb/pixQuantity ;
 
-// ------------------- Red Rgb Average --------------------------------------
+// --------------------- Red Rgb Average --------------------------------------
     colorRgb = 0; pixQuantity = 0;
     for (int x = BarsWidth[6]; x<BarsWidth[7]; x++)
     {
@@ -132,7 +129,7 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[0] = colorRgb/pixQuantity ;
 
-// ------------------- Blue Rgb Average --------------------------------------
+// ---------------------- Blue Rgb Average ------------------------------------
     colorRgb = 0; pixQuantity = 0;
     for (int x = BarsWidth[5]; x<BarsWidth[6]; x++)
     {
@@ -146,14 +143,22 @@ void TVideoWidget::singleFrameTest()
 
     singleMeasured[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
 
-// ----------------------------- noise ----------------------------------------
-
-
+// ----------------------- black area noise -----------------------------------
+    colorRgb = 0; pixQuantity = 0;
+    for (int x = BarsWidth[7]; x<InputFrame.cols; x++)
+    {
+      for (int y = 50; y<InputFrame.rows-50; y++)
+      {
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+        colorRgb += ((rgb[0] + rgb[1] + rgb[2])/3); pixQuantity++ ;
+      }
+    }
+    singleMeasured[2] = colorRgb/pixQuantity ;
 
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
-    //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << noise << "\n" ;
+    //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
     //MyFile.close();
 
  // -------------------------- read from file ---------------------------------
