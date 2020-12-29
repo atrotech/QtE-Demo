@@ -167,19 +167,13 @@ void TVideoWidget::singleFrameTest()
     MyReadFile.close();
 
  // --------------------- difference percentage -------------------------------
-
-   float distanceAverage = singleMeasured[0];
-   float totalColorAverage = singleMeasured[1];
-   float noise = singleMeasured[2];
-
-    singleMeasured[0] = abs((( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100);
-    singleMeasured[1] = abs((( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100);
-    singleMeasured[2] = abs((( noise - refrenceValue[2] )/ refrenceValue[2] )*100);
+    singleMeasured[0] = abs((( singleMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
+    singleMeasured[1] = abs((( singleMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
+    singleMeasured[2] = abs((( singleMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
     printf(" singleMeasured[0] %f \n", singleMeasured[0]);
     printf(" singleMeasured[1] %f \n", singleMeasured[1]);
     printf(" singleMeasured[2] %f \n", singleMeasured[2]);
-
 
 }
 
