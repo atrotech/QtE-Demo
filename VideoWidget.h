@@ -59,7 +59,7 @@ private:
     QPixmap tableImg = QPixmap(":/img/table.png");
 
 
-    float refrenceValue[3];
+    float refrenceValue[3]={0,0,0};
     float currentValue[3]={0,0,0};
     float singleMeasured[3]={0,0,0};
 
