@@ -98,10 +98,8 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    singleMeasured[0]=0;
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     singleMeasured[0] /= 7;
-    printf(" singleMeasured[0]  : %d \n",singleMeasured[0] );
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
@@ -122,9 +120,9 @@ void TVideoWidget::singleFrameTest()
 
 
  // --------------------- difference percentage -------------------------------
-    singleMeasured[0] = distanceAverage;
-    singleMeasured[1] = totalColorAverage;
-    singleMeasured[2] = noise;
+    // singleMeasured[0] = distanceAverage;
+    // singleMeasured[1] = totalColorAverage;
+    // singleMeasured[2] = noise;
 
     distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
     colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
