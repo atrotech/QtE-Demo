@@ -81,7 +81,7 @@ void TVideoWidget::singleFrameTest()
   float totalColorAverage=0;
   float noise = 0;
   int difRGB[3] = {0,0,0};
-  int BarsWidth[8];
+  int BarsWidth[9];
   int j=1;
 
 // ------------------------ distance Average ----------------------------------
