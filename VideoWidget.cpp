@@ -131,7 +131,7 @@ void TVideoWidget::singleFrameTest()
 
 // ------------------- Red Rgb Average --------------------------------------
     colorRgb = 0; pixQuantity = 0;
-    for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
+    for (int x = BarsWidth[6]; x<BarsWidth[7]; x++)
     {
       for (int y = 50; y<InputFrame.rows-50; y++)
       {
@@ -143,7 +143,7 @@ void TVideoWidget::singleFrameTest()
 
 // ------------------- Blue Rgb Average --------------------------------------
     colorRgb = 0; pixQuantity = 0;
-    for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
+    for (int x = BarsWidth[5]; x<BarsWidth[6]; x++)
     {
       for (int y = 50; y<InputFrame.rows-50; y++)
       {
@@ -153,7 +153,9 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[2] = colorRgb/pixQuantity ;
 
-    printf(" rgbAverage : %d %d %d \n", rgbAverage[0],rgbAverage[1],rgbAverage[2]);
+    int rgbAverage = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
+
+    printf(" rgbAverage : %d \n", rgbAverage);
 
 
  // -------------------------- save to file -----------------------------------
