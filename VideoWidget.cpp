@@ -80,10 +80,14 @@ void TVideoWidget::singleFrameTest()
   float distanceAverage = 0;
   float totalColorAverage=0;
   float noise = 0;
-  
+
   int difRGB[3] = {0,0,0};
   int BarsWidth[9];
   int j=1;
+
+  int rgbAverage[3] = {0,0,0};
+  int pixQuantity = 0;
+  int colorRgb = 0;
 
 // ------------------------ change color point --------------------------------
    BarsWidth[0]=0;
@@ -115,21 +119,41 @@ void TVideoWidget::singleFrameTest()
 
 
 // ------------------- Green Rgb Average --------------------------------------
-    int pixQuantity = 0;
-    int greenRgb = 0;
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
     {
       for (int y = 50; y<InputFrame.rows-50; y++)
       {
         cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-        greenRgb += rgb[1]; pixQuantity++ ;
+        colorRgb += rgb[1]; pixQuantity++ ;
       }
     }
-    int greenRgbAverage = greenRgb/pixQuantity ;
+    rgbAverage[1] = colorRgb/pixQuantity ;
 
-    printf("Green RGB Average:  %d  \n " ,greenRgbAverage);
+// ------------------- Red Rgb Average --------------------------------------
+    colorRgb = 0; pixQuantity = 0;
+    for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
+    {
+      for (int y = 50; y<InputFrame.rows-50; y++)
+      {
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+        colorRgb += rgb[0]; pixQuantity++ ;
+      }
+    }
+    rgbAverage[0] = colorRgb/pixQuantity ;
 
+// ------------------- Blue Rgb Average --------------------------------------
+    colorRgb = 0; pixQuantity = 0;
+    for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
+    {
+      for (int y = 50; y<InputFrame.rows-50; y++)
+      {
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+        colorRgb += rgb[2]; pixQuantity++ ;
+      }
+    }
+    rgbAverage[2] = colorRgb/pixQuantity ;
 
+    printf(" rgbAverage : %d %d %d \n", rgbAverage[0],rgbAverage[1],rgbAverage[2]);
 
 
  // -------------------------- save to file -----------------------------------
