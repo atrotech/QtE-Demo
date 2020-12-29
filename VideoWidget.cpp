@@ -98,7 +98,7 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    for(int x=0; x<8; x++){
+    for(int x=0; x<7; x++){
       printf("BarsWidth[x]: %d \n", BarsWidth[x]);
       singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);
       printf("BarsWidth[x+1]: %d \n", BarsWidth[x+1]);
