@@ -56,7 +56,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]).setprecision(2));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(singleMeasured[1]));
@@ -167,6 +167,7 @@ void TVideoWidget::singleFrameTest()
     MyReadFile.close();
 
  // --------------------- difference percentage -------------------------------
+    std::setprecision(3);
     singleMeasured[0] = abs((( singleMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
     singleMeasured[1] = abs((( singleMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( singleMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
