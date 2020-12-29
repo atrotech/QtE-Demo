@@ -63,7 +63,7 @@ private:
     float colorDiffPer = 0;
     float noiseDiffPer = 0;
 
-    int singleMeasured[3];
+    int singleMeasured[3]={0,0,0};
 
 
 };
