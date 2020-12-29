@@ -173,7 +173,7 @@ void TVideoWidget::singleFrameTest()
 
     printf(" singleMeasured[0] %.2f \n", singleMeasured[0]);
     printf(" singleMeasured[1] %.2f \n", singleMeasured[1]);
-    printf(" singleMeasured[2] %.2f \n", singleMeasured[2]);
+    printf(" singleMeasured[2] %f \n", round(singleMeasured[2]));
 
 }
 
