@@ -105,18 +105,6 @@ void TVideoWidget::singleFrameTest()
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     singleMeasured[0] /= 7;
- // ------------------------- noise Average -----------------------------------
-     printf(" BarsWidth[1]: %d \n", BarsWidth[1]);
-     printf(" BarsWidth[2]: %d \n", BarsWidth[2]);
-     printf(" BarsWidth[3]: %d \n", BarsWidth[3]);
-     printf(" BarsWidth[4]: %d \n", BarsWidth[4]);
-     printf(" BarsWidth[5]: %d \n", BarsWidth[5]);
-     printf(" BarsWidth[6]: %d \n", BarsWidth[6]);
-     printf(" BarsWidth[7]: %d \n", BarsWidth[7]);
-     printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
-     printf(" BarsWidth[9]: %d \n", BarsWidth[9]);
-
-
 
 // ------------------- Green Rgb Average --------------------------------------
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
@@ -154,32 +142,27 @@ void TVideoWidget::singleFrameTest()
     rgbAverage[2] = colorRgb/pixQuantity ;
 
     singleMeasured[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
-    printf(" singleMeasured[1] : %d \n", singleMeasured[1]);
+
+// ----------------------------- noise ----------------------------------------
+
 
 
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
-    //MyFile << distanceAverage << "\n" << totalColorAverage << "\n" << noise << "\n" ;
+    //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << noise << "\n" ;
     //MyFile.close();
-
-
 
  // -------------------------- read from file ---------------------------------
     std::ifstream MyReadFile("value.txt");
     int ReadValue;
     int i=0;
     while(MyReadFile >> ReadValue){
-      refrenceValue[i]=ReadValue;
-      i++;
+      refrenceValue[i]=ReadValue; i++;
     }
     MyReadFile.close();
 
-
  // --------------------- difference percentage -------------------------------
-    // singleMeasured[0] = distanceAverage;
-    // singleMeasured[1] = totalColorAverage;
-    // singleMeasured[2] = noise;
 
     distDiffPer = (( distanceAverage - refrenceValue[0] )/ refrenceValue[0] )*100;
     colorDiffPer = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
