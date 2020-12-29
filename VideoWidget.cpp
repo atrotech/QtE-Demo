@@ -104,9 +104,12 @@ void TVideoWidget::singleFrameTest()
      printf(" BarsWidth[1]: %d \n", BarsWidth[1]);
      printf(" BarsWidth[2]: %d \n", BarsWidth[2]);
      printf(" BarsWidth[3]: %d \n", BarsWidth[3]);
+     printf(" BarsWidth[4]: %d \n", BarsWidth[4]);
+     printf(" BarsWidth[5]: %d \n", BarsWidth[5]);
      printf(" BarsWidth[6]: %d \n", BarsWidth[6]);
      printf(" BarsWidth[7]: %d \n", BarsWidth[7]);
      printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
+     printf(" BarsWidth[9]: %d \n", BarsWidth[9]);
 
  // -------------------------- save to file -----------------------------------
 
