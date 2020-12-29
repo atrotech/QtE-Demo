@@ -58,8 +58,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawPixmap( width()/9 , height()/8 , tableImg);
 
-    p.drawText( width()/4 , height()/3 ,  QString(" %1 ").arg(singleMeasured[0]));
-    p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
+    p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(singleMeasured[0]));
+    p.drawText( width()/4 , height()/3 ,  QString(" %1 ").arg(currentValue[0]));
+    p.drawText( width()/4 , height()/3 ,  QString(" %1 ").arg(refrenceValue[0]));
+    p.drawPixmap( width()/5 , height()/5 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" %1 ").arg(singleMeasured[1]));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
