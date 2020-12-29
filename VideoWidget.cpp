@@ -176,9 +176,9 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = (( totalColorAverage - refrenceValue[1] )/ refrenceValue[1] )*100;
     singleMeasured[2] = (( noise - refrenceValue[2] )/ refrenceValue[2] )*100;
 
-    printf(" singleMeasured[0] %d \n", singleMeasured[0]);
-    printf(" singleMeasured[1] %d \n", singleMeasured[1]);
-    printf(" singleMeasured[2] %d \n", singleMeasured[2]);
+    printf(" singleMeasured[0] %f \n", singleMeasured[0]);
+    printf(" singleMeasured[1] %f \n", singleMeasured[1]);
+    printf(" singleMeasured[2] %f \n", singleMeasured[2]);
 
 
 }
