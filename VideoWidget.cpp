@@ -52,10 +52,11 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, flashImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
-    p.drawPixmap( width()/5 , height()/5 , tableImg);
 
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
+
+    p.drawPixmap( width()/5 , height()/5 , tableImg);
 
     p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
