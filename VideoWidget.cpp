@@ -56,18 +56,18 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawPixmap( width()/10 , height()/10 , tableImg);
+    p.drawPixmap( width()/9 , height()/8 , tableImg);
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
+    p.drawText( width()/3 , height()/4 ,     QString(" %1 ").arg(singleMeasured[0]));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
-    p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(singleMeasured[1]));
+    p.drawText( width()/3 , height()/4+100 , QString(" %1 ").arg(singleMeasured[1]));
     p.drawPixmap( width()/3-50  , height()/4+65 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" تست درصد اختلاف نویز : %1  ").arg(singleMeasured[2]));
+    p.drawText( width()/3 , height()/4+200 , QString(" %1 ").arg(singleMeasured[2]));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
-    p.drawText( width()/3 , height()/4+300 , QString(" تست درصد اختلاف فریم : %1  ").arg(67));
+    p.drawText( width()/3 , height()/4+300 , QString(" %1 ").arg(67));
     p.drawPixmap( width()/3-50  , height()/4+265 , processImg);
 
 }
