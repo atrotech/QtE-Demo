@@ -111,6 +111,26 @@ void TVideoWidget::singleFrameTest()
      printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
      printf(" BarsWidth[9]: %d \n", BarsWidth[9]);
 
+
+
+// ------------------- Green Rgb Average --------------------------------------
+    int pixQuantity = 0;
+    int greenRgb = 0;
+    for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
+    {
+      for (int y = 50; y<InputFrame.rows-50; y++)
+      {
+        cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
+        greenRgb += rgb[1]; pixQuantity++ ;
+      }
+    }
+    int greenRgbAverage = greenRgb/pixQuantity ;
+
+    printf("Green RGB Average:  %d  \n " ,greenRgbAverage);
+
+
+
+
  // -------------------------- save to file -----------------------------------
 
     //ofstream MyFile("value.txt");
