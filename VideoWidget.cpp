@@ -56,7 +56,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 28));
 
-    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]));
+    p.drawText( width()/3 , height()/4 ,     QString(" تست درصد اختلاف ابعاد : %1  ").arg(singleMeasured[0]).setprecision(2));
     p.drawPixmap( width()/3-50 , height()/4-35 , tickImg);
 
     p.drawText( width()/3 , height()/4+100 , QString(" تست درصد اختلاف رنگ : %1  ").arg(singleMeasured[1]));
@@ -171,9 +171,9 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = abs((( singleMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( singleMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
-    printf(" singleMeasured[0] %.2f \n", singleMeasured[0]);
-    printf(" singleMeasured[1] %.2f \n", singleMeasured[1]);
-    printf(" singleMeasured[2] %f \n", round(singleMeasured[2]));
+    printf(" singleMeasured[0] %f \n", singleMeasured[0]);
+    printf(" singleMeasured[1] %f \n", singleMeasured[1]);
+    printf(" singleMeasured[2] %.2f \n", singleMeasured[2]);
 
 }
 
