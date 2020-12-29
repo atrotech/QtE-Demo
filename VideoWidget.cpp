@@ -95,14 +95,18 @@ void TVideoWidget::singleFrameTest()
       difRGB[1] = abs(prevRGB[1]-currentRGB[1]);
       difRGB[2] = abs(prevRGB[2]-currentRGB[2]);
       if( difRGB[0]>50 || difRGB[1]>50 || difRGB[2]>50){BarsWidth[j++]=x;x+=10;}
-      printf(" BarsWidth[j]: %d \n", BarsWidth[x]);
     }
 
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     singleMeasured[0] /= 7;
  // ------------------------- noise Average -----------------------------------
-    printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
+     printf(" BarsWidth[1]: %d \n", BarsWidth[1]);
+     printf(" BarsWidth[2]: %d \n", BarsWidth[2]);
+     printf(" BarsWidth[3]: %d \n", BarsWidth[3]);
+     printf(" BarsWidth[6]: %d \n", BarsWidth[6]);
+     printf(" BarsWidth[7]: %d \n", BarsWidth[7]);
+     printf(" BarsWidth[8]: %d \n", BarsWidth[8]);
 
  // -------------------------- save to file -----------------------------------
 
