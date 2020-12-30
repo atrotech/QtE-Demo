@@ -113,6 +113,7 @@ void TVideoWidget::singleFrameTest()
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){currentValue[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     currentValue[0] /= 7;
+    currentValue[0]= (int)(currentValue[0]*100.0)/100.0;
 
 // ------------------- Green Rgb Average --------------------------------------
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
@@ -150,6 +151,7 @@ void TVideoWidget::singleFrameTest()
     rgbAverage[2] = colorRgb/pixQuantity ;
 
     currentValue[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
+    currentValue[1]= (int)(currentValue[1]*100.0)/100.0;
 
 // ----------------------- black area noise -----------------------------------
     colorRgb = 0; pixQuantity = 0;
@@ -162,6 +164,7 @@ void TVideoWidget::singleFrameTest()
       }
     }
     currentValue[2] = colorRgb/pixQuantity ;
+    currentValue[2]= (int)(currentValue[1]*100.0)/100.0;
 
  // -------------------------- save to file -----------------------------------
     //ofstream MyFile("value.txt");
@@ -183,6 +186,8 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
     singleMeasured[0]= (int)(singleMeasured[0]*100.0)/100.0;
+    singleMeasured[1]= (int)(singleMeasured[1]*100.0)/100.0;
+    singleMeasured[2]= (int)(singleMeasured[2]*100.0)/100.0;
 
 }
 
