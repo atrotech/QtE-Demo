@@ -61,20 +61,22 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(singleMeasured[0]));
     p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(currentValue[0]));
     p.drawText( width()/2-15 , height()/3+10 ,  QString(" %1 ").arg(refrenceValue[0]));
-    p.drawPixmap( width()/15 , height()/3-50 , tickImg);
+    p.drawPixmap( width()/15 , height()/3-40 , tickImg);
 
     p.drawText( width()/6 , height()/2-30 , QString(" %1 ").arg(singleMeasured[1]));
     p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(currentValue[1]));
     p.drawText( width()/2-15 , height()/2-20 ,  QString(" %1 ").arg(refrenceValue[1]));
     p.drawPixmap( width()/15  , height()/2-50 , noneImg);
 
-    p.drawText( width()/6 , height()/1.7 , QString(" %1 ").arg(singleMeasured[2]));
-    p.drawText( width()/3-40 , height()/1.7 ,  QString(" %1 ").arg(currentValue[2]));
-    p.drawText( width()/2-15 , height()/1.7 ,  QString(" %1 ").arg(refrenceValue[2]));
-    p.drawPixmap( width()/15  , height()/1.7 , cancelImg);
+    p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(singleMeasured[2]));
+    p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(currentValue[2]));
+    p.drawText( width()/2-15 , height()/1.65 ,  QString(" %1 ").arg(refrenceValue[2]));
+    p.drawPixmap( width()/15  , height()/1.7-10 , cancelImg);
 
-    p.drawText( width()/3 , height()/1.3 , QString(" %1 ").arg(67));
-    p.drawPixmap( width()/15  , height()/1.5 , processImg);
+    p.drawText( width()/6 , height()/1.3 , QString(" %1 ").arg("none"));
+    p.drawText( width()/3-40 , height()/1.3 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2-15 , height()/1.3 , QString(" %1 ").arg("none"));
+    p.drawPixmap( width()/15  , height()/1.4 , processImg);
 
 
 }
@@ -86,7 +88,7 @@ void TVideoWidget::videoTest(){
 
 void TVideoWidget::singleFrameTest()
 {
-  
+
 // ---------------------------- variables -------------------------------------
   int difRGB[3] = {0,0,0};
   int BarsWidth[9];
