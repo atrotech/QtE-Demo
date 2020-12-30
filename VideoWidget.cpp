@@ -69,6 +69,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawPixmap( width()/15  , height()/5+20 , noneImg);
 
     p.drawText( width()/3 , height()/4+200 , QString(" %1 ").arg(singleMeasured[2]));
+    p.drawText( width()/3-40 , height()/5+10 ,  QString(" %1 ").arg(currentValue[2]));
+    p.drawText( width()/2-15 , height()/5+20 ,  QString(" %1 ").arg(refrenceValue[2]));
     p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" %1 ").arg(67));
@@ -108,6 +110,7 @@ void TVideoWidget::singleFrameTest()
  // ---------------------- Distance Average -----------------------------------
     for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     currentValue[0] /= 7;
+    printf(" currentValue: %f \n", currentValue[0] );
 
 // ------------------- Green Rgb Average --------------------------------------
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
@@ -177,7 +180,7 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
-
+    printf(" currentValue: %f \n", currentValue[0] );
 
 }
 
