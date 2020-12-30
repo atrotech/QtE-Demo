@@ -86,10 +86,11 @@ void TVideoWidget::videoTest(){
 
 void TVideoWidget::singleFrameTest()
 {
+  
+// ---------------------------- variables -------------------------------------
   int difRGB[3] = {0,0,0};
   int BarsWidth[9];
   int j=1;
-
   int rgbAverage[3] = {0,0,0};
   int pixQuantity = 0;
   int colorRgb = 0;
