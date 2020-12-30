@@ -61,17 +61,17 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(singleMeasured[0]));
     p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(currentValue[0]));
     p.drawText( width()/2-15 , height()/3+10 ,  QString(" %1 ").arg(refrenceValue[0]));
-    p.drawPixmap( width()/15 , height()/4 , tickImg);
+    p.drawPixmap( width()/15 , height()/3+30 , tickImg);
 
-    p.drawText( width()/6 , height()/5 , QString(" %1 ").arg(singleMeasured[1]));
-    p.drawText( width()/3-40 , height()/5+10 ,  QString(" %1 ").arg(currentValue[1]));
-    p.drawText( width()/2-15 , height()/5+20 ,  QString(" %1 ").arg(refrenceValue[1]));
-    p.drawPixmap( width()/15  , height()/5+20 , noneImg);
+    p.drawText( width()/6 , height()/2-30 , QString(" %1 ").arg(singleMeasured[1]));
+    p.drawText( width()/3-40 , height()/2-30 ,  QString(" %1 ").arg(currentValue[1]));
+    p.drawText( width()/2-15 , height()/2-30 ,  QString(" %1 ").arg(refrenceValue[1]));
+    p.drawPixmap( width()/15  , height()/2-30 , noneImg);
 
-    p.drawText( width()/3 , height()/4+200 , QString(" %1 ").arg(singleMeasured[2]));
-    p.drawText( width()/3-40 , height()/5+10 ,  QString(" %1 ").arg(currentValue[2]));
-    p.drawText( width()/2-15 , height()/5+20 ,  QString(" %1 ").arg(refrenceValue[2]));
-    p.drawPixmap( width()/3-50  , height()/4+165 , cancelImg);
+    p.drawText( width()/6 , height()/1.5 , QString(" %1 ").arg(singleMeasured[2]));
+    p.drawText( width()/3-40 , height()/1.5 ,  QString(" %1 ").arg(currentValue[2]));
+    p.drawText( width()/2-15 , height()/1.5 ,  QString(" %1 ").arg(refrenceValue[2]));
+    p.drawPixmap( width()/15  , height()/1.5 , cancelImg);
 
     p.drawText( width()/3 , height()/4+300 , QString(" %1 ").arg(67));
     p.drawPixmap( width()/3-50  , height()/4+265 , processImg);
