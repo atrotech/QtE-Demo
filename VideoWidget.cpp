@@ -182,6 +182,10 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
+    singleMeasured[0]= round(singleMeasured[0],2);
+    singleMeasured[1]= round(singleMeasured[1],2);
+    singleMeasured[2]= round(singleMeasured[2],2);
+
 }
 
 
