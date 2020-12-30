@@ -94,7 +94,7 @@ void TVideoWidget::singleFrameTest()
   int pixQuantity = 0;
   int colorRgb = 0;
 
-// ------------------------ change color point --------------------------------
+// ------------------------ change color points -------------------------------
    BarsWidth[0]=0;
    for (int x = 1; x<InputFrame.cols; x++)
    {
@@ -108,7 +108,7 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
+    for(int x=0; x<7; x++){currentValue[0] += (BarsWidth[x+1] - BarsWidth[x]);}
     currentValue[0] /= 7;
 
 // ------------------- Green Rgb Average --------------------------------------
