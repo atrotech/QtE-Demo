@@ -78,8 +78,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2-15 , height()/1.3 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.4 , processImg);
 
-
 }
+
 
 void TVideoWidget::videoTest(){
   singleFrameTest();
@@ -193,8 +193,6 @@ void TVideoWidget::saveReportTest()
 {
 
   printf(" saveReportTest \n " );
-
-
 
 
 
