@@ -61,22 +61,22 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(singleMeasured[0]));
     p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(currentValue[0]));
     p.drawText( width()/2-15 , height()/3+10 ,  QString(" %1 ").arg(refrenceValue[0]));
-    p.drawPixmap( width()/3.5 , height()/3-35 , tickImg);
+    p.drawPixmap( width()/1.3 , height()/3-35 , tickImg);
 
     p.drawText( width()/6 , height()/2-30 , QString(" %1 ").arg(singleMeasured[1]));
     p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(currentValue[1]));
     p.drawText( width()/2-15 , height()/2-20 ,  QString(" %1 ").arg(refrenceValue[1]));
-    p.drawPixmap( width()/4  , height()/2-50 , noneImg);
+    p.drawPixmap( width()/1.3  , height()/2-50 , noneImg);
 
     p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(singleMeasured[2]));
     p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(currentValue[2]));
     p.drawText( width()/2-15 , height()/1.65 ,  QString(" %1 ").arg(refrenceValue[2]));
-    p.drawPixmap( width()/4  , height()/1.7-10 , cancelImg);
+    p.drawPixmap( width()/1.3  , height()/1.7-10 , cancelImg);
 
     p.drawText( width()/6 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawText( width()/3-40 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawText( width()/2-15 , height()/1.3-10 , QString(" %1 ").arg("none"));
-    p.drawPixmap( width()/2  , height()/1.4 , processImg);
+    p.drawPixmap( width()/1.3  , height()/1.4 , processImg);
 
 }
 
@@ -182,9 +182,9 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
-    singleMeasured[0]= round(singleMeasured[0]);
-    singleMeasured[1]= round(singleMeasured[1]);
-    singleMeasured[2]= round(singleMeasured[2]);
+    singleMeasured[0]= (int)(singleMeasured[0]*100.0)/100.0;
+    singleMeasured[1]= round(singleMeasured[1],2);
+    singleMeasured[2]= round(singleMeasured[2],2);
 
 }
 
