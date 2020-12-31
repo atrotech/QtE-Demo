@@ -58,18 +58,18 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawPixmap( width()/9 , height()/8 , tableImg);
 
-    p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(singleMeasured[0]));
-    p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(currentValue[0]));
+    p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(measuredError[0]));
+    p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(totalMeasured[0]));
     p.drawText( width()/2-20 , height()/3+10 ,  QString(" %1 ").arg(refrenceValue[0]));
     p.drawPixmap( width()/1.3-15  , height()/3-35 , tickImg);
 
-    p.drawText( width()/6 , height()/2-20 , QString(" %1 ").arg(singleMeasured[1]));
-    p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(currentValue[1]));
+    p.drawText( width()/6 , height()/2-20 , QString(" %1 ").arg(measuredError[1]));
+    p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(totalMeasured[1]));
     p.drawText( width()/2-20 , height()/2-20 ,  QString(" %1 ").arg(refrenceValue[1]));
     p.drawPixmap( width()/1.3-15   , height()/2-50 , noneImg);
 
-    p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(singleMeasured[2]));
-    p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(currentValue[2]));
+    p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(measuredError[2]));
+    p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(totalMeasured[2]));
     p.drawText( width()/2-20 , height()/1.65 ,  QString(" %1 ").arg(refrenceValue[2]));
     p.drawPixmap( width()/1.3-15  , height()/1.7-10 , cancelImg);
 
@@ -81,13 +81,42 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 }
 
 
-void TVideoWidget::videoTest(){
-  singleFrameTest();
+void TVideoWidget::videoTest()
+{
+// --------------------------- Total Measured ---------------------------------
+  for (int x = 0; x<500; x++)
+  {
+    singleFrameTest();
+    totalMeasured[0] += singleMeasured[0] ;
+    totalMeasured[1] += singleMeasured[1] ;
+    totalMeasured[2] += singleMeasured[2] ;
+  }
+  totalMeasured[0]  /= 500;
+  totalMeasured[1]  /= 500;
+  totalMeasured[2]  /= 500;
 
+// -------------------------- read from file ----------------------------------
+     std::ifstream MyReadFile("value.txt");
+     int ReadValue;
+     int i=0;
+     while(MyReadFile >> ReadValue){
+       refrenceValue[i]=ReadValue; i++;
+     }
+     MyReadFile.close();
 
+// --------------------- difference percentage - error ------------------------
+     measuredError[0] = abs((( totalMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
+     measuredError[1] = abs((( totalMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
+     measuredError[2] = abs((( totalMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
 
+     measuredError[0]= (int)(measuredError[0]*100.0)/100.0;
+     measuredError[1]= (int)(measuredError[1]*100.0)/100.0;
+     measuredError[2]= (int)(measuredError[2]*100.0)/100.0;
 
 }
+
+
+
 
 
 void TVideoWidget::singleFrameTest()
@@ -100,6 +129,10 @@ void TVideoWidget::singleFrameTest()
   int rgbAverage[3] = {0,0,0};
   int pixQuantity = 0;
   int colorRgb = 0;
+
+  singleMeasured[0] = 0 ;
+  singleMeasured[1] = 0 ;
+  singleMeasured[2] = 0 ;
 
 // ------------------------ change color points -------------------------------
    BarsWidth[0]=0;
@@ -115,9 +148,8 @@ void TVideoWidget::singleFrameTest()
     }
 
  // ---------------------- Distance Average -----------------------------------
-    for(int x=0; x<7; x++){currentValue[0] += (BarsWidth[x+1] - BarsWidth[x]);}
-    currentValue[0] /= 7;
-    currentValue[0]= (int)(currentValue[0]*100.0)/100.0;
+    for(int x=0; x<7; x++){singleMeasured[0] += (BarsWidth[x+1] - BarsWidth[x]);}
+    singleMeasured[0] /= 7;
 
 // ------------------- Green Rgb Average --------------------------------------
     for (int x = BarsWidth[3]; x<BarsWidth[4]; x++)
@@ -154,8 +186,7 @@ void TVideoWidget::singleFrameTest()
     }
     rgbAverage[2] = colorRgb/pixQuantity ;
 
-    currentValue[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
-    currentValue[1]= (int)(currentValue[1]*100.0)/100.0;
+    singleMeasured[1] = (rgbAverage[0]+rgbAverage[1]+rgbAverage[2])/3 ;
 
 // ----------------------- black area noise -----------------------------------
     colorRgb = 0; pixQuantity = 0;
@@ -167,31 +198,7 @@ void TVideoWidget::singleFrameTest()
         colorRgb += ((rgb[0] + rgb[1] + rgb[2])/3); pixQuantity++ ;
       }
     }
-    currentValue[2] = colorRgb/pixQuantity ;
-    currentValue[2]= (int)(currentValue[2]*100.0)/100.0;
-
- // -------------------------- save to file -----------------------------------
-    //ofstream MyFile("value.txt");
-    //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
-    //MyFile.close();
-
- // -------------------------- read from file ---------------------------------
-    std::ifstream MyReadFile("value.txt");
-    int ReadValue;
-    int i=0;
-    while(MyReadFile >> ReadValue){
-      refrenceValue[i]=ReadValue; i++;
-    }
-    MyReadFile.close();
-
- // --------------------- difference percentage - error -----------------------
-    singleMeasured[0] = abs((( currentValue[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
-    singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
-    singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
-
-    singleMeasured[0]= (int)(singleMeasured[0]*100.0)/100.0;
-    singleMeasured[1]= (int)(singleMeasured[1]*100.0)/100.0;
-    singleMeasured[2]= (int)(singleMeasured[2]*100.0)/100.0;
+    singleMeasured[2] = colorRgb/pixQuantity ;
 
 }
 
@@ -204,6 +211,16 @@ void TVideoWidget::saveReportTest()
 {
 
   printf(" saveReportTest \n " );
+
+
+
+
+// -------------------------- save to file -----------------------------------
+      //ofstream MyFile("value.txt");
+      //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
+      //MyFile.close();
+
+
 
 
 
