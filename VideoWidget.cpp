@@ -201,6 +201,12 @@ void TVideoWidget::singleFrameTest()
     }
     singleMeasured[2] = colorRgb/pixQuantity ;
 
+
+
+    singleMeasured[0]= (int)(singleMeasured[0]*100.0)/100.0;
+    singleMeasured[1]= (int)(singleMeasured[1]*100.0)/100.0;
+    singleMeasured[2]= (int)(singleMeasured[2]*100.0)/100.0;
+
 }
 
 
