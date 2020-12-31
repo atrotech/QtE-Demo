@@ -214,19 +214,10 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 
-  printf(" saveReportTest \n " );
-
-
-
-
 // -------------------------- save to file -----------------------------------
-      //ofstream MyFile("value.txt");
-      //MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
-      //MyFile.close();
+    ofstream MyFile("value.txt");
+    MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
+    MyFile.close();
 
 
-
-
-
-  QApplication::quit();
 }
