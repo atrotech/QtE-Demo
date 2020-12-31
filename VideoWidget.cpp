@@ -83,6 +83,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest(){
   singleFrameTest();
+
+
+
+
 }
 
 
@@ -180,7 +184,7 @@ void TVideoWidget::singleFrameTest()
     }
     MyReadFile.close();
 
- // --------------------- difference percentage -------------------------------
+ // --------------------- difference percentage - error -----------------------
     singleMeasured[0] = abs((( currentValue[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
     singleMeasured[1] = abs((( currentValue[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
     singleMeasured[2] = abs((( currentValue[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
