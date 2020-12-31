@@ -95,10 +95,6 @@ void TVideoWidget::videoTest()
   totalMeasured[1]  /= 500;
   totalMeasured[2]  /= 500;
 
-  totalMeasured[0]= round(totalMeasured[0],2);
-  totalMeasured[1]= round(totalMeasured[0],2);
-  totalMeasured[2]= round(totalMeasured[0],2);
-
 // -------------------------- read from file ----------------------------------
      std::ifstream MyReadFile("value.txt");
      int ReadValue;
