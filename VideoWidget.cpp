@@ -97,7 +97,7 @@ void TVideoWidget::videoTest()
 
 // -------------------------- read from file ----------------------------------
   std::ifstream MyReadFile("value.txt");
-  int ReadValue;
+  float ReadValue;
   int i=0;
   while(MyReadFile >> ReadValue){
     refrenceValue[i]=ReadValue; i++;
