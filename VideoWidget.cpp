@@ -96,18 +96,23 @@ void TVideoWidget::videoTest()
   totalMeasured[2]  /= 500;
 
 // -------------------------- read from file ----------------------------------
-     std::ifstream MyReadFile("value.txt");
-     int ReadValue;
-     int i=0;
-     while(MyReadFile >> ReadValue){
-       refrenceValue[i]=ReadValue; i++;
-     }
-     MyReadFile.close();
+  std::ifstream MyReadFile("value.txt");
+  int ReadValue;
+  int i=0;
+  while(MyReadFile >> ReadValue){
+    refrenceValue[i]=ReadValue; i++;
+  }
+  MyReadFile.close();
 
 // --------------------- difference percentage - error ------------------------
-     measuredError[0] = abs((( totalMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
-     measuredError[1] = abs((( totalMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
-     measuredError[2] = abs((( totalMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
+  measuredError[0] = abs((( totalMeasured[0] - refrenceValue[0] )/ refrenceValue[0] )*100);
+  measuredError[1] = abs((( totalMeasured[1] - refrenceValue[1] )/ refrenceValue[1] )*100);
+  measuredError[2] = abs((( totalMeasured[2] - refrenceValue[2] )/ refrenceValue[2] )*100);
+
+  measuredError[0]= (int)(measuredError[0]*100.0)/100.0;
+  measuredError[1]= (int)(measuredError[1]*100.0)/100.0;
+  measuredError[2]= (int)(measuredError[2]*100.0)/100.0;
+
 
 }
 
