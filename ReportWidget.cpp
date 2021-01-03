@@ -41,16 +41,16 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);
      p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);
 
-     p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, playImg);
-     p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, saveImg);
+     p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, upImg);
+     p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, downImg);
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, flashImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
 
 
      p.setPen(Qt::black);
-     p.setFont(QFont("Arial", 24));
+     p.setFont(QFont("Arial", 40));
 
-     p.drawPixmap( width()/9 , height()/8 , tableImg);
+     p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg([101010101010));
 
 }
