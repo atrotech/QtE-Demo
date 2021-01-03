@@ -4,6 +4,7 @@
 #include <QtCore/QtGlobal>
 #include <QtWidgets>
 #include "VideoWidget.h"
+#include "ReportWidget.h"
 
 #include <sys/time.h>
 #include "lib/gpio.h"
@@ -25,7 +26,7 @@ private:
     void paintEvent(QPaintEvent *);
     char CheckButtons();
     char PushedButton();
-    
+
 private:
     QTimer* mpKeepAliveTimer;
     QPixmap FrameMap;
@@ -38,6 +39,7 @@ private:
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
 
     TVideoWidget *VideoWindow = new TVideoWidget(0);
+    TReportWidget *ReportWindow = new TReportWidget(0);
 
     char ActiveWindow = 0;
 

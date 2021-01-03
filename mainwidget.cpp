@@ -36,6 +36,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonD_pin,GPIO_IN);
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
+    ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
 
 
     mpKeepAliveTimer = new QTimer();
@@ -129,6 +130,10 @@ char TMainWidget::CheckButtons()
             break;
             case 3:
             ActiveWindow = 3;
+            ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
+            ReportWindow->showFullScreen();
+            ReportWindow->setGeometry(0,0,width(),height());
+            ReportWindow->show();
             break;
             case 4:
             QApplication::quit();
