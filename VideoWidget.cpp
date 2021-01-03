@@ -1,6 +1,5 @@
 #include "VideoWidget.h"
 
-
 using namespace cv;
 using namespace std;
 
@@ -9,9 +8,6 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 {
 
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
-
-
-
 
 
     mpKeepAliveTimer = new QTimer();
@@ -24,7 +20,6 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 void TVideoWidget::onKeepAlive() {
-
     update();
 }
 
@@ -39,7 +34,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     if(Button==3){Button=0;saveReportTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
-
 
 
      p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
@@ -113,9 +107,7 @@ void TVideoWidget::videoTest()
   measuredError[1]= (int)(measuredError[1]*100.0)/100.0;
   measuredError[2]= (int)(measuredError[2]*100.0)/100.0;
 
-
 }
-
 
 
 
@@ -219,6 +211,5 @@ void TVideoWidget::saveReportTest()
     ofstream MyFile("value.txt");
     MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
     MyFile.close();
-
 
 }
