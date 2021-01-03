@@ -47,6 +47,7 @@ private:
     QPixmap returnImg = QPixmap(":/img/return.png");
     QPixmap upImg = QPixmap(":/img/up.png");
     QPixmap downImg = QPixmap(":/img/down.png");
+    QPixmap tapImg = QPixmap(":/img/tap.png");
 
 
 

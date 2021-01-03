@@ -43,7 +43,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
      p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, upImg);
      p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, downImg);
-     p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, flashImg);
+     p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, tapImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
 
