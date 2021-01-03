@@ -31,6 +31,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;videoTest();}
+    if(Button==2){Button=0;saveReportTest();}
     if(Button==3){Button=0;saveReportTest();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
@@ -208,8 +209,8 @@ void TVideoWidget::saveReportTest()
 {
 
 // -------------------------- save to file -----------------------------------
-    ofstream MyFile("value.txt");
-    MyFile << singleMeasured[0] << "\n" << singleMeasured[1] << "\n" << singleMeasured[2] << "\n" ;
+    ofstream MyFile("reportValue.txt");
+    MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
     MyFile.close();
 
 }
