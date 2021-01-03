@@ -51,6 +51,6 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setPen(Qt::black);
      p.setFont(QFont("Arial", 40));
 
-     p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg([101010101010));
+     p.drawText( width()/6 , height()/3+10 ,  QString(" report ");
 
 }
