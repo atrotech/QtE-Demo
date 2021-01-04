@@ -206,7 +206,6 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
-    InputFrame
     time_t now = time(0); tm *ltm = localtime(&now);      // https://www.isip.piconepress.com/courses/temple/ece_3822/resources/tutorials/cpp/cpp_date_time.pdf
     char testTime[30];
     sprintf (testTime, "reports/%d-%d-%d-%d:%d:%d.csv", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
