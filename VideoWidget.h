@@ -20,6 +20,7 @@
 
 #include <cmath>
 
+
 using namespace cv;
 
 class TVideoWidget : public QWidget

@@ -204,13 +204,11 @@ void TVideoWidget::singleFrameTest()
 
 
 
-
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
     ofstream MyFile("reportValue.txt");
-    MyFile.open ("reportValue.txt", std::ofstream::out | std::ofstream::app);
-    MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
+    MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" << FrameMap ;
     MyFile.close();
 
 }
