@@ -208,6 +208,10 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
+    time_t now = time(0);
+    char* dateTime = ctime(&now);
+    printf(" dateTime: %d ", dateTime);
+
     ofstream MyFile("reportValue.txt");
     MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
     MyFile.close();
