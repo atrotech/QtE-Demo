@@ -207,7 +207,7 @@ void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
     time_t now = time(0); tm *ltm = localtime(&now);
-    printf(" mon: %d ", ltm->tm_mon );
+    printf(" Date & Time : %d %d %d %d %d %d \n ", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 1+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec );
 
     ofstream MyFile("reportValue.txt");
     MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
