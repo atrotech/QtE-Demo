@@ -206,12 +206,14 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
-    string timee;
     time_t now = time(0); tm *ltm = localtime(&now);
-    sprintf(timee, "%d-%d-%d-%d-%d-%d.txt", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec );
+    char buffer [50];
+    sprintf (buffer, "%d %d %d %d %d %d", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
+    printf ("%s\n",buffer);
 
 
-    ofstream MyFile(timee);
+
+    ofstream MyFile("reportValue.txt");
     MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
     MyFile.close();
 
