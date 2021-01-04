@@ -206,10 +206,15 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
-    time_t now = time(0); tm *ltm = localtime(&now);char testTime[30];
-    sprintf (testTime, "%d-%d-%d-%d:%d:%d.txt", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
+    InputFrame
+    time_t now = time(0); tm *ltm = localtime(&now);
+    char testTime[30];
+    sprintf (testTime, "reports/%d-%d-%d-%d:%d:%d.csv", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
     ofstream MyFile(testTime);
-    MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n" << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n" << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n" ;
+    MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n";
+    MyFile << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n";
+    MyFile << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n";
+    MyFile << InputFrame.data;
     MyFile.close();
 
 }
