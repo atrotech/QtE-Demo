@@ -1,14 +1,14 @@
 #include "VideoWidget.h"
 
+
+
 using namespace cv;
 using namespace std;
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
     QWidget(parent)
 {
-
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
-
 
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
@@ -199,6 +199,7 @@ void TVideoWidget::singleFrameTest()
     singleMeasured[2]= (int)(singleMeasured[2]*100.0)/100.0;
 
 }
+
 
 
 
