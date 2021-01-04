@@ -206,6 +206,7 @@ void TVideoWidget::singleFrameTest()
 void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
+    char timeee;
     time_t now = time(0); tm *ltm = localtime(&now);
     sprintf(timeee, "%d-%d-%d-%d-%d-%d.txt", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec );
     printf("%s\n", timeee );
