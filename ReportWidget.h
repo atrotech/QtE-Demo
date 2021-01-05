@@ -13,7 +13,6 @@
 
 #include "lib/gpio.h"
 #include "lib/common.h"
-#include "lib/dirent.h"
 
 #include <iostream>
 #include <fstream>
