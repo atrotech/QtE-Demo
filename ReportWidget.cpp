@@ -65,7 +65,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
      vector<char *> files;
      if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr)
      {
-       diread = readdir(dir)
+       diread = readdir(dir);
        files.push_back(diread->d_name);
        closedir (dir);
      }
