@@ -53,4 +53,10 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
      p.drawText( width()/6 , height()/3+10 ,  QString(" report "));
 
+     string path = "/reports";
+     for (const auto & entry : fs::directory_iterator(path))
+     {
+       printf(" %s \n", entry.path() );
+     }
+
 }
