@@ -55,18 +55,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     std::vector<std::string> get_directories(const std::string& s)
-     {
-       std::vector<std::string> r;
-       for(auto& p : std::filesystem::recursive_directory_iterator(s)){
-         if (p.is_directory())
-         r.push_back(p.path().string());
-       }
-       return r;
-       printf("%s\n", r);
-     }
-
-
+     
 
 
 }
