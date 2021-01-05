@@ -13,11 +13,13 @@
 
 #include "lib/gpio.h"
 #include "lib/common.h"
+#include "lib/dirent.h"
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cmath>
+
 
 
 using namespace cv;

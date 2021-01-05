@@ -55,8 +55,24 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     char command[50] = "reports/ls -l";
-     system(command);
+     void list_dir(const char *path)
+     {
+       struct dirent *entry;
+       DIR *dir = opendir(path);
+
+       if (dir == NULL) {
+          return;
+       }
+       while ((entry = readdir(dir)) != NULL) {
+       cout << entry->d_name << endl;
+       }
+       closedir(dir);
+     }
+
+
+     list_dir("/reports");
+
+
 
 
 }
