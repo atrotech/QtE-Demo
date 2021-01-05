@@ -55,22 +55,16 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     void list_dir(const char *path)
+     std::vector<std::string> get_directories(const std::string& s)
      {
-       struct dirent *entry;
-       DIR *dir = opendir(path);
-
-       if (dir == NULL) {
-          return;
+       std::vector<std::string> r;
+       for(auto& p : std::filesystem::recursive_directory_iterator(s)){
+         if (p.is_directory())
+         r.push_back(p.path().string());
        }
-       while ((entry = readdir(dir)) != NULL) {
-       cout << entry->d_name << endl;
-       }
-       closedir(dir);
+       return r;
+       printf("%s\n", r);
      }
-
-
-     list_dir("/reports");
 
 
 
