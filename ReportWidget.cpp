@@ -3,6 +3,7 @@
 using namespace cv;
 using namespace std;
 
+
 TReportWidget::TReportWidget(QWidget *parent) :
     QWidget(parent)
 {
@@ -55,7 +56,32 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     
+
+
+     using std::cout; using std::cin;
+     using std::endl; using std::vector;
+
+     DIR *dir; struct dirent *diread;
+     vector<char *> files;
+     if ((dir = opendir("/")) != nullptr) {
+       while ((diread = readdir(dir)) != nullptr) {
+         files.push_back(diread->d_name);
+       }
+       closedir (dir);
+     }
+     else
+     {
+       perror ("opendir");
+       return EXIT_FAILURE;
+     }
+
+    for (auto file : files) cout << file << "| ";
+    cout << endl;
+
+    return EXIT_SUCCESS;
+
+
+
 
 
 }
