@@ -54,6 +54,9 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.drawText( width()/6 , height()/3+10 ,  QString(" report "));
 
 
-     
+
+     char command[50] = "ls -l";
+     system(command);
+
 
 }
