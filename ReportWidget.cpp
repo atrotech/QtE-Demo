@@ -55,7 +55,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     char command[50] = "ls -l";
+     char command[50] = "reports/ls -l";
      system(command);
 
 
