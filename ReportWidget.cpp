@@ -63,7 +63,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
      DIR *dir; struct dirent *diread;
      vector<char *> files;
-     if ((dir = opendir("/")) != nullptr) {
+     if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
        while ((diread = readdir(dir)) != nullptr) {
          files.push_back(diread->d_name);
        }
@@ -73,7 +73,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
      {
        perror ("opendir");
      }
-    for (auto file : files) cout << file << "| ";
+    for (auto file : files) cout << file << "\n";
     cout << endl;
 
 
