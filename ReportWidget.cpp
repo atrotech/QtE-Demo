@@ -53,6 +53,8 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
      p.drawText( width()/6 , height()/3+10 ,  QString(" report "));
 
+
+     namespace fs = std::filesystem;
      string path = "/reports";
      for (const auto & entry : fs::directory_iterator(path))
      {
