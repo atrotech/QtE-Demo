@@ -55,7 +55,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
      namespace fs = std::filesystem;
-     string path = "/reports";
+     string path = "/reports/";
      for (const auto & entry : fs::directory_iterator(path))
      {
        printf(" %s \n", entry.path() );
