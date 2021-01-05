@@ -73,12 +73,8 @@ void TReportWidget::paintEvent(QPaintEvent *)
      {
        perror ("opendir");
      }
-
     for (auto file : files) cout << file << "| ";
     cout << endl;
-
-    return EXIT_SUCCESS;
-
 
 
 
