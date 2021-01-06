@@ -59,7 +59,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-void TVideoWidget::showReports()
+void TReportWidget::showReports()
 {
   using std::cout; using std::cin;
   using std::endl; using std::vector;
