@@ -52,5 +52,8 @@ private:
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
 
+    vector<char *> files;
+    unsigned char SelectedIndex = 0;
+
 
 };

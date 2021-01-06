@@ -3,8 +3,7 @@
 using namespace cv;
 using namespace std;
 
-using std::cout; using std::cin;
-using std::endl; using std::vector;
+using std::vector;
 
 
 TReportWidget::TReportWidget(QWidget *parent) :
@@ -18,6 +17,16 @@ TReportWidget::TReportWidget(QWidget *parent) :
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
+
+    DIR *dir; struct dirent *diread;
+
+    if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
+      while ((diread = readdir(dir)) != nullptr) {
+        files.push_back(diread->d_name);
+      }
+      closedir (dir);
+    }
+
 
 }
 
@@ -34,8 +43,8 @@ void TReportWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
-    if(Button==1){Button=0;}
-    if(Button==3){Button=0;}
+    if(Button==1){Button=0;SelectedIndex--;}
+    if(Button==2){Button=0;SelectedIndex++;}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -54,19 +63,13 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setFont(QFont("Arial", 25));
 
 
-    DIR *dir; struct dirent *diread;
-    vector<char *> files;
-    if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
-      while ((diread = readdir(dir)) != nullptr) {
-        files.push_back(diread->d_name);
-      }
-      closedir (dir);
-    }
-    int i = 10;
+
+    int i = 0;
     for (auto file : files)
     {
-      p.drawText(width()/6, height()/4+i, QString(file));
-      i+=50;
+      if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
+      p.drawText(width()/6, (height()/4)+(i*50)+10, QString(file));
+      i+=1;
     }
 
 
