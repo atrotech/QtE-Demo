@@ -63,10 +63,10 @@ void TReportWidget::paintEvent(QPaintEvent *)
     for (auto file : files)
     {
       p.setPen(Qt::black);
-      p.setFont(QFont("Arial", 30));
+      p.setFont(QFont("Arial", 25));
 
       p.drawText(width()/6, height()/3+i, QString(file));
-      i+=20;
+      i+=50;
     }
 
 
