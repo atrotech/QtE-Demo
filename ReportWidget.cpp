@@ -3,6 +3,9 @@
 using namespace cv;
 using namespace std;
 
+using std::cout; using std::cin;
+using std::endl; using std::vector;
+
 
 TReportWidget::TReportWidget(QWidget *parent) :
     QWidget(parent)
@@ -32,7 +35,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;}
-    if(Button==3){Button=0;showReports();}
+    if(Button==3){Button=0;}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -53,28 +56,15 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setFont(QFont("Arial", 40));
 
 
-
-
-
-
-
-
-void TReportWidget::showReports()
-{
-  using std::cout; using std::cin;
-  using std::endl; using std::vector;
-
-  DIR *dir; struct dirent *diread;
-  vector<char *> files;
-  if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
-    while ((diread = readdir(dir)) != nullptr) {
-      files.push_back(diread->d_name);
+    DIR *dir; struct dirent *diread;
+    vector<char *> files;
+    if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
+      while ((diread = readdir(dir)) != nullptr) {
+        files.push_back(diread->d_name);
+      }
+      closedir (dir);
     }
-    closedir (dir);
-  }
-  for (auto file : files) p.drawText(width()/6, height()/3+10, QString(file));
-
-}
+    for (auto file : files) p.drawText(width()/6, height()/3+10, QString(file));
 
 
 
