@@ -69,5 +69,4 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-
 }
