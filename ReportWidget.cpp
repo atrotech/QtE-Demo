@@ -72,10 +72,7 @@ void TReportWidget::showReports()
     }
     closedir (dir);
   }
-  for (auto file : files)
-  {
-    p.drawText(width()/6, height()/3+10, QString(file));
-  }
+  for (auto file : files) p.drawText(width()/6, height()/3+10, QString(file));
 
 }
 
