@@ -22,7 +22,7 @@
 #include <vector>
 
 
-
+using std::vector;
 using namespace cv;
 
 class TReportWidget : public QWidget
