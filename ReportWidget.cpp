@@ -32,7 +32,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
     if(Button==1){Button=0;}
-    if(Button==3){Button=0;}
+    if(Button==3){Button=0;showReports();}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -58,19 +58,24 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-     using std::cout; using std::cin;
-     using std::endl; using std::vector;
 
-     DIR *dir; struct dirent *diread;
-     vector<char *> files;
-     if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
-       while ((diread = readdir(dir)) != nullptr) {
-         files.push_back(diread->d_name);
-       }
-       closedir (dir);
-     }
-    for (auto file : files) cout << file << "\n";
-    cout << endl;
+void TVideoWidget::showReports()
+{
+  using std::cout; using std::cin;
+  using std::endl; using std::vector;
+
+  DIR *dir; struct dirent *diread;
+  vector<char *> files;
+  if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
+    while ((diread = readdir(dir)) != nullptr) {
+      files.push_back(diread->d_name);
+    }
+    closedir (dir);
+  }
+ for (auto file : files) cout << file << "\n";
+ cout << endl;
+
+}
 
 
 
