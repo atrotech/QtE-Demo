@@ -52,8 +52,7 @@ private:
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
 
-
-
+    int i = 10;
 
 
 };

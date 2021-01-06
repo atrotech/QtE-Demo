@@ -50,6 +50,9 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, tapImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
+     p.setPen(Qt::black);
+     p.setFont(QFont("Arial", 25));
+
 
     DIR *dir; struct dirent *diread;
     vector<char *> files;
@@ -59,13 +62,9 @@ void TReportWidget::paintEvent(QPaintEvent *)
       }
       closedir (dir);
     }
-    int i=10;
     for (auto file : files)
     {
-      p.setPen(Qt::black);
-      p.setFont(QFont("Arial", 25));
-
-      p.drawText(width()/6, height()/3+i, QString(file));
+      p.drawText(width()/6, height()/4+i, QString(file));
       i+=50;
     }
 
