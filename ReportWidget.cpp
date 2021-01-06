@@ -52,7 +52,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setPen(Qt::black);
      p.setFont(QFont("Arial", 40));
 
-     p.drawText( width()/6 , height()/3+10 ,  QString(" report "));
+
 
 
 
@@ -72,8 +72,7 @@ void TVideoWidget::showReports()
     }
     closedir (dir);
   }
- for (auto file : files) cout << file << "\n";
- cout << endl;
+ for (auto file : files) p.drawText(width()/6, height()/3+10, QString(file));
 
 }
 
