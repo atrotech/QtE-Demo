@@ -62,6 +62,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
       }
       closedir (dir);
     }
+    int i = 10;
     for (auto file : files)
     {
       p.drawText(width()/6, height()/4+i, QString(file));
