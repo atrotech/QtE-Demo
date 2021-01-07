@@ -28,7 +28,7 @@ void updateFileList(){
 
   if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
     while ((diread = readdir(dir)) != nullptr) {
-      if(diread->d_type == isFile)printf("%s \n",diread->d_name);
+      if(diread->d_type == DT_REG)printf("%s \n",diread->d_name);
     }
     closedir (dir);
   }
