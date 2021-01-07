@@ -26,14 +26,16 @@ TReportWidget::TReportWidget(QWidget *parent) :
 void TReportWidget::updateFileList(){
   DIR *dir; struct dirent *diread;
   filesCount = 0;
-  if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
-    while ((diread = readdir(dir)) != nullptr) {
-      if(diread->d_type == DT_REG)sprintf(files[filesCount],"%s",diread->d_name);
+  if ((dir = opendir("/home/pi/QtE-Demo/reports")) == nullptr) {closedir (dir);return;}
+  while ((diread = readdir(dir)) != nullptr) {
+    if(diread->d_type == DT_REG)
+    {
+      sprintf(files[filesCount],"%s",diread->d_name);
+      printf("%s\n",diread->d_name);
       filesCount++;
     }
-    closedir (dir);
   }
-
+  closedir (dir);
 }
 
 
