@@ -28,7 +28,7 @@ void updateFileList(){
 
   if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
     while ((diread = readdir(dir)) != nullptr) {
-      files.push_back(diread->d_name);
+      if(diread->d_type == isFile)printf("%s \n",diread->d_name);
     }
     closedir (dir);
   }
@@ -69,14 +69,14 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-    int i = 0;
+    /*int i = 0;
     for (auto file : files)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      p.drawText(width()/6, (height()/4)+(i*50)+10, QString(file));
+      //p.drawText(width()/6, (height()/4)+(i*50)+10, QString(file));
       i+=1;
     }
-
+*/
 
 
 
