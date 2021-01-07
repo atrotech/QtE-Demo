@@ -34,7 +34,7 @@ public:
     ~TReportWidget() {}
     int Button = 0;
 
-    vector<char *> files;
+    char files[20][15];
     void updateFileList();
 private slots:
     void onKeepAlive();

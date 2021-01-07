@@ -25,10 +25,10 @@ TReportWidget::TReportWidget(QWidget *parent) :
 
 void TReportWidget::updateFileList(){
   DIR *dir; struct dirent *diread;
-
+  char i=0;
   if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
     while ((diread = readdir(dir)) != nullptr) {
-      if(diread->d_type == DT_REG)printf("%s \n",diread->d_name);
+      if(diread->d_type == DT_REG)sprintf(files[i++],"%s",diread->d_name);
     }
     closedir (dir);
   }
@@ -69,14 +69,13 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-    /*int i = 0;
-    for (auto file : files)
+    int i = 0;
+    for (int i=0;i<10;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      //p.drawText(width()/6, (height()/4)+(i*50)+10, QString(file));
-      i+=1;
+      p.drawText(width()/6, (height()/4)+(i*50)+10, QString(files[i++]));
     }
-*/
+
 
 
 
