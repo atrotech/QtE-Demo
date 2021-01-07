@@ -23,7 +23,7 @@ TReportWidget::TReportWidget(QWidget *parent) :
 
 }
 
-void updateFileList(){
+void TReportWidget::updateFileList(){
   DIR *dir; struct dirent *diread;
 
   if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
