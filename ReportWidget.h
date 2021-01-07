@@ -33,7 +33,8 @@ public:
     explicit TReportWidget(QWidget *parent);
     ~TReportWidget() {}
     int Button = 0;
-    Mat InputFrame;
+
+    vector<char *> files;
     void updateFileList();
 private slots:
     void onKeepAlive();
@@ -52,7 +53,7 @@ private:
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
 
-    vector<char *> files;
+
     unsigned char SelectedIndex = 0;
 
 
