@@ -35,6 +35,7 @@ public:
     int Button = 0;
 
     char files[20][15];
+    int filesCount = 0;
     void updateFileList();
 private slots:
     void onKeepAlive();
