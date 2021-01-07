@@ -18,15 +18,20 @@ TReportWidget::TReportWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
 
-    DIR *dir; struct dirent *diread;
 
-    if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
-      while ((diread = readdir(dir)) != nullptr) {
-        files.push_back(diread->d_name);
-      }
-      closedir (dir);
+
+
+}
+
+void updateFileList(){
+  DIR *dir; struct dirent *diread;
+
+  if ((dir = opendir("/home/pi/QtE-Demo/reports")) != nullptr) {
+    while ((diread = readdir(dir)) != nullptr) {
+      files.push_back(diread->d_name);
     }
-
+    closedir (dir);
+  }
 
 }
 

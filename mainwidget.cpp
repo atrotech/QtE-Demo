@@ -134,6 +134,7 @@ char TMainWidget::CheckButtons()
             ReportWindow->showFullScreen();
             ReportWindow->setGeometry(0,0,width(),height());
             ReportWindow->show();
+            ReportWindow->updateFileList();
             break;
             case 4:
             QApplication::quit();

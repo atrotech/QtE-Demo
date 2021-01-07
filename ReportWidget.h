@@ -34,7 +34,7 @@ public:
     ~TReportWidget() {}
     int Button = 0;
     Mat InputFrame;
-
+    void updateFileList();
 private slots:
     void onKeepAlive();
 private:
