@@ -81,6 +81,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       int h = 200;
       p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(130,230,130)));
       p.drawText( width()/2-(w/2)+20 , height()/2, QString(MessageString));
+      p.drawText( width()/2-(w/2)+20 , height()/2+30, QString("ذخیره شد"));
 
       t++;
       if(t>40)
@@ -231,7 +232,7 @@ void TVideoWidget::saveReportTest()
     MyFile << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n";
     MyFile << InputFrame.data;
     MyFile.close();
-    sprintf(MessageString,"ذخیره شد %s",testTime);
+    sprintf(MessageString,"%s",testTime);
 
 
 }
