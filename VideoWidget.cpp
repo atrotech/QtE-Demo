@@ -80,8 +80,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       int w = 450;
       int h = 150;
       p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(130,230,130)));
-      p.drawText( width()/2-(w/2)+70 , height()/2, QString(MessageString));
-      p.drawText( width()/2-(w/2)+150 , height()/2+35, QString("ذخیره شد"));
+      p.drawText( width()/2-(w/2)+70 , height()/2-10, QString(MessageString));
+      p.drawText( width()/2-(w/2)+150 , height()/2+30, QString("ذخیره شد"));
 
       t++;
       if(t>30)
