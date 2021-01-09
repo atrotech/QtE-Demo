@@ -75,15 +75,14 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2-20 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/1.3-15  , height()/1.4 , processImg);
 
+
     if(MessageString[0]!=0)
     {
-      int w = 450;
-      int h = 150;
+      int w, h = 450, 150; t++;
       p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(130,230,130)));
       p.drawText( width()/2-(w/2)+70 , height()/2-10, QString(MessageString));
       p.drawText( width()/2-(w/2)+150 , height()/2+30, QString("ذخیره شد"));
 
-      t++;
       if(t>30)
       {
         MessageString[0]=0;
@@ -91,7 +90,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       }
     }
 
+
 }
+
+
 
 
 void TVideoWidget::videoTest()
