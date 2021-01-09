@@ -15,6 +15,8 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
 
+    MessageString[0]=0;
+
 }
 
 
