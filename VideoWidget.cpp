@@ -83,7 +83,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       p.drawText( width()/2-(w/2)+20 , height()/2, QString(MessageString));
 
       t++;
-      if(t>100)
+      if(t>40)
       {
         MessageString[0]=0;
         t=0;
@@ -224,14 +224,14 @@ void TVideoWidget::saveReportTest()
 // -------------------------- save to file -----------------------------------
     time_t now = time(0); tm *ltm = localtime(&now);      // https://www.isip.piconepress.com/courses/temple/ece_3822/resources/tutorials/cpp/cpp_date_time.pdf
     char testTime[30];
-    sprintf (testTime, "reports/%d-%d-%d-%d:%d:%d.csv", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
+    sprintf (testTime, "%d-%d-%d-%d:%d:%d.csv", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
     ofstream MyFile(testTime);
     MyFile << refrenceValue[0] << "," << totalMeasured[0] << "," << measuredError[0] << "\n";
     MyFile << refrenceValue[1] << "," << totalMeasured[1] << "," << measuredError[1] << "\n";
     MyFile << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n";
     MyFile << InputFrame.data;
     MyFile.close();
-    sprintf(MessageString,"MSG: %s",testTime);
+    sprintf(MessageString,"ذخیره شد %s",testTime);
 
 
 }
