@@ -77,8 +77,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     if(MessageString[0]!=0)
     {
-      int w = 200;
-      int h = 400;
+      int w = 400;
+      int h = 200;
       p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(100,100,255)));
       p.drawText( width()/2-(w/2)+20 , height()/2-h, QString(MessageString));
 
