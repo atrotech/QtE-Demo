@@ -39,7 +39,7 @@ void TReportWidget::updateFileList(){
   }
 
   closedir (dir);
-  for (int i=0;i<filesCount;i++){printf("%s \n",files[i]);}
+
 }
 
 
@@ -80,8 +80,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     for (int i=0;i<filesCount;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      //printf(" %d :  %s \n", i, files[i]);
-      //p.drawText(width()/6, (height()/4)+(i*50)+10, QString(str));
+      p.drawText(width()/6, (height()/4)+(i*50)+10, QString(files[i]));
     }
 
 
