@@ -79,8 +79,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     {
       int w = 200;
       int h = 400;
-      p.fillRect((width()/2)-(w/2)),(height()/2)-(h/2),w,h,QBrush(QColor(100,100,255)));
-      p.drawText((width()/2)-(w/2))+20 , (height()/2)-h, QString(MessageString));
+      p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(100,100,255)));
+      p.drawText( width()/2-(w/2)+20 , height()/2-h, QString(MessageString));
   }
 }
 
