@@ -17,7 +17,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 #include <cmath>
 #include <ctime>
 
@@ -64,6 +63,7 @@ private:
 
     char MessageString[40];
     MessageString[0]=0;
+
 
 
 };
