@@ -224,8 +224,8 @@ void TVideoWidget::saveReportTest()
 {
 // -------------------------- save to file -----------------------------------
     time_t now = time(0); tm *ltm = localtime(&now);      // https://www.isip.piconepress.com/courses/temple/ece_3822/resources/tutorials/cpp/cpp_date_time.pdf
-    char pathDir[30];
-    char fileName[20];
+    char pathDir[40];
+    char fileName[30];
     sprintf (fileName, "%d-%d-%d-%d:%d:%d.csv", 1900+ltm->tm_year, 1+ltm->tm_mon, ltm->tm_mday, 4+ltm->tm_hour, 1+ltm->tm_min, 1+ltm->tm_sec);
     sprintf (pathDir, "reports/%s", fileName);
     ofstream MyFile(pathDir);
