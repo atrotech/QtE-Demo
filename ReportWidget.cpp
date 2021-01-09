@@ -39,7 +39,7 @@ void TReportWidget::updateFileList(){
   }
 
   closedir (dir);
-  for (int i=0;i<filesCount;i++){printf("%s \n", i, files[i]);}
+  for (int i=0;i<filesCount;i++){printf("%s \n",files[i]);}
 }
 
 
