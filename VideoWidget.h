@@ -62,7 +62,8 @@ private:
     double totalMeasured[3]={0,0,0};
     float measuredError[3]={0,0,0};
 
-    char MessageString[40];MessageString[0]=0;
+    char MessageString[40];
+    MessageString[0]=0;
 
 
 };
