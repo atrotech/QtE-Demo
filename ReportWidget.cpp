@@ -74,7 +74,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
 
-
+    char str[20];
     int i = 0;
     for (int i=0;i<filesCount;i++)
     {
