@@ -79,8 +79,8 @@ void TReportWidget::paintEvent(QPaintEvent *)
     for (int i=0;i<filesCount;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      sprintf(str,"%s",files[i]);
-      p.drawText(width()/6, (height()/4)+(i*50)+10, QString(str));
+      printf("%s\n",files[i]);
+      //p.drawText(width()/6, (height()/4)+(i*50)+10, QString(str));
     }
 
 
