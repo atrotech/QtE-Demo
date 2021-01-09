@@ -83,7 +83,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       p.drawText( width()/2-(w/2)+20 , height()/2, QString(MessageString));
 
       t++;
-      if(t>300)
+      if(t>100)
       {
         MessageString[0]=0;
         t=0;
