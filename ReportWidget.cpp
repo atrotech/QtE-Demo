@@ -33,11 +33,13 @@ void TReportWidget::updateFileList(){
     if(diread->d_type == DT_REG)
     {
       sprintf(files[filesCount],"%s",diread->d_name);
+      printf("%s\n",files[filesCount]);
       filesCount++;
     }
   }
-  closedir (dir);
 
+  closedir (dir);
+  for (int i=0;i<filesCount;i++){printf("%s \n", i, files[i]);}
 }
 
 
@@ -75,11 +77,10 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
     char str[20];
-    int i = 0;
     for (int i=0;i<filesCount;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      printf(" %d :  %s \n", i, files[i]);
+      //printf(" %d :  %s \n", i, files[i]);
       //p.drawText(width()/6, (height()/4)+(i*50)+10, QString(str));
     }
 
