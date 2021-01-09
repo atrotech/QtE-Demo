@@ -34,8 +34,8 @@ void TReportWidget::updateFileList(){
     {
       sprintf(files[filesCount],"%s",diread->d_name);
       filesCount++;
+      printf("%s\n", files[filesCount] );
     }
-    printf("%s\n", diread );
   }
   closedir (dir);
 
