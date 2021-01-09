@@ -33,7 +33,6 @@ void TReportWidget::updateFileList(){
     if(diread->d_type == DT_REG)
     {
       sprintf(files[filesCount],"%s",diread->d_name);
-      printf("%s\n",files[filesCount]);
       filesCount++;
     }
   }
