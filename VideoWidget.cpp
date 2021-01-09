@@ -80,10 +80,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       int w = 400;
       int h = 200;
       p.fillRect( width()/2-(w/2), height()/2-(h/2),w,h,QBrush(QColor(100,200,255)));
-      p.drawText( width()/2-(w/2)+20 , height()/2-h, QString("MessageString"));
+      p.drawText( width()/2-(w/2)+20 , height()/2, QString("MessageString"));
 
       t++;
-      if(t>500)MessageString[0]=0;
+      if(t>50)MessageString[0]=0;
     }
 
 }
