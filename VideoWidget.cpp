@@ -73,6 +73,11 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2-20 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/1.3-15  , height()/1.4 , processImg);
 
+    if(MessageString[0]!=0)
+    {
+      p.fillRect((width()/2)-25,(height()/2)-50,50,100,QBrush(QColor(255,255,255)));
+      p.drawText( width()/2-20 , height()/1.3-10 , QString(MessageString));
+  }
 }
 
 
@@ -214,5 +219,6 @@ void TVideoWidget::saveReportTest()
     MyFile << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n";
     MyFile << InputFrame.data;
     MyFile.close();
+    sprintf(MessageString,"MSG: %s",testTime);
 
 }
