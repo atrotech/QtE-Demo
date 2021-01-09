@@ -214,5 +214,6 @@ void TVideoWidget::saveReportTest()
     MyFile << refrenceValue[2] << "," << totalMeasured[2] << "," << measuredError[2] << "\n";
     MyFile << InputFrame.data;
     MyFile.close();
+    p.drawText( width()/2-100 , height()/1.2 , QString(" %1 saved successfully  ").arg(testTime));
 
 }
