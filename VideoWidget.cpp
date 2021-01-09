@@ -215,10 +215,4 @@ void TVideoWidget::saveReportTest()
     MyFile << InputFrame.data;
     MyFile.close();
 
-
-    QPainter p(this);
-    p.setPen(Qt::black);
-    p.setFont(QFont("Arial", 24));
-    p.drawText( width()/2-100 , height()/1.2 , QString(" %1 saved successfully  ").arg(testTime));
-
 }
