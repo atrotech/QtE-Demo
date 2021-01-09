@@ -73,13 +73,13 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setFont(QFont("Arial", 25));
 
 
-    char str[20];
+
+
     int i = 0;
     for (int i=0;i<filesCount;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      sprintf(str,"%s",files[i]);
-      printf(" %s \n", str);
+      printf(str,"%s",files[i]);
       p.drawText(width()/6, (height()/4)+(i*50)+10, QString(str));
     }
 
