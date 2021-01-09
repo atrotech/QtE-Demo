@@ -34,7 +34,6 @@ void TReportWidget::updateFileList(){
     {
       sprintf(files[filesCount],"%s",diread->d_name);
       filesCount++;
-      printf(" %c \n", files[filesCount] );
     }
   }
   closedir (dir);
@@ -81,7 +80,6 @@ void TReportWidget::paintEvent(QPaintEvent *)
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
       p.drawText(width()/6, (height()/4)+(i*50)+10, QString(files[i++]));
     }
-
 
 
 
