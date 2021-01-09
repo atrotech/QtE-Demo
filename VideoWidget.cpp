@@ -84,7 +84,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       p.drawText( width()/2-(w/2)+20 , height()/2+30, QString("ذخیره شد"));
 
       t++;
-      if(t>40)
+      if(t>30)
       {
         MessageString[0]=0;
         t=0;
