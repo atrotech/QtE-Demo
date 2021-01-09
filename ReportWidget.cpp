@@ -24,6 +24,8 @@ TReportWidget::TReportWidget(QWidget *parent) :
 }
 
 void TReportWidget::updateFileList(){
+
+
   DIR *dir; struct dirent *diread;
   filesCount = 0;
   if ((dir = opendir("/home/pi/QtE-Demo/reports")) == nullptr) {closedir (dir);return;}
@@ -35,6 +37,7 @@ void TReportWidget::updateFileList(){
     }
   }
   closedir (dir);
+
 }
 
 
