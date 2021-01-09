@@ -229,4 +229,6 @@ void TVideoWidget::saveReportTest()
     MyFile.close();
     sprintf(MessageString,"MSG: %s",testTime);
 
+    printf(" %s \n", MessageString );
+
 }
