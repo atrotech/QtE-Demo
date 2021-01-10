@@ -56,24 +56,24 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawPixmap( width()/9 , height()/8 , tableImg);
 
-    p.drawText( width()/6 , height()/3+10 ,  QString(" %1 ").arg(measuredError[0]));
-    p.drawText( width()/3-40 , height()/3+10 ,  QString(" %1 ").arg(totalMeasured[0]));
-    p.drawText( width()/2+50 , height()/4 ,  QString(" %1 ").arg(refrenceValue[0]));
+    p.drawText( width()/6 , height()/4    ,  QString(" %1 ").arg(measuredError[0]));
+    p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg(totalMeasured[0]));
+    p.drawText( width()/2+60 , height()/4 ,  QString(" %1 ").arg(refrenceValue[0]));
     //p.drawPixmap( width()/1.3-15  , height()/3-35 , tickImg);
 
-    p.drawText( width()/6 , height()/2-20 , QString(" %1 ").arg(measuredError[1]));
-    p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(totalMeasured[1]));
-    p.drawText( width()/2+50 , height()/3 ,  QString(" %1 ").arg(refrenceValue[1]));
+    p.drawText( width()/6 , height()/3-10    , QString(" %1 ").arg(measuredError[1]));
+    p.drawText( width()/3+40 , height()/3-10 ,  QString(" %1 ").arg(totalMeasured[1]));
+    p.drawText( width()/2+60 , height()/3-10 ,  QString(" %1 ").arg(refrenceValue[1]));
     //p.drawPixmap( width()/1.3-15   , height()/2-50 , noneImg);
 
-    p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(measuredError[2]));
-    p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(totalMeasured[2]));
-    p.drawText( width()/2+50 , height()/3+50 ,  QString(" %1 ").arg(refrenceValue[2]));
+    p.drawText( width()/6 , height()/3+45    , QString(" %1 ").arg(measuredError[2]));
+    p.drawText( width()/3+40 , height()/3+45 ,  QString(" %1 ").arg(totalMeasured[2]));
+    p.drawText( width()/2+60 , height()/3+45 ,  QString(" %1 ").arg(refrenceValue[2]));
     //p.drawPixmap( width()/1.3-15  , height()/1.7-10 , cancelImg);
 
-    p.drawText( width()/6 , height()/1.3-10 , QString(" %1 ").arg("none"));
-    p.drawText( width()/3-40 , height()/1.3-10 , QString(" %1 ").arg("none"));
-    p.drawText( width()/2+50 , height()/2-20 , QString(" %1 ").arg("none"));
+    p.drawText( width()/6 , height()/2-20    , QString(" %1 ").arg("none"));
+    p.drawText( width()/3+40 , height()/2-20 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+60 , height()/2-20 , QString(" %1 ").arg("none"));
     //p.drawPixmap( width()/1.3-15  , height()/1.4 , processImg);
 
 
