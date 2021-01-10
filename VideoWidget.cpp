@@ -38,7 +38,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
-
      p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
      p.drawPixmap( width()-150 , 1 * SpaceHeight + HeightOffset, btnPush);
      p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);
@@ -48,7 +47,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, saveImg);
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, flashImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
-
 
 
     p.setPen(Qt::black);
@@ -76,19 +74,20 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2+60 , height()/2-20 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/2.4 , processImg);
 // ----------------------
-    p.drawText( width()/6 , height()/1.6    , QString(" %1 ").arg("none"));
-    p.drawText( width()/3+40 , height()/1.6 , QString(" %1 ").arg("none"));
-    p.drawText( width()/2+60 , height()/1.6 , QString(" %1 ").arg("none"));
+    p.drawText( width()/6 , height()/1.7    , QString(" %1 ").arg("none"));
+    p.drawText( width()/3+40 , height()/1.7 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+60 , height()/1.7 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.5 , tickImg);
 
-    p.drawText( width()/6 , height()/1.4    , QString(" %1 ").arg("none"));
-    p.drawText( width()/3+40 , height()/1.4  , QString(" %1 ").arg("none"));
-    p.drawText( width()/2+60 , height()/1.4  , QString(" %1 ").arg("none"));
-    p.drawPixmap( width()/15  , height()/1.4  , tickImg);
+    p.drawText( width()/6 , height()/1.5    , QString(" %1 ").arg("none"));
+    p.drawText( width()/3+40 , height()/1.5  , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+60 , height()/1.5  , QString(" %1 ").arg("none"));
+    p.drawPixmap( width()/15  , height()/1.5  , tickImg);
 // ----------------------
     p.drawText( width()/6 , height()/1.2    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+90 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.3 , tickImg);
 
 
