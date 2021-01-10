@@ -72,7 +72,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawText( width()/6 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawText( width()/3-40 , height()/1.3-10 , QString(" %1 ").arg("none"));
-    p.drawText( width()/2+50 , height()/2 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+50 , height()/2-20 , QString(" %1 ").arg("none"));
     //p.drawPixmap( width()/1.3-15  , height()/1.4 , processImg);
 
 
