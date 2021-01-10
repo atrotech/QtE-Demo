@@ -50,6 +50,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
 
+
     p.setPen(Qt::black);
     p.setFont(QFont("Arial", 18));
 
@@ -74,6 +75,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/3-40 , height()/1.3-10 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+50 , height()/2-20 , QString(" %1 ").arg("none"));
     //p.drawPixmap( width()/1.3-15  , height()/1.4 , processImg);
+
 
 
     if(MessageString[0]!=0)
