@@ -1,7 +1,6 @@
 #include "VideoWidget.h"
 
 
-
 using namespace cv;
 using namespace std;
 
@@ -18,6 +17,7 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
     MessageString[0]=0;
 
 }
+
 
 
 
