@@ -63,12 +63,12 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
     p.drawText( width()/6 , height()/2-20 , QString(" %1 ").arg(measuredError[1]));
     p.drawText( width()/3-40 , height()/2-20 ,  QString(" %1 ").arg(totalMeasured[1]));
-    p.drawText( width()/2+50 , height()/4+60 ,  QString(" %1 ").arg(refrenceValue[1]));
+    p.drawText( width()/2+50 , height()/3 ,  QString(" %1 ").arg(refrenceValue[1]));
     //p.drawPixmap( width()/1.3-15   , height()/2-50 , noneImg);
 
     p.drawText( width()/6 , height()/1.65 , QString(" %1 ").arg(measuredError[2]));
     p.drawText( width()/3-40 , height()/1.65 ,  QString(" %1 ").arg(totalMeasured[2]));
-    p.drawText( width()/2+50 , height()/3 ,  QString(" %1 ").arg(refrenceValue[2]));
+    p.drawText( width()/2+50 , height()/3+50 ,  QString(" %1 ").arg(refrenceValue[2]));
     //p.drawPixmap( width()/1.3-15  , height()/1.7-10 , cancelImg);
 
     p.drawText( width()/6 , height()/1.3-10 , QString(" %1 ").arg("none"));
