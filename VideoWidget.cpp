@@ -51,7 +51,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 
     p.setPen(Qt::black);
-    p.setFont(QFont("Arial", 24));
+    p.setFont(QFont("Arial", 18));
 
     p.drawPixmap( width()/9 , height()/8 , tableImg);
 
