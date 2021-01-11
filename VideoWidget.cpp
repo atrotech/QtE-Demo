@@ -125,9 +125,9 @@ void TVideoWidget::videoTest()
   StatusIcon5 = processImg;
   StatusIcon6 = processImg;
   StatusIcon7 = processImg;
-  
-  QPaintEvent->update();
-  QPaintEvent->TVideoWidget()->update();
+
+  update();
+  TVideoWidget()->update();
 
 
 // --------------------------- Total Measured ---------------------------------
