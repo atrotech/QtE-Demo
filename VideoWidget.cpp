@@ -125,7 +125,6 @@ void TVideoWidget::videoTest()
   StatusIcon5 = processImg;
   StatusIcon6 = processImg;
   StatusIcon7 = processImg;
-
   update();
 
 
@@ -159,6 +158,20 @@ void TVideoWidget::videoTest()
   measuredError[0]= (int)(measuredError[0]*100.0)/100.0;
   measuredError[1]= (int)(measuredError[1]*100.0)/100.0;
   measuredError[2]= (int)(measuredError[2]*100.0)/100.0;
+
+
+  if(measuredError[0]<5)StatusIcon1 = tickImg;
+  else StatusIcon1 = cancelImg;
+
+  if(measuredError[1]<5)StatusIcon2 = tickImg;
+  else StatusIcon2 = cancelImg;
+
+  if(measuredError[2]<5)StatusIcon3 = tickImg;
+  else StatusIcon3 = cancelImg;
+
+
+
+
 
 }
 
