@@ -108,7 +108,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       }
     }
 
-
 }
 
 
