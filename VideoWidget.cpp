@@ -26,7 +26,7 @@ void TVideoWidget::onKeepAlive() {
     update();
 }
 
-void TVideoWidget::paintEvent(QPaintEvent *)
+void TVideoWidget::paintEvent(QPaintEvent * parent)
 {
     QPainter p(this);
 
@@ -125,7 +125,8 @@ void TVideoWidget::videoTest()
   StatusIcon5 = processImg;
   StatusIcon6 = processImg;
   StatusIcon7 = processImg;
-  update();
+
+  parent->update();
 
 
 // --------------------------- Total Measured ---------------------------------
