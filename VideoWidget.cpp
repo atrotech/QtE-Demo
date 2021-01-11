@@ -126,9 +126,7 @@ void TVideoWidget::videoTest()
   StatusIcon6 = processImg;
   StatusIcon7 = processImg;
 
-  setUpdatesEnabled(true);
   update();
-  repaint();
 
 
 
