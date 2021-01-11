@@ -132,6 +132,7 @@ void TVideoWidget::videoTest()
   StatusIcon6 = processImg;
   StatusIcon7 = processImg;
   update();
+  repaint();
 // --------------------------- Total Measured ---------------------------------
 
   for (int x = 0; x<500; x++)
