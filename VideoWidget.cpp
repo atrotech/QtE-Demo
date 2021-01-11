@@ -1,8 +1,9 @@
 #include "VideoWidget.h"
 
-
 using namespace cv;
 using namespace std;
+
+
 
 TVideoWidget::TVideoWidget(QWidget *parent) :
     QWidget(parent)
@@ -91,7 +92,6 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawPixmap( width()/15  , height()/1.27 , StatusIcon7);
 
 
-
     if(MessageString[0]!=0)
     {
       int w = 450;
@@ -110,14 +110,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 
 
-
-
-
-
-
-
-
 }
+
 
 
 
@@ -133,8 +127,8 @@ void TVideoWidget::videoTest()
   StatusIcon7 = processImg;
   update();
   repaint();
+  
 // --------------------------- Total Measured ---------------------------------
-
   for (int x = 0; x<500; x++)
   {
     singleFrameTest();

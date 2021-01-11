@@ -1,31 +1,29 @@
 #include <QtCore/QtGlobal>
 #include <QtWidgets>
-
 #include <sys/time.h>
-
 #include <signal.h>
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/imgcodecs.hpp>
-
 #include "lib/gpio.h"
 #include "lib/common.h"
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cmath>
 #include <ctime>
 
-
 using namespace cv;
+
+
+
 
 class TVideoWidget : public QWidget
 {
-    Q_OBJECT
+
+  Q_OBJECT
 
 public:
     explicit TVideoWidget(QWidget *parent);
@@ -50,12 +48,10 @@ private:
     QPixmap flashImg = QPixmap(":/img/flash-disk.png");
     QPixmap playImg = QPixmap(":/img/play.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
-
     QPixmap cancelImg = QPixmap(":/img/cancel.png");
     QPixmap noneImg = QPixmap(":/img/none.png");
     QPixmap tickImg = QPixmap(":/img/tick.png");
     QPixmap processImg = QPixmap(":/img/process.png");
-
     QPixmap tableImg = QPixmap(":/img/table.png");
 
     QPixmap StatusIcon1 = QPixmap(noneImg);
@@ -66,7 +62,6 @@ private:
     QPixmap StatusIcon6 = QPixmap(noneImg);
     QPixmap StatusIcon7 = QPixmap(noneImg);
 
-
     float refrenceValue[3]={0,0,0};
     float singleMeasured[3]={0,0,0};
     double totalMeasured[3]={0,0,0};
@@ -74,7 +69,6 @@ private:
 
     char MessageString[40];
     int t = 0; // time for delay popup
-
 
 
 };
