@@ -57,38 +57,38 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/6 , height()/4    ,  QString(" %1 ").arg(measuredError[0]));
     p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg(totalMeasured[0]));
     p.drawText( width()/2+60 , height()/4 ,  QString(" %1 ").arg(refrenceValue[0]));
-    //p.drawPixmap( width()/15  , height()/4.8 , StatusIcon1);
+    p.drawPixmap( width()/15  , height()/4.8 , StatusIcon1);
 
     p.drawText( width()/6 , height()/3-10    ,  QString(" %1 ").arg(measuredError[1]));
     p.drawText( width()/3+40 , height()/3-10 ,  QString(" %1 ").arg(totalMeasured[1]));
     p.drawText( width()/2+60 , height()/3-10 ,  QString(" %1 ").arg(refrenceValue[1]));
-    //p.drawPixmap( width()/15  , height()/3.6 , StatusIcon2);
+    p.drawPixmap( width()/15  , height()/3.6 , StatusIcon2);
 
     p.drawText( width()/6 , height()/3+45    ,  QString(" %1 ").arg(measuredError[2]));
     p.drawText( width()/3+40 , height()/3+45 ,  QString(" %1 ").arg(totalMeasured[2]));
     p.drawText( width()/2+60 , height()/3+45 ,  QString(" %1 ").arg(refrenceValue[2]));
-    //p.drawPixmap( width()/15  , height()/2.8 , StatusIcon3);
+    p.drawPixmap( width()/15  , height()/2.8 , StatusIcon3);
 
     p.drawText( width()/6 , height()/2-20    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/2-20 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/2-20 , QString(" %1 ").arg("none"));
-    //p.drawPixmap( width()/15  , height()/2.3 , StatusIcon4);
+    p.drawPixmap( width()/15  , height()/2.3 , StatusIcon4);
 // ----------------------
     p.drawText( width()/6 , height()/1.7+20    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.7+20 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.7+20 , QString(" %1 ").arg("none"));
-    //p.drawPixmap( width()/15  , height()/1.82 , StatusIcon5);
+    p.drawPixmap( width()/15  , height()/1.82 , StatusIcon5);
 
     p.drawText( width()/6 , height()/1.5+10    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.5+10   , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.5+10   , QString(" %1 ").arg("none"));
-    //p.drawPixmap( width()/15  , height()/1.55  , StatusIcon6);
+    p.drawPixmap( width()/15  , height()/1.55  , StatusIcon6);
 // ----------------------
     p.drawText( width()/6 , height()/1.2    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawText( width()/1.3-20 , height()/1.2 , QString(" %1 ").arg("none"));
-    //p.drawPixmap( width()/15  , height()/1.27 , StatusIcon7);
+    p.drawPixmap( width()/15  , height()/1.27 , StatusIcon7);
 
 
 
@@ -124,7 +124,14 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
-
+  StatusIcon1 = processImg;
+  StatusIcon2 = processImg;
+  StatusIcon3 = processImg;
+  StatusIcon4 = processImg;
+  StatusIcon5 = processImg;
+  StatusIcon6 = processImg;
+  StatusIcon7 = processImg;
+  update();
 // --------------------------- Total Measured ---------------------------------
 
   for (int x = 0; x<500; x++)
