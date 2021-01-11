@@ -33,7 +33,17 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
-    if(Button==1){Button=0;videoTest();}
+    if(Button==1){
+      Button=0;
+      StatusIcon1 = processImg;
+      StatusIcon2 = processImg;
+      StatusIcon3 = processImg;
+      StatusIcon4 = processImg;
+      StatusIcon5 = processImg;
+      StatusIcon6 = processImg;
+      StatusIcon7 = processImg;
+      videoTest();}
+      
     if(Button==2){Button=0;saveReportTest();}
     if(Button==3){Button=0;saveReportTest();}
 
@@ -118,14 +128,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::videoTest()
 {
-  StatusIcon1 = processImg;
-  StatusIcon2 = processImg;
-  StatusIcon3 = processImg;
-  StatusIcon4 = processImg;
-  StatusIcon5 = processImg;
-  StatusIcon6 = processImg;
-  StatusIcon7 = processImg;
-  update();
+
 
 
 
