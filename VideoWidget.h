@@ -58,13 +58,13 @@ private:
 
     QPixmap tableImg = QPixmap(":/img/table.png");
 
-    Qpixmap StatusIcon1 = noneImg;
-    Qpixmap StatusIcon2 = noneImg;
-    Qpixmap StatusIcon3 = noneImg;
-    Qpixmap StatusIcon4 = noneImg;
-    Qpixmap StatusIcon5 = noneImg;
-    Qpixmap StatusIcon6 = noneImg;
-    Qpixmap StatusIcon7 = noneImg;
+    Qpixmap StatusIcon1 = QPixmap(noneImg);
+    Qpixmap StatusIcon2 = QPixmap(noneImg);
+    Qpixmap StatusIcon3 = QPixmap(noneImg);
+    Qpixmap StatusIcon4 = QPixmap(noneImg);
+    Qpixmap StatusIcon5 = QPixmap(noneImg);
+    Qpixmap StatusIcon6 = QPixmap(noneImg);
+    Qpixmap StatusIcon7 = QPixmap(noneImg);
 
 
     float refrenceValue[3]={0,0,0};
