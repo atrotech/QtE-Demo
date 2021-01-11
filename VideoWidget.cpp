@@ -127,7 +127,7 @@ void TVideoWidget::videoTest()
   StatusIcon7 = processImg;
 
   setUpdatesEnabled(true);
-  repaint();
+  update(p);
 
 
 // --------------------------- Total Measured ---------------------------------
