@@ -58,8 +58,8 @@ private:
 
     QPixmap tableImg = QPixmap(":/img/table.png");
 
-    Qpixmap StatusIcon1 = new QPixmap(noneImg);
-    Qpixmap StatusIcon2 = new QPixmap(noneImg);
+    Qpixmap StatusIcon1 = QPixmap(&noneImg);
+    Qpixmap StatusIcon2 = QPixmap(noneImg);
     Qpixmap StatusIcon3 = QPixmap(noneImg);
     Qpixmap StatusIcon4 = QPixmap(noneImg);
     Qpixmap StatusIcon5 = QPixmap(noneImg);
