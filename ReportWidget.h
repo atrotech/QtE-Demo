@@ -55,7 +55,8 @@ private:
     QPixmap tapImg = QPixmap(":/img/tap.png");
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
-
+    int StartListIndex = 0;
+    int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
 

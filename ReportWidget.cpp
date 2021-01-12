@@ -16,7 +16,7 @@ TReportWidget::TReportWidget(QWidget *parent) :
     mpKeepAliveTimer = new QTimer();
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-    mpKeepAliveTimer->start(100);
+    mpKeepAliveTimer->start(10);
 
 
 
@@ -36,7 +36,7 @@ void TReportWidget::updateFileList(){
       filesCount++;
     }
   }
-
+ if(filesCount<10)LastListIndex = filesCount;
   closedir (dir);
 
 }
@@ -63,7 +63,11 @@ void TReportWidget::paintEvent(QPaintEvent *)
     if(Button==2)
     {
       Button=0;
-      if(SelectedIndex<filesCount-1)SelectedIndex++;
+      if(SelectedIndex<filesCount-1)
+      {
+        SelectedIndex++;
+        if(SelectedIndex>LastListIndex){LastListIndex++;StartListIndex++;}
+      }
     }
 
 
@@ -87,11 +91,11 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
 
     char str[20];
-    for (int i=0;i<filesCount;i++)
+    for (int i=StartListIndex;i<LastListIndex;i++)
     {
         if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-        if(i<10) p.drawText(width()/4, (height()/4)+(i*42)+10, QString(files[i]));
-        else p.drawText(width()/4, (height()/4)+((i-10)*42)+10, QString(files[i]));
+        p.drawText(width()/4, (height()/4)+(i*42)+10, QString(files[i]));
+
     }
 
 
