@@ -67,8 +67,5 @@ private:
     double totalMeasured[3]={0,0,0};
     float measuredError[3]={0,0,0};
 
-    char MessageString[40];
-    int t = 0; // time for delay popup
-
 
 };
