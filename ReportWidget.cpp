@@ -89,8 +89,16 @@ void TReportWidget::paintEvent(QPaintEvent *)
     char str[20];
     for (int i=0;i<filesCount;i++)
     {
-      if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      p.drawText(width()/4, (height()/4)+(i*42)+10, QString(files[i]));
+        if(i<10)
+        {
+          if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
+          p.drawText(width()/4, (height()/4)+(i*42)+10, QString(files[i]));
+        }
+        else
+        {
+          if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
+          p.drawText(width()/4, (height()/4)+(i*42)+10, QString(files[i]));
+        }
     }
 
 
