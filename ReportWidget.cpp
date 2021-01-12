@@ -58,7 +58,11 @@ void TReportWidget::paintEvent(QPaintEvent *)
     if(Button==1)
     {
       Button=0;
-      if(SelectedIndex>0)SelectedIndex--;
+      if(SelectedIndex<filesCount-1)
+      {
+        SelectedIndex--;
+        if(SelectedIndex<firstListIndex){firstListIndex--;StartListIndex--;}
+      }
     }
     if(Button==2)
     {
