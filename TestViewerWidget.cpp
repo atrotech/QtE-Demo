@@ -1,11 +1,11 @@
-#include "VideoWidget.h"
+#include "TestViewerWidget.h"
 
 using namespace cv;
 using namespace std;
 
 
 
-TVideoWidget::TVideoWidget(QWidget *parent) :
+TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     QWidget(parent)
 {
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
@@ -22,12 +22,12 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 
-void TVideoWidget::onKeepAlive() {
+void TTestViewerWidget::onKeepAlive() {
     update();
 }
 
 
-void TVideoWidget::paintEvent(QPaintEvent *)
+void TTestViewerWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
@@ -130,7 +130,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 
 
-void TVideoWidget::videoTest()
+void TTestViewerWidget::videoTest()
 {
 
 // --------------------------- Total Measured ---------------------------------
@@ -183,7 +183,7 @@ void TVideoWidget::videoTest()
 
 
 
-void TVideoWidget::singleFrameTest()
+void TTestViewerWidget::singleFrameTest()
 {
 
 // ---------------------------- variables -------------------------------------
@@ -272,7 +272,7 @@ void TVideoWidget::singleFrameTest()
 
 
 
-void TVideoWidget::saveReportTest()
+void TTestViewerWidget::saveReportTest()
 {
 
 // -------------------------- save to file -----------------------------------
