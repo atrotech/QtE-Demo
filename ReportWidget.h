@@ -53,7 +53,7 @@ private:
     QPixmap upImg = QPixmap(":/img/up.png");
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
-    QPixmap tapImg = QPixmap(":/img/testTable.png");
+    QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
 
     unsigned char SelectedIndex = 0;
