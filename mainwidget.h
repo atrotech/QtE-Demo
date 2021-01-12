@@ -5,6 +5,7 @@
 #include <QtWidgets>
 #include "VideoWidget.h"
 #include "ReportWidget.h"
+#include "TestViewerWidget.h"
 
 #include <sys/time.h>
 #include "lib/gpio.h"
@@ -40,6 +41,8 @@ private:
 
     TVideoWidget *VideoWindow = new TVideoWidget(0);
     TReportWidget *ReportWindow = new TReportWidget(0);
+    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
+
 
     char ActiveWindow = 0;
 

@@ -37,6 +37,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
     ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
+    TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
 
 
     mpKeepAliveTimer = new QTimer();
