@@ -76,7 +76,7 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
     p.drawPixmap( width()/15  , height()/1.82 , StatusIcon5);
 
     p.drawText( width()/6 , height()/1.5+10    , QString(" %1 ").arg("none"));
-    p.drawText( width()/3+40 , height()/1.5+10   , QString(" %1 ").arg("none"));
+    p.drawText( width()/3+40 , height()/1.5+10   , QString(" %1 ").arg("mone"));
     p.drawText( width()/2+60 , height()/1.5+10   , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.55  , StatusIcon6);
 // ----------------------
