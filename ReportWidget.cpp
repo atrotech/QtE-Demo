@@ -48,7 +48,6 @@ void TReportWidget::onKeepAlive() {
 }
 
 void TReportWidget::ViewDataTable(){
-  TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
   TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->showFullScreen();
