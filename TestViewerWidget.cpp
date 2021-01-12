@@ -28,6 +28,7 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
+
     int SpaceHeight = 160;
     int HeightOffset = 60;
 
