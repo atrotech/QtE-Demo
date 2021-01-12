@@ -20,14 +20,14 @@ using namespace cv;
 
 
 
-class TVideoWidget : public QWidget
+class TTestViewerWidget : public QWidget
 {
 
   Q_OBJECT
 
 public:
-    explicit TVideoWidget(QWidget *parent);
-    ~TVideoWidget() {}
+    explicit TTestViewerWidget(QWidget *parent);
+    ~TTestViewerWidget() {}
     int Button = 0;
     Mat InputFrame;
 
