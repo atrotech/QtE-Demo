@@ -15,10 +15,7 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
 
-    MessageString[0]=0;
-
 }
-
 
 
 
@@ -30,12 +27,6 @@ void TTestViewerWidget::onKeepAlive() {
 void TTestViewerWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
-
-
-    if(Button==4){}
-    if(Button==1){}
-    if(Button==2){}
-    if(Button==3){}
 
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -90,7 +81,6 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawText( width()/1.3-20 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.27 , StatusIcon7);
-
 
 
 

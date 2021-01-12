@@ -19,7 +19,6 @@ using namespace cv;
 
 
 
-
 class TTestViewerWidget : public QWidget
 {
 
@@ -35,9 +34,7 @@ private slots:
     void onKeepAlive();
 private:
     void paintEvent(QPaintEvent *);
-    void videoTest();
-    void saveReportTest();
-    void singleFrameTest();
+
 private:
     QTimer* mpKeepAliveTimer;
 
