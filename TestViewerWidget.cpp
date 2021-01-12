@@ -28,6 +28,9 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
+    int SpaceHeight = 160;
+    int HeightOffset = 60;
+
      p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
      p.drawPixmap( width()-150 , 0 * SpaceHeight + HeightOffset, btnPush);
