@@ -26,6 +26,7 @@ void TVideoWidget::onKeepAlive() {
     update();
 }
 
+
 void TVideoWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
