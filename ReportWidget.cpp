@@ -81,7 +81,9 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
      p.setPen(Qt::black);
-     p.setFont(QFont("Arial", 25));
+     p.setFont(QFont("Arial", 20));
+    
+     p.drawPixmap( width()/9 , height()/8 , testTableImg);
 
 
 
