@@ -30,6 +30,11 @@ public:
     int Button = 0;
     Mat InputFrame;
 
+    float refrenceValue[3]={0,0,0};
+    float singleMeasured[3]={0,0,0};
+    double totalMeasured[3]={0,0,0};
+    float measuredError[3]={0,0,0};
+
 private slots:
     void onKeepAlive();
 private:
@@ -59,10 +64,7 @@ private:
     QPixmap StatusIcon6 = QPixmap(noneImg);
     QPixmap StatusIcon7 = QPixmap(noneImg);
 
-    float refrenceValue[3]={0,0,0};
-    float singleMeasured[3]={0,0,0};
-    double totalMeasured[3]={0,0,0};
-    float measuredError[3]={0,0,0};
+
 
 
 };

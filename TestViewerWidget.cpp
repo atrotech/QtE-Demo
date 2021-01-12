@@ -88,10 +88,6 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 
 
 
-    if(Button==4){this->hide();Button=0;}
-    if(Button==1){Button=0;}
-    if(Button==2){Button=0;}
-    if(Button==3){Button=0;}
 
 
 
