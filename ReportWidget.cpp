@@ -82,7 +82,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
      p.setPen(Qt::black);
      p.setFont(QFont("Arial", 20));
 
-     p.drawPixmap( width()/7 , height()/8 , testTableImg);
+     p.drawPixmap( width()/6 , height()/8 , testTableImg);
 
 
 
@@ -90,7 +90,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     for (int i=0;i<filesCount;i++)
     {
       if(i==SelectedIndex){p.setPen(Qt::red);}else{p.setPen(Qt::black);}
-      p.drawText(width()/4, (height()/5)+(i*50)+10, QString(files[i]));
+      p.drawText(width()/4, (height()/4)+(i*50)+10, QString(files[i]));
     }
 
 
