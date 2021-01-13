@@ -34,8 +34,6 @@ public:
     ~TReportWidget() {}
     int Button = 0;
 
-    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
-
     void ViewDataTable();
 
     char files[30][30];
@@ -58,6 +56,8 @@ private:
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
+
+    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
 
 
 
