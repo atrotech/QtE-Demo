@@ -41,7 +41,7 @@ private:
 
     TVideoWidget *VideoWindow = new TVideoWidget(0);
     TReportWidget *ReportWindow = new TReportWidget(0);
-    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
+
 
 
 

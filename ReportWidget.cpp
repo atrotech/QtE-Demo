@@ -47,16 +47,19 @@ void TReportWidget::onKeepAlive() {
     update();
 }
 
-void TReportWidget::ViewDataTable(){
-  TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
-  TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
-  TestViewerWindow->showFullScreen();
-  TestViewerWindow->setGeometry(0,0,width(),height());
-  TestViewerWindow->show();
+
+
+void TReportWidget::ViewDataTable()
+{
+  TTestViewerWidget::TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
+  TTestViewerWidget::TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
+  TTestViewerWidget::TestViewerWindow->showFullScreen();
+  TTestViewerWidget::TestViewerWindow->setGeometry(0,0,width(),height());
+  TTestViewerWidget::TestViewerWindow->show();
   //TestViewerWindow->refrenceValue[];
 
-
 }
+
 
 void TReportWidget::paintEvent(QPaintEvent *)
 {
