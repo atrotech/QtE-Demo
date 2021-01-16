@@ -60,7 +60,6 @@ private:
     TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
 
 
-
     int StartListIndex = 0;
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
