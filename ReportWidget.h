@@ -21,6 +21,8 @@
 #include <dirent.h>
 #include <vector>
 
+#include "TestViewerWidget.h"
+
 
 using std::vector;
 using namespace cv;
@@ -57,8 +59,7 @@ private:
     QPixmap tapImg = QPixmap(":/img/tap.png");
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
-   // TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
-    TVideoWidget *VideoWindow = new TVideoWidget(0);
+    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
 
     int StartListIndex = 0;
     int LastListIndex = 9;
