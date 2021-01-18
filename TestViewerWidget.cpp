@@ -21,8 +21,6 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
 
 void TTestViewerWidget::onKeepAlive() {
     update();
-
-
 }
 
 
