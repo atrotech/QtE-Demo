@@ -57,7 +57,7 @@ private:
     QPixmap tapImg = QPixmap(":/img/tap.png");
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
-    TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
+   // TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
     TVideoWidget *VideoWindow = new TVideoWidget(0);
 
     int StartListIndex = 0;

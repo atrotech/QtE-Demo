@@ -51,12 +51,12 @@ void TReportWidget::onKeepAlive() {
 
 void TReportWidget::ViewDataTable()
 {
-  TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
+  /*TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->showFullScreen();
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
-  //TestViewerWindow->refrenceValue[];
+  //TestViewerWindow->refrenceValue[];*/
 
 }
 
