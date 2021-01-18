@@ -58,7 +58,7 @@ private:
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
     TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
-
+    TVideoWidget *VideoWindow = new TVideoWidget(0);
 
     int StartListIndex = 0;
     int LastListIndex = 9;
