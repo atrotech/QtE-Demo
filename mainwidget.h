@@ -5,7 +5,6 @@
 #include <QtWidgets>
 #include "VideoWidget.h"
 #include "ReportWidget.h"
-#include "TestViewerWidget.h"
 
 #include <sys/time.h>
 #include "lib/gpio.h"
