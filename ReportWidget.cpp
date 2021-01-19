@@ -70,11 +70,16 @@ void TReportWidget::paintEvent(QPaintEvent *)
 
     int SpaceHeight = 160;
     int HeightOffset = 60;
-    if(Button==4){this->hide();Button=0;}
+    if(Button==4)
+    {
+      this->hide();
+      Button=0;
+      if(ViewerIsOpen){TestViewerWindow->hide();}
+    }
     if(Button==3)
     {
       Button=0;
-      if(ViewerIsOpen){TestViewerWindow->hide();}else{ViewDataTable();}
+      if(!ViewerIsOpen){ViewDataTable();}
     }
     if(Button==1)
     {
