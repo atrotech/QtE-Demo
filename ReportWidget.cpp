@@ -59,6 +59,7 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->show();
   //TestViewerWindow->refrenceValue[];
   while(Button!=3){Button=0;}
+  TestViewerWindow->hide();
 
 }
 
