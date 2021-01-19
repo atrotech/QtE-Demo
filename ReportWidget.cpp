@@ -61,7 +61,6 @@ void TReportWidget::ViewDataTable()
   char FileName[] = files[SelectedIndex];
   printf(" %s \n", FileName);
 
-
 }
 
 
