@@ -22,5 +22,7 @@ private:
 private:
     QTimer* mpKeepAliveTimer;
 
+    QPixmap testTableImg = QPixmap(":/img/testTable.png");
+
 
 };
