@@ -65,6 +65,6 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    char SelectedValue[5];
+    char SelectedValue[10][30];
 
 };
