@@ -27,6 +27,7 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
     QPainter p(this);
 
     p.drawPixmap( width()/6 , height()/8 , testTableImg);
+    p.drawText( width()/6 , height()/2  , QString(" %1 ").arg("testtt"));
 
 
 }
