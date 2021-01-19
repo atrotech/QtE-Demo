@@ -30,7 +30,6 @@ private:
     QPixmap flashImg = QPixmap(":/img/flash-disk.png");
     QPixmap deleteImg = QPixmap(":/img/remove.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
-
     QPixmap tableImg = QPixmap(":/img/table.png");
 
 

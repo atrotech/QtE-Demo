@@ -58,8 +58,7 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
   ViewerIsOpen = true;
-  //TestViewerWindow->refrenceValue[];
-
+  TestViewerWindow->refrenceValue[];
 
 }
 
