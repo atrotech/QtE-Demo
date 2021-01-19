@@ -20,7 +20,5 @@
         <file>img/down.png</file>
         <file>img/tap.png</file>
         <file>img/testTable.png</file>
-        <file>img/remove.png</file>
-        <file>img/printer.png</file>
     </qresource>
 </RCC>
