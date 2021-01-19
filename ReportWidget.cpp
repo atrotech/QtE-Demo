@@ -77,7 +77,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     {
       this->hide();
       Button=0;
-      if(ViewerIsOpen){TestViewerWindow->hide();}
+      if(ViewerIsOpen){TestViewerWindow->hide();ViewerIsOpen=false;}
     }
     if(Button==3)
     {
