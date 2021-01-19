@@ -58,7 +58,7 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
   ViewerIsOpen = true;
-  char FileName[30];
+  char FileName[50];
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
   printf("%s\n", FileName);
 
