@@ -58,7 +58,6 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
   ViewerIsOpen = true;
-  TestViewerWindow->refrenceValue[];
   char FileName = files[SelectedIndex];
   printf("%s\n", FileName);
 
