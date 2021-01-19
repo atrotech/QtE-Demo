@@ -2,7 +2,6 @@
 
 
 
-
 TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     QWidget(parent)
 {
