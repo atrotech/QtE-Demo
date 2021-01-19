@@ -62,27 +62,19 @@ void TReportWidget::ViewDataTable()
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
 
 
-  //    std::ifstream MyReadFile(FileName);
-//      char ReadValue;
-//      int i=0;
-  //    while(MyReadFile >> ReadValue)
-  //    {
-  //      SelectedValue[i]=ReadValue; i++;
-    //    printf("%s\n", SelectedValue[i]);
-//      }
-  //    MyReadFile.close();
-
-
-  std::ifstream ifs(FileName);
-  std::string content;
-  content.assign( (std::istreambuf_iterator<char>(ifs) ),
-                (std::istreambuf_iterator<char>()    ) );
-  printf("%s\n", content);
-
-
+  std::ifstream MyReadFile(FileName);
+  char ReadValue;
+  int i=0;
+  while(MyReadFile >> ReadValue)
+  {
+    SelectedValue[i]=ReadValue; i++;
+    printf("%s\n", SelectedValue[i]);
+  }
+  MyReadFile.close();
 
 
 }
+
 
 
 void TReportWidget::paintEvent(QPaintEvent *)
