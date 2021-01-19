@@ -74,8 +74,9 @@ void TReportWidget::ViewDataTable()
 
 
   std::ifstream ifs(FileName);
-  std::string content( (std::istreambuf_iterator<char>(ifs) ),
-                       (std::istreambuf_iterator<char>()    ) );
+  std::string content;
+  content.assign( (std::istreambuf_iterator<char>(ifs) ),
+                (std::istreambuf_iterator<char>()    ) );
   printf("%s\n", content);
 
 
