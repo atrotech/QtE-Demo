@@ -51,12 +51,12 @@ void TReportWidget::onKeepAlive() {
 
 void TReportWidget::ViewDataTable()
 {
-  /*TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
+  TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->setWindowFlags(Qt::FramelessWindowHint);
   TestViewerWindow->showFullScreen();
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
-  //TestViewerWindow->refrenceValue[];*/
+  //TestViewerWindow->refrenceValue[];
 
 }
 
@@ -68,7 +68,7 @@ void TReportWidget::paintEvent(QPaintEvent *)
     int SpaceHeight = 160;
     int HeightOffset = 60;
     if(Button==4){this->hide();Button=0;}
-    if(Button==3)
+    if(Button==3){Button=0;ViewDataTable();}
     {
       Button=0;
       ViewDataTable();
