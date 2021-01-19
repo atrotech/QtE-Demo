@@ -65,6 +65,6 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    float refrenceValue[3]={0,0,0};
+    char SelectedValue;
 
 };
