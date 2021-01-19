@@ -60,7 +60,15 @@ void TReportWidget::ViewDataTable()
   ViewerIsOpen = true;
   char FileName[60];
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
-  printf("%s\n", FileName);
+
+  std::ifstream MyReadFile(FileName);
+  float ReadValue;
+  int i=0;
+  while(MyReadFile >> ReadValue){
+    refrenceValue[i]=ReadValue; i++;
+    printf("%s\n", refrenceValue[i]);
+  }
+  MyReadFile.close();
 
 
 
