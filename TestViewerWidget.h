@@ -12,6 +12,7 @@ class TTestViewerWidget : public QWidget
 public:
     explicit TTestViewerWidget(QWidget *parent);
     ~TTestViewerWidget() {}
+    int Button = 0;
 
 
 private slots:
