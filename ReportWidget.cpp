@@ -59,7 +59,9 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->show();
   ViewerIsOpen = true;
   char FileName[30] = files[SelectedIndex];
-  printf(" %s \n", FileName);
+  sprintf (FileName, "%s", FileName);
+  printf( "%s \n", FileName);
+
 
 }
 
