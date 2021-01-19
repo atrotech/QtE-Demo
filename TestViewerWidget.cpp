@@ -25,4 +25,8 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 {
     QPainter p(this);
 
+    p.drawPixmap( width()/6 , height()/8 , testTableImg);
+
+
+
 }
