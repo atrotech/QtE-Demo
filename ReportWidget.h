@@ -11,6 +11,7 @@
 #include "lib/common.h"
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <cmath>
 #include <dirent.h>
