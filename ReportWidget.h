@@ -65,6 +65,6 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    float SelectedValue[5]={0,0,0};
+    string SelectedValue[5]={0,0,0};
 
 };
