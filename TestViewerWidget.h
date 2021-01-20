@@ -23,7 +23,7 @@ private slots:
     void onKeepAlive();
 private:
     void paintEvent(QPaintEvent *);
-
+    void UpdateTable();
 private:
     QTimer* mpKeepAliveTimer;
 
