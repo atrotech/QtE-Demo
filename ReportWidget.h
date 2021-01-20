@@ -33,6 +33,7 @@ public:
     explicit TReportWidget(QWidget *parent);
     ~TReportWidget() {}
     int Button = 0;
+    char FileName[60];
 
     void ViewDataTable();
 

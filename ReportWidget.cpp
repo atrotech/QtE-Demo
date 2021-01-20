@@ -60,7 +60,6 @@ void TReportWidget::ViewDataTable()
 
   char FileName[60];
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
-  TestViewerWindow->FileName;
 
   ifstream file(FileName);
   string Value;

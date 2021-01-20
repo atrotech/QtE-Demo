@@ -12,6 +12,8 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
 
+    
+
 }
 
 
