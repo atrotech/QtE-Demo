@@ -85,6 +85,7 @@ void TReportWidget::ViewDataTable()
   cout << 9 <<": " << SelectedValue[9] << '\n';
 
   printf("0: %s \n", SelectedValue[0].data());
+  
 
 
 

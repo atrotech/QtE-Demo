@@ -52,7 +52,7 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
   p.drawPixmap( width()/9 , height()/8 , tableImg);
 // ----------------------
   p.drawText( width()/6 , height()/4    ,  QString(" %1 ").arg(SelectedValue[0].data()));
-  p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg(SelectedValue[0].c_str()));
+  p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg("none"));
   p.drawText( width()/2+60 , height()/4 ,  QString(" %1 ").arg("none"));
 
   p.drawText( width()/6 , height()/3-10    ,  QString(" %1 ").arg("none"));
