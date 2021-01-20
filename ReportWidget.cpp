@@ -61,20 +61,9 @@ void TReportWidget::ViewDataTable()
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
 
 
-//  std::ifstream MyReadFile(FileName);
-//  string ReadValue;
-//  int j=0;
-//  while(MyReadFile >> ReadValue)
-//  {
-//    SelectedValue[j]=ReadValue;
-//    printf(" %s \n ", SelectedValue[j]);
-//    j++;
-//  }
-//  MyReadFile.close();
   std::ifstream file(FileName);
-  std::string str;
-  while (std::getline(file, str)) {
-    std::cout << str << "\n";
+  while (std::getline(file, SelectedValue)) {
+    std::cout << SelectedValue << "\n";
   }
 
 

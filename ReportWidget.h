@@ -62,8 +62,7 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    //std::array<std::string, 6> SelectedValue;
-
+    std::string SelectedValue;
 
 
 
