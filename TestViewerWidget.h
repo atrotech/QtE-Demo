@@ -17,7 +17,7 @@ public:
     ~TTestViewerWidget() {}
     int Button = 0;
     string SelectedValue[10];
-
+    char FileName[60];
 
 private slots:
     void onKeepAlive();

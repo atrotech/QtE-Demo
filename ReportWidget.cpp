@@ -58,22 +58,8 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->show();
   ViewerIsOpen = true;
 
-  char FileName[60];
-  sprintf (FileName, "reports/%s", files[SelectedIndex]);
-
-  ifstream file(FileName);
-  string Value;
-  int j=0;
-  while (getline(file, Value)) {
-    istringstream ss(Value);
-    string token;
-    while(getline(ss, token, ',')) {
-        TestViewerWindow->SelectedValue[j]=token;
-        j++;
-    }
-  }
-
-
+  sprintf (TestViewerWindow->FileName, "reports/%s", files[SelectedIndex]);
+  TestViewerWindow->UpdateTable();
 }
 
 
@@ -97,6 +83,15 @@ void TReportWidget::paintEvent(QPaintEvent *)
     }
     if(Button==1)
     {
+      if(ViewerIsOpen)
+      {
+        remove(TestViewerWindow->FileName);
+        TestViewerWindow->hide();
+        ViewerIsOpen=false;
+        updateFileList();
+        SelectedIndex=0;
+        return;
+        }
       Button=0;
       if(SelectedIndex>0)
       {

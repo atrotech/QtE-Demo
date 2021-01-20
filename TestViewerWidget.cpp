@@ -11,9 +11,21 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(100);
+}
 
-    
-
+TTestViewerWidget::UpdateTable()
+{
+  ifstream file(FileName);
+  string Value;
+  int j=0;
+  while (getline(file, Value)) {
+    istringstream ss(Value);
+    string token;
+    while(getline(ss, token, ',')) {
+        SelectedValue[j]=token;
+        j++;
+    }
+  }
 }
 
 
