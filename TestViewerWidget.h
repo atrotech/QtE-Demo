@@ -3,7 +3,6 @@
 #include <sys/time.h>
 #include <signal.h>
 #include <string>
-#include "ReportWidget.h"
 
 using namespace std;
 
@@ -17,6 +16,8 @@ public:
     explicit TTestViewerWidget(QWidget *parent);
     ~TTestViewerWidget() {}
     int Button = 0;
+
+    std::string SelectedValue[10];
 
 
 private slots:
