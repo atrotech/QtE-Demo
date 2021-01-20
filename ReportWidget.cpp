@@ -69,7 +69,7 @@ void TReportWidget::ViewDataTable()
     std::string token;
     while(std::getline(ss, token, ',')) {
         SelectedValue[j]=token;
-        std::cout << SelectedValue[j] << '\n';
+        std::cout << j <<": " << SelectedValue[j] << '\n';
         j++;
     }
   }
