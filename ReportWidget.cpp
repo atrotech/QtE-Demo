@@ -74,7 +74,7 @@ void TReportWidget::ViewDataTable()
   }
 
 
-  printf("printf 0: %s\n", SelectedValue[0);
+  printf("printf 0: %s\n", SelectedValue[0]);
 
   std::cout << 0 <<": " << SelectedValue[0] << '\n';
   std::cout << 1 <<": " << SelectedValue[1] << '\n';
