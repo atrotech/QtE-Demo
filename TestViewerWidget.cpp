@@ -13,7 +13,7 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
     mpKeepAliveTimer->start(100);
 }
 
-TTestViewerWidget::UpdateTable()
+void TTestViewerWidget::UpdateTable()
 {
   ifstream file(FileName);
   string Value;
