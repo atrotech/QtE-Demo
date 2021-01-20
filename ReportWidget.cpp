@@ -63,7 +63,7 @@ void TReportWidget::ViewDataTable()
 
   std::ifstream file(FileName);
   std::vector<string> v;
-  std::stringstream ss(file);
+  stringstream ss(file);
   while (ss.good()) {
         string substr;
         getline(ss, substr, ',');
