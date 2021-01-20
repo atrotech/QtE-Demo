@@ -21,12 +21,12 @@ public:
     int Button = 0;
     string SelectedValue[10];
     char FileName[60];
+    void UpdateTable();
 
 private slots:
     void onKeepAlive();
 private:
     void paintEvent(QPaintEvent *);
-    void UpdateTable();
 private:
     QTimer* mpKeepAliveTimer;
 
