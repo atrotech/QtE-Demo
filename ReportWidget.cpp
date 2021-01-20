@@ -63,9 +63,8 @@ void TReportWidget::ViewDataTable()
 
   std::ifstream file(FileName);
   while (std::getline(file, SelectedValue)) {
-    std::cout << SelectedValue ;
+    std::cout << SelectedValue << "\n";
   }
-  printf(" SelectedValue: %s ", SelectedValue);
 
     //vector<string> v;
     //stringstream ss(str);
