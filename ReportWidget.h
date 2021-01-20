@@ -35,6 +35,7 @@ public:
     explicit TReportWidget(QWidget *parent);
     ~TReportWidget() {}
     int Button = 0;
+    string SelectedValue[5];
 
     void ViewDataTable();
 
@@ -65,6 +66,5 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    string SelectedValue[5];
 
 };
