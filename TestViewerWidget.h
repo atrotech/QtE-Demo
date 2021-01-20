@@ -2,6 +2,9 @@
 #include <QtWidgets>
 #include <sys/time.h>
 #include <signal.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <string>
 
 using namespace std;
