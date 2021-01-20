@@ -2,6 +2,9 @@
 #include <QtWidgets>
 #include <sys/time.h>
 #include <signal.h>
+#include <string>
+
+using namespace std;
 
 
 class TTestViewerWidget : public QWidget
@@ -14,7 +17,6 @@ public:
     ~TTestViewerWidget() {}
     int Button = 0;
     std::string SelectedValue[10];
-
 
 private slots:
     void onKeepAlive();
