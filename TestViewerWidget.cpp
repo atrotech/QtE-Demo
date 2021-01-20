@@ -1,5 +1,7 @@
 #include "TestViewerWidget.h"
 
+using namespace std;
+using std::vector;
 
 
 TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
