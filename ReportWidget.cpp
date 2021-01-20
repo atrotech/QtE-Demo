@@ -62,20 +62,9 @@ void TReportWidget::ViewDataTable()
 
 
   std::ifstream file(FileName);
-  std::vector<string> v;
-  stringstream ss(file);
-  while (ss.good()) {
-        string substr;
-        getline(ss, substr, ',');
-        v.push_back(substr);
-    }
-    for (size_t i = 0; i < v.size(); i++)std::cout << v[i] << endl;
-
-
-
-  //while (std::getline(file, SelectedValue)) {
-  //  std::cout << SelectedValue << "\n";
-  //}
+  while (std::getline(file, SelectedValue)) {
+    std::cout << SelectedValue << "\n";
+  }
 
     //vector<string> v;
     //stringstream ss(str);
