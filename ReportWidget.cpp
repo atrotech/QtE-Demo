@@ -2,7 +2,6 @@
 
 using namespace cv;
 using namespace std;
-
 using std::vector;
 
 
@@ -63,7 +62,7 @@ void TReportWidget::ViewDataTable()
 
 
   std::ifstream MyReadFile(FileName);
-  string ReadValue;
+  std::string ReadValue;
   int j=0;
   while(MyReadFile >> ReadValue)
   {
