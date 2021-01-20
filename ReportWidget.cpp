@@ -64,20 +64,25 @@ void TReportWidget::ViewDataTable()
   ifstream file(FileName);
   string Value;
   int j=0;
-  while (std::getline(file, Value)) {
+  while (getline(file, Value)) {
     istringstream ss(Value);
     string token;
-    while(std::getline(ss, token, ',')) {
+    while(getline(ss, token, ',')) {
         SelectedValue[j]=token;
         j++;
     }
   }
 
-
-  printf("0: %s \n", SelectedValue[0]);
   cout << 0 <<": " << SelectedValue[0] << '\n';
-
-
+  cout << 1 <<": " << SelectedValue[1] << '\n';
+  cout << 2 <<": " << SelectedValue[2] << '\n';
+  cout << 3 <<": " << SelectedValue[3] << '\n';
+  cout << 4 <<": " << SelectedValue[4] << '\n';
+  cout << 5 <<": " << SelectedValue[5] << '\n';
+  cout << 6 <<": " << SelectedValue[6] << '\n';
+  cout << 7 <<": " << SelectedValue[7] << '\n';
+  cout << 8 <<": " << SelectedValue[8] << '\n';
+  cout << 9 <<": " << SelectedValue[9] << '\n';
 
 
 
