@@ -63,7 +63,7 @@ void TReportWidget::ViewDataTable()
 
 
   std::ifstream MyReadFile(FileName);
-  char ReadValue;
+  float ReadValue;
   int i=0;
   while(MyReadFile >> ReadValue)
   {
