@@ -33,5 +33,6 @@ private:
 
     QPixmap tableImg = QPixmap(":/img/table.png");
 
+    std::string SelectedValue[10];
 
 };
