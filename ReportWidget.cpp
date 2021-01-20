@@ -71,18 +71,13 @@ void TReportWidget::ViewDataTable()
         SelectedValue[j]=token;
         std::cout << j <<": " << SelectedValue[j] << '\n';
         j++;
-
-        printf("------in---------- \n");
-        printf("SelectedValue 0: %s \n", SelectedValue[0]);
-        printf("SelectedValue 1: %s \n", SelectedValue[1]);
-        printf("SelectedValue 2: %s \n", SelectedValue[2]);
     }
   }
+  std::cout << 0 <<": " << SelectedValue[0] << '\n';
+  std::cout << 1 <<": " << SelectedValue[1] << '\n';
+  std::cout << 2 <<": " << SelectedValue[2] << '\n';
+  std::cout << 3 <<": " << SelectedValue[3] << '\n';
 
-  printf("--------out-------- \n");
-  printf("SelectedValue 0: %s \n", SelectedValue[0]);
-  printf("SelectedValue 1: %s \n", SelectedValue[1]);
-  printf("SelectedValue 2: %s \n", SelectedValue[2]);
 
 
 
