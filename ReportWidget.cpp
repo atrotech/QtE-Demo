@@ -73,7 +73,6 @@ void TReportWidget::ViewDataTable()
   MyReadFile.close();
 
 
-
 }
 
 
