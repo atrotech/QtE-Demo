@@ -16,7 +16,7 @@ public:
     explicit TTestViewerWidget(QWidget *parent);
     ~TTestViewerWidget() {}
     int Button = 0;
-
+    char FileName[60];
     string SelectedValue[10];
 
 

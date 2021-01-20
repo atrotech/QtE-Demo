@@ -51,17 +51,17 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 
   p.drawPixmap( width()/9 , height()/8 , tableImg);
 // ----------------------
-  p.drawText( width()/6 , height()/4    ,  QString(" %1 ").arg(SelectedValue[0].data()));
-  p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg("none"));
-  p.drawText( width()/2+60 , height()/4 ,  QString(" %1 ").arg("none"));
+  p.drawText( width()/6 , height()/4    ,  QString(" %1 ").arg(SelectedValue[2].data()));
+  p.drawText( width()/3+40 , height()/4 ,  QString(" %1 ").arg(SelectedValue[1].data()));
+  p.drawText( width()/2+60 , height()/4 ,  QString(" %1 ").arg(SelectedValue[0].data()));
 
-  p.drawText( width()/6 , height()/3-10    ,  QString(" %1 ").arg("none"));
-  p.drawText( width()/3+40 , height()/3-10 ,  QString(" %1 ").arg("none"));
-  p.drawText( width()/2+60 , height()/3-10 ,  QString(" %1 ").arg("none"));
+  p.drawText( width()/6 , height()/3-10    ,  QString(" %1 ").arg(SelectedValue[5].data()));
+  p.drawText( width()/3+40 , height()/3-10 ,  QString(" %1 ").arg(SelectedValue[4].data()));
+  p.drawText( width()/2+60 , height()/3-10 ,  QString(" %1 ").arg(SelectedValue[3].data()));
 
-  p.drawText( width()/6 , height()/3+45    ,  QString(" %1 ").arg("none"));
-  p.drawText( width()/3+40 , height()/3+45 ,  QString(" %1 ").arg("none"));
-  p.drawText( width()/2+60 , height()/3+45 ,  QString(" %1 ").arg("none"));
+  p.drawText( width()/6 , height()/3+45    ,  QString(" %1 ").arg(SelectedValue[8].data()));
+  p.drawText( width()/3+40 , height()/3+45 ,  QString(" %1 ").arg(SelectedValue[7].data()));
+  p.drawText( width()/2+60 , height()/3+45 ,  QString(" %1 ").arg(SelectedValue[6].data()));
 
   p.drawText( width()/6 , height()/2-20    , QString(" %1 ").arg("none"));
   p.drawText( width()/3+40 , height()/2-20 , QString(" %1 ").arg("none"));
@@ -83,7 +83,7 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 
 
   if(Button==4){this->hide();Button=0;}
-  if(Button==1){Button=0;}
+  if(Button==1){this->hide();Button=0;remove(FileName);}
   if(Button==2){Button=0;}
   if(Button==3){Button=0;}
 
