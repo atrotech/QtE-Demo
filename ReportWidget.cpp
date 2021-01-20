@@ -61,12 +61,12 @@ void TReportWidget::ViewDataTable()
   char FileName[60];
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
 
-  std::ifstream file(FileName);
-  std::string Value;
+  ifstream file(FileName);
+  string Value;
   int j=0;
   while (std::getline(file, Value)) {
-    std::istringstream ss(Value);
-    std::string token;
+    istringstream ss(Value);
+    string token;
     while(std::getline(ss, token, ',')) {
         SelectedValue[j]=token;
         j++;
@@ -74,9 +74,8 @@ void TReportWidget::ViewDataTable()
   }
 
 
-  printf("0: %s\n", SelectedValue[0]);
+  printf("0: %s \n", SelectedValue[0]);
   cout << 0 <<": " << SelectedValue[0] << '\n';
-  std::cout << 0 <<": " << SelectedValue[0] << '\n';
 
 
 
