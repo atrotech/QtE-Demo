@@ -40,8 +40,8 @@ public:
     int filesCount = 0;
     void updateFileList();
 
-    std::string SelectedValue[10];
-    
+    string SelectedValue[10];
+
 private slots:
     void onKeepAlive();
 private:

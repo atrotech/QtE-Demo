@@ -17,7 +17,7 @@ public:
     ~TTestViewerWidget() {}
     int Button = 0;
 
-    std::string SelectedValue[10];
+    string SelectedValue[10];
 
 
 private slots:
