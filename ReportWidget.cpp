@@ -57,9 +57,9 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
   ViewerIsOpen = true;
+
   char FileName[60];
   sprintf (FileName, "reports/%s", files[SelectedIndex]);
-
 
   std::ifstream file(FileName);
   std::string Value;

@@ -16,7 +16,7 @@ public:
     explicit TTestViewerWidget(QWidget *parent);
     ~TTestViewerWidget() {}
     int Button = 0;
-    std::string SelectedValue[10];
+
 
 private slots:
     void onKeepAlive();
@@ -34,5 +34,7 @@ private:
     QPixmap removeImg = QPixmap(":/img/remove.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
     QPixmap tableImg = QPixmap(":/img/table.png");
+
+    string SelectedValue[10];
 
 };
