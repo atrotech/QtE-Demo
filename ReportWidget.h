@@ -62,7 +62,8 @@ private:
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
 
-    std::string SelectedValue[5];
+    std::vector<std::string> SelectedValue[5];
+
 
 
 };

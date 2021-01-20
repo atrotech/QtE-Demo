@@ -62,12 +62,12 @@ void TReportWidget::ViewDataTable()
 
 
   std::ifstream MyReadFile(FileName);
-  std::string ReadValue;
+  std::vector<std::string> ReadValue;
   int j=0;
   while(MyReadFile >> ReadValue)
   {
     SelectedValue[j]=ReadValue;
-    std::printf(" %s \n ", SelectedValue[j]);
+    printf(" %s \n ", SelectedValue[j]);
     j++;
   }
   MyReadFile.close();
