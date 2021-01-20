@@ -68,7 +68,7 @@ void TReportWidget::ViewDataTable()
   while(MyReadFile >> ReadValue)
   {
     SelectedValue[i]=ReadValue; i++;
-    printf(" %s \n ", SelectedValue[i]);
+    printf(" %f \n ", SelectedValue[i]);
   }
   MyReadFile.close();
 
