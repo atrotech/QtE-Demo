@@ -39,6 +39,9 @@ public:
     char files[30][30];
     int filesCount = 0;
     void updateFileList();
+
+    std::string SelectedValue[10];
+    
 private slots:
     void onKeepAlive();
 private:
@@ -62,10 +65,6 @@ private:
     int StartListIndex = 0;
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
-
-    std::string SelectedValue[10];
-
-
 
 
 
