@@ -17,13 +17,13 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
 
 void TTestViewerWidget::UpdateTable()
 {
-  ifstream file(FileName);
-  string Value;
+  std::ifstream file(FileName);
+  std::string Value;
   int j=0;
-  while (getline(file, Value)) {
-    istringstream ss(Value);
-    string token;
-    while(getline(ss, token, ',')) {
+  while (std::getline(file, Value)) {
+    std::istringstream ss(Value);
+    std::string token;
+    while(std::getline(ss, token, ',')) {
         SelectedValue[j]=token;
         j++;
     }
