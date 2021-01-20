@@ -40,7 +40,6 @@ public:
     int filesCount = 0;
     void updateFileList();
 
-    string SelectedValue[10];
 
 private slots:
     void onKeepAlive();
