@@ -3,6 +3,7 @@
 #include <sys/time.h>
 #include <signal.h>
 #include <string>
+#include "ReportWidget.h"
 
 using namespace std;
 
@@ -35,6 +36,6 @@ private:
     QPixmap returnImg = QPixmap(":/img/return.png");
     QPixmap tableImg = QPixmap(":/img/table.png");
 
-    string SelectedValue[10];
+
 
 };
