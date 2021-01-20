@@ -73,6 +73,10 @@ void TReportWidget::ViewDataTable()
         j++;
     }
   }
+  printf("------------------ \n");
+  printf("SelectedValue 0 %s \n", SelectedValue[0]);
+  printf("SelectedValue 1 %s \n", SelectedValue[1]);
+  printf("SelectedValue 2 %s \n", SelectedValue[2]);
 
 
 
