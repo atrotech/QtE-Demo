@@ -32,10 +32,10 @@ class TReportWidget : public QWidget
 public:
     explicit TReportWidget(QWidget *parent);
     ~TReportWidget() {}
+    void ViewDataTable();
+    
     int Button = 0;
     char FileName[60];
-
-    void ViewDataTable();
 
     char files[30][30];
     int filesCount = 0;
@@ -65,7 +65,6 @@ private:
     int StartListIndex = 0;
     int LastListIndex = 9;
     unsigned char SelectedIndex = 0;
-
 
 
 
