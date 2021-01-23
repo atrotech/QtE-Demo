@@ -33,7 +33,7 @@ public:
     explicit TReportWidget(QWidget *parent);
     ~TReportWidget() {}
     void ViewDataTable();
-    
+
     int Button = 0;
     char FileName[60];
 
@@ -61,6 +61,7 @@ private:
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
 
     TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
+
     bool ViewerIsOpen = false;
     int StartListIndex = 0;
     int LastListIndex = 9;
