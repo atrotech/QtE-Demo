@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 
+
 using namespace std;
 
 
@@ -38,7 +39,6 @@ private:
     QPixmap removeImg = QPixmap(":/img/remove.png");
     QPixmap returnImg = QPixmap(":/img/return.png");
     QPixmap tableImg = QPixmap(":/img/table.png");
-
 
 
 };
