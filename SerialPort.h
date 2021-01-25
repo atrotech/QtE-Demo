@@ -20,7 +20,7 @@ using namespace cv;
 
 
 
-class TSerialPort:
+class SerialPort:
 {
 
   public:
@@ -30,6 +30,7 @@ class TSerialPort:
 
 
   private:
+    int x=0;
 
 
 
