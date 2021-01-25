@@ -14,21 +14,3 @@
 #include <string>
 #include <cmath>
 #include <ctime>
-
-using namespace cv;
-
-
-
-class SerialPort:
-{
-
-  public:
-    void functionx();
-
-
-
-  private:
-    int x=0;
-
-
-};
