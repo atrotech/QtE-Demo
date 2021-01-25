@@ -19,7 +19,6 @@ using namespace cv;
 
 
 
-
 class SerialPort:
 {
 
@@ -28,10 +27,8 @@ class SerialPort:
 
 
 
-
   private:
     int x=0;
-
 
 
 
