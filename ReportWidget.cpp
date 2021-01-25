@@ -1,5 +1,6 @@
 #include "ReportWidget.h"
 
+
 using namespace cv;
 using namespace std;
 using std::vector;
@@ -18,9 +19,9 @@ TReportWidget::TReportWidget(QWidget *parent) :
     mpKeepAliveTimer->start(10);
 
 
-
-
 }
+
+
 
 void TReportWidget::updateFileList(){
 
