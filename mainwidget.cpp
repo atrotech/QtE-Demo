@@ -1,16 +1,13 @@
 #include "mainwidget.h"
 #include <signal.h>
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect/objdetect.hpp>
-//#include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/imgcodecs.hpp>
-
 #include "lib/gpio.h"
 
-
 using namespace cv;
+
 
 int ET = 0;
 VideoCapture cap(0);
@@ -37,7 +34,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
     ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
-    
+
 
 
     mpKeepAliveTimer = new QTimer();
