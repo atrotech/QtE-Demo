@@ -31,5 +31,4 @@ class SerialPort:
     int x=0;
 
 
-
 };
