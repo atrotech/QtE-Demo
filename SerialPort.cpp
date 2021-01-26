@@ -2,11 +2,6 @@
 
 
 
- serialPort::serialPort(){
-
-
-}
-
 
 speed_t serialPort::changeSpeed(int speed)
 {

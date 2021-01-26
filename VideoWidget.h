@@ -73,7 +73,4 @@ private:
     char MessageString[40];
     int t = 0; // time for delay popup
 
-    serialPort *Serial3 =  new serialPort();
-
-
 };
