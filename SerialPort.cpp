@@ -18,12 +18,11 @@ static inline speed_t changeSpeed(int speed)
         case 9600:return B9600;
         case 38400:return B38400;
         case 115200:return B115200;
-        case 250000:return B250000;
-        default:B9600
+        default:return B9600;
     }
 }
 
-SerialPort::Open(byte ComPortNum)
+bool SerialPort::Open(byte ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
@@ -49,8 +48,8 @@ SerialPort::Open(byte ComPortNum)
     return true;
 }
 
-SerialPort::WriteLine(char* outArray){
-    char* chr = outArray;
+bool SerialPort::WriteLine(char* char inArray[]){
+    char* chr = inArray;
     for (; *chr != '\0'; ++chr)
     {
         WaitFdWriteable(SerialFileStream);
@@ -59,7 +58,7 @@ SerialPort::WriteLine(char* outArray){
     return true;
 }
 
-SerialPort::ReadLine(char* outArray){
+int SerialPort::ReadLine(char* outArray){
     char chr = 0;
     int index = 0;
      while (read(SerialFileStream, &chr, 1) == 1)
@@ -79,6 +78,6 @@ static inline void WaitFdWriteable(int Fd)
     if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) { }
 }
 
-SerialPort::Close(){
+void SerialPort::Close(){
     close(SerialFileStream);
 }
