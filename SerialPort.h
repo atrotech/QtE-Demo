@@ -8,7 +8,7 @@
 class SerialPort{
 
 public:
-  void SerialPort();
+  SerialPort();
   bool Open(int ComPortNum);
   void Close();
   int baudrate = 38400;

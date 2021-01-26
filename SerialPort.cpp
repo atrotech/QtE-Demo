@@ -2,7 +2,7 @@
 
 
 
-void SerialPort::SerialPort(){
+ SerialPort::SerialPort(){
 
 
 }
