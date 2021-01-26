@@ -48,7 +48,7 @@ bool SerialPort::Open(int ComPortNum)
     return true;
 }
 
-bool SerialPort::WriteLine(char* char inArray[]){
+bool SerialPort::WriteLine(char inArray[]){
     char* chr = inArray;
     for (; *chr != '\0'; ++chr)
     {
