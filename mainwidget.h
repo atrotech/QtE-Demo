@@ -4,7 +4,6 @@
 #include <QtWidgets>
 #include "VideoWidget.h"
 #include "ReportWidget.h"
-#include "SerialPort.h"
 #include <sys/time.h>
 #include "lib/gpio.h"
 #include "lib/common.h"
