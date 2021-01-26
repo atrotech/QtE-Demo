@@ -11,7 +11,7 @@ SerialPort::Open(int ComPortNum)
     int CommFd;
     int DeviceSpeed = B38400;
     struct termios port_settings;
-    
+
     const char *DeviceName = "/dev/ttyAMA3";
     CommFd = open(DeviceName, O_RDWR, 0);
     if (fcntl(CommFd, F_SETFL, O_NONBLOCK) < 0)return false;
@@ -26,7 +26,7 @@ SerialPort::Open(int ComPortNum)
     port_settings.c_cflag |= CS8;
     port_settings.c_cflag &= ~CRTSCTS;  //No hadware hanshaking
 
-    tcsetattr(fd, TCSANOW, &port_settings); // apply the settings to the port
+    tcsetattr(CommFd, TCSANOW, &port_settings); // apply the settings to the port
     return true;
 }
 
