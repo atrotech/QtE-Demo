@@ -7,14 +7,16 @@
 
 class SerialPort{
 
-    public:
-    bool Open(int ComPortNum);
-    void Close();
-    int baudrate = 38400;
-    bool WriteLine(char inArray[]);
-    int ReadLine(char* outArray);
+public:
+bool Open(int ComPortNum);
+void Close();
+int baudrate = 38400;
+bool WriteLine(char inArray[]);
+int ReadLine(char* outArray);
 
-    private:
-    static inline void WaitFdWriteable(int Fd);
-    int SerialFileStream = -1;
+private:
+  void SerialPort::WaitFdWriteable(int Fd);
+  speed_t SerialPort::changeSpeed(int speed);
+  int SerialFileStream = -1;
+
 };

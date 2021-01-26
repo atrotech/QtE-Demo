@@ -6,8 +6,7 @@
 
 
 
-
-static inline speed_t changeSpeed(int speed)
+speed_t SerialPort::changeSpeed(int speed)
 {
     switch (speed)
     {
@@ -70,7 +69,7 @@ int SerialPort::ReadLine(char* outArray){
     return -1;
 }
 
-static inline void WaitFdWriteable(int Fd)
+void SerialPort::WaitFdWriteable(int Fd)
 {
     fd_set WriteSetFD;
     FD_ZERO(&WriteSetFD);
