@@ -1,12 +1,8 @@
 #include "SerialPort.h"
 
-SerialPort::SerialPort()
-{
 
 
-}
-
-static inline speed_t changeSpeed(int speed)
+speed_t SerialPort::changeSpeed(int speed)
 {
     switch (speed)
     {
@@ -17,12 +13,11 @@ static inline speed_t changeSpeed(int speed)
         case 9600:return B9600;
         case 38400:return B38400;
         case 115200:return B115200;
-        case 250000:return B250000;
-        default:B9600
+        default:return B9600;
     }
 }
 
-bool SerialPort::Open(byte ComPortNum)
+bool SerialPort::Open(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
@@ -32,7 +27,7 @@ bool SerialPort::Open(byte ComPortNum)
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
     if (fcntl(SerialFileStream, F_SETFL, O_NONBLOCK) < 0)return false;
-    
+
 
     struct termios options;
     tcgetattr(SerialFileStream, &options);
@@ -40,16 +35,16 @@ bool SerialPort::Open(byte ComPortNum)
     options.c_iflag = IGNPAR;
     options.c_oflag = 0;
     options.c_lflag = 0;
-    cfsetospeed(options,baudStruct);
-    cfsetispeed(options,baudStruct);
+    cfsetospeed(&options,baudStruct);
+    cfsetispeed(&options,baudStruct);
     tcflush(SerialFileStream, TCIFLUSH);
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
     return true;
 }
 
-bool SerialPort::WriteLine(char* outArray){
-    char* chr = outArray;
+bool SerialPort::WriteLine(char inArray[]){
+    char* chr = inArray;
     for (; *chr != '\0'; ++chr)
     {
         WaitFdWriteable(SerialFileStream);
@@ -70,7 +65,7 @@ int SerialPort::ReadLine(char* outArray){
     return -1;
 }
 
-static inline void WaitFdWriteable(int Fd)
+void SerialPort::WaitFdWriteable(int Fd)
 {
     fd_set WriteSetFD;
     FD_ZERO(&WriteSetFD);
@@ -81,4 +76,3 @@ static inline void WaitFdWriteable(int Fd)
 void SerialPort::Close(){
     close(SerialFileStream);
 }
-
