@@ -16,7 +16,6 @@ public:
 
 
 private:
-  void SerialPort();
   void WaitFdWriteable(int Fd);
   speed_t changeSpeed(int speed);
   int SerialFileStream = -1;

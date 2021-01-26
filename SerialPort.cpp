@@ -2,17 +2,6 @@
 
 
 
-
-
-void SerialPort::SerialPort()
-{
-  printf(" --------- \n ");
-
-}
-
-
-
-
 speed_t SerialPort::changeSpeed(int speed)
 {
     switch (speed)
