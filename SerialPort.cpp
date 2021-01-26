@@ -24,7 +24,7 @@ bool serialPort::Open(int ComPortNum)
 
     char *DeviceName = "/dev/ttyAMA";
     sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
-    printf(DeviceName);
+    printf("%s\n",DeviceName);
 
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
