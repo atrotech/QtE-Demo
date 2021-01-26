@@ -1,7 +1,14 @@
 #include "SerialPort.h"
 
-//SerialPort::SerialPort()
-//{}
+
+
+
+
+void SerialPort::SerialPort()
+{
+  printf(" --------- \n ");
+
+}
 
 
 

@@ -13,6 +13,7 @@ void Close();
 int baudrate = 38400;
 bool WriteLine(char inArray[]);
 int ReadLine(char* outArray);
+void SerialPort();
 
 private:
   void WaitFdWriteable(int Fd);
