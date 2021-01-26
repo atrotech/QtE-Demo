@@ -13,10 +13,10 @@ public:
   int baudrate = 38400;
   bool WriteLine(char inArray[]);
   int ReadLine(char* outArray);
-  ~void SerialPort();
 
 
 private:
+  void SerialPort();
   void WaitFdWriteable(int Fd);
   speed_t changeSpeed(int speed);
   int SerialFileStream = -1;
