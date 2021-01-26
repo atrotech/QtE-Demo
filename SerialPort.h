@@ -17,4 +17,4 @@ class SerialPort{
     private:
     static inline void WaitFdWriteable(int Fd);
     int SerialFileStream = -1;
-}
+};
