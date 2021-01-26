@@ -40,8 +40,8 @@ bool SerialPort::Open(int ComPortNum)
     options.c_iflag = IGNPAR;
     options.c_oflag = 0;
     options.c_lflag = 0;
-    cfsetospeed(options,baudStruct);
-    cfsetispeed(options,baudStruct);
+    cfsetospeed(&options,baudStruct);
+    cfsetispeed(&options,baudStruct);
     tcflush(SerialFileStream, TCIFLUSH);
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
