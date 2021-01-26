@@ -3,6 +3,10 @@
 //SerialPort::SerialPort()
 //{}
 
+
+
+
+
 static inline speed_t changeSpeed(int speed)
 {
     switch (speed)
