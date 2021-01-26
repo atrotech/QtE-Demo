@@ -1,16 +1,24 @@
 #include <QtCore/QtGlobal>
-#include <QtWidgets>
-#include <sys/time.h>
-#include <signal.h>
-#include <opencv2/opencv.hpp>
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/imgcodecs.hpp>
-#include "lib/gpio.h"
-#include "lib/common.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cmath>
-#include <ctime>
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <termio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <getopt.h>
+# include <time.h>
+# include <errno.h>
+# include <string.h>
+
+class SerialPort{
+
+    public:
+    bool Open(int ComPortNum);
+    bool Close();
+    int baudrate = 38400;
+    bool WriteLine(char inArray[]);
+    int ReadLine(char* outArray);
+    private:
+    static inline void WaitFdWriteable(int Fd);
+
+}
