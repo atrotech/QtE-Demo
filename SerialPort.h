@@ -1,5 +1,3 @@
-#include <QtCore/QtGlobal>
-
 # include <stdio.h>
 # include <stdlib.h>
 # include <termio.h>
@@ -15,6 +13,7 @@ class SerialPort{
     int baudrate = 38400;
     bool WriteLine(char inArray[]);
     int ReadLine(char* outArray);
+    
     private:
     static inline void WaitFdWriteable(int Fd);
     int SerialFileStream = -1;

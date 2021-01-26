@@ -78,4 +78,7 @@ static inline void WaitFdWriteable(int Fd)
     if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) { }
 }
 
+SerialPort::Close(){
+    close(SerialFileStream);
+}
 
