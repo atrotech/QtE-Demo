@@ -15,8 +15,8 @@ bool WriteLine(char inArray[]);
 int ReadLine(char* outArray);
 
 private:
-  void SerialPort::WaitFdWriteable(int Fd);
-  speed_t SerialPort::changeSpeed(int speed);
+  void WaitFdWriteable(int Fd);
+  speed_t changeSpeed(int speed);
   int SerialFileStream = -1;
 
 };
