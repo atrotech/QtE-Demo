@@ -8,12 +8,13 @@
 class SerialPort{
 
 public:
-bool Open(int ComPortNum);
-void Close();
-int baudrate = 38400;
-bool WriteLine(char inArray[]);
-int ReadLine(char* outArray);
-void SerialPort::SerialPort();
+  bool Open(int ComPortNum);
+  void Close();
+  int baudrate = 38400;
+  bool WriteLine(char inArray[]);
+  int ReadLine(char* outArray);
+  ~void SerialPort();
+
 
 private:
   void WaitFdWriteable(int Fd);
