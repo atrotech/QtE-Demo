@@ -1,10 +1,7 @@
 #include "SerialPort.h"
 
-SerialPort::SerialPort()
-{
-
-
-}
+//SerialPort::SerialPort()
+//{}
 
 static inline speed_t changeSpeed(int speed)
 {
@@ -32,7 +29,7 @@ SerialPort::Open(byte ComPortNum)
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
     if (fcntl(SerialFileStream, F_SETFL, O_NONBLOCK) < 0)return false;
-    
+
 
     struct termios options;
     tcgetattr(SerialFileStream, &options);
@@ -81,4 +78,3 @@ static inline void WaitFdWriteable(int Fd)
 SerialPort::Close(){
     close(SerialFileStream);
 }
-
