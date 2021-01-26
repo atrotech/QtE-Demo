@@ -15,6 +15,7 @@ class SerialPort{
     int ReadLine(char* outArray);
     
     private:
+    static inline speed_t changeSpeed(int speed);
     static inline void WaitFdWriteable(int Fd);
     int SerialFileStream = -1;
 }
