@@ -8,7 +8,7 @@
 class SerialPort{
 
     public:
-    bool Open(byte ComPortNum);
+    bool Open(int ComPortNum);
     bool Close();
     int baudrate = 38400;
     bool WriteLine(char inArray[]);

@@ -22,7 +22,7 @@ static inline speed_t changeSpeed(int speed)
     }
 }
 
-bool SerialPort::Open(byte ComPortNum)
+bool SerialPort::Open(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
