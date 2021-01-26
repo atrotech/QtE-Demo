@@ -120,10 +120,17 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
     if(Button==1){Button=0;videoTest();}
     if(Button==2){Button=0;saveReportTest();}
-    if(Button==3){Button=0;saveReportTest();}
+    if(Button==3){Button=0;DataTest();}
 
 
 
+}
+
+
+void TVideoWidget::DataTest(){
+  Serial3->Open(3);
+  Serial3->WriteLine("parsa");
+  Serial3->Close();
 }
 
 

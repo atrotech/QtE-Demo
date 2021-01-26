@@ -15,6 +15,8 @@
 #include <cmath>
 #include <ctime>
 
+#include "SerialPort.h"
+
 using namespace cv;
 
 
@@ -38,6 +40,7 @@ private:
     void videoTest();
     void saveReportTest();
     void singleFrameTest();
+    void DataTest();
 private:
     QTimer* mpKeepAliveTimer;
 
@@ -69,6 +72,8 @@ private:
 
     char MessageString[40];
     int t = 0; // time for delay popup
+
+    SerialPort *Serial3 =  new SerialPort();
 
 
 };
