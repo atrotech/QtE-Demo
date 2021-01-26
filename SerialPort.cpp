@@ -6,27 +6,45 @@ SerialPort::SerialPort()
 
 }
 
-SerialPort::Open(int ComPortNum)
+static inline speed_t changeSpeed(int speed)
 {
-    int CommFd;
-    int DeviceSpeed = B38400;
-    struct termios port_settings;
+    switch (speed)
+    {
+        case 0:return B0;
+        case 1200:return B1200;
+        case 2400:return B2400;
+        case 4800:return B4800;
+        case 9600:return B9600;
+        case 38400:return B38400;
+        case 115200:return B115200;
+        case 250000:return B250000;
+        default:B9600
+    }
+}
 
-    const char *DeviceName = "/dev/ttyAMA3";
-    CommFd = open(DeviceName, O_RDWR, 0);
-    if (fcntl(CommFd, F_SETFL, O_NONBLOCK) < 0)return false;
-    //Cau hinh tham so com port
-    //baudrate 9600, 8N1
-    cfsetispeed(&port_settings, B9600);
-    cfsetospeed(&port_settings, B9600);
+SerialPort::Open(byte ComPortNum)
+{
+    speed_t baudStruct = changeSpeed(baudrate);
 
-    port_settings.c_cflag &= ~PARENB;   //Set no parity
-    port_settings.c_cflag &= ~CSTOPB;   //Set 1 stop bit
-    port_settings.c_cflag &= ~CSIZE;    //Set 8 bit data using mask bit
-    port_settings.c_cflag |= CS8;
-    port_settings.c_cflag &= ~CRTSCTS;  //No hadware hanshaking
+    char *DeviceName = "/dev/ttyAMA";
+    sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
 
-    tcsetattr(CommFd, TCSANOW, &port_settings); // apply the settings to the port
+    SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
+
+    if (fcntl(SerialFileStream, F_SETFL, O_NONBLOCK) < 0)return false;
+    
+
+    struct termios options;
+    tcgetattr(SerialFileStream, &options);
+    options.c_cflag = B9600 | CS8 | CLOCAL | CREAD;		//<Set baud rate
+    options.c_iflag = IGNPAR;
+    options.c_oflag = 0;
+    options.c_lflag = 0;
+    cfsetospeed(options,baudStruct);
+    cfsetispeed(options,baudStruct);
+    tcflush(SerialFileStream, TCIFLUSH);
+    tcsetattr(SerialFileStream, TCSANOW, &options);
+
     return true;
 }
 
@@ -34,8 +52,8 @@ SerialPort::WriteLine(char* outArray){
     char* chr = outArray;
     for (; *chr != '\0'; ++chr)
     {
-        WaitFdWriteable(CommFd);
-        if (write(CommFd, &chr, 1) < 0)return false;
+        WaitFdWriteable(SerialFileStream);
+        if (write(SerialFileStream, &chr, 1) < 0)return false;
     }
     return true;
 }
@@ -43,7 +61,7 @@ SerialPort::WriteLine(char* outArray){
 SerialPort::ReadLine(char* outArray){
     char chr = 0;
     int index = 0;
-     while (read(CommFd, &chr, 1) == 1)
+     while (read(SerialFileStream, &chr, 1) == 1)
       {
         outArray[index] = chr;
         index++;
@@ -57,9 +75,7 @@ static inline void WaitFdWriteable(int Fd)
     fd_set WriteSetFD;
     FD_ZERO(&WriteSetFD);
     FD_SET(Fd, &WriteSetFD);
-    if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) {
-	  printf("%s",strerror(errno));
-    }
+    if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) { }
 }
 
 

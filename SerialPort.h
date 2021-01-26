@@ -5,10 +5,7 @@
 # include <termio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <getopt.h>
-# include <time.h>
-# include <errno.h>
-# include <string.h>
+
 
 class SerialPort{
 
@@ -20,5 +17,5 @@ class SerialPort{
     int ReadLine(char* outArray);
     private:
     static inline void WaitFdWriteable(int Fd);
-
+    int SerialFileStream = -1;
 }
