@@ -10,7 +10,7 @@ mkdir build
 cd build
 echo "making..."
 qmake-qt5 ../
-make
+make -j8
 cd ../
 echo "set environment..."
 . setqt5env
