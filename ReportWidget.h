@@ -25,6 +25,7 @@ using std::vector;
 
 
 
+
 class TReportWidget : public QWidget
 {
     Q_OBJECT
