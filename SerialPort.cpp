@@ -18,6 +18,7 @@ speed_t serialPort::changeSpeed(int speed)
     }
 }
 
+
 bool serialPort::Open(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
