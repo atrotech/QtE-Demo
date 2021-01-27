@@ -21,11 +21,12 @@ speed_t SerialPort::changeSpeed(int speed)
 
 bool SerialPort::Open(int ComPortNum)
 {
-   printf("----**----");
+    printf("----**----");
     speed_t baudStruct = changeSpeed(baudrate);
 
     char *DeviceName = "/dev/ttyAMA";
     sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
+    printf("----*2----");
 
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
@@ -44,6 +45,7 @@ bool SerialPort::Open(int ComPortNum)
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
     return true;
+    printf("----*3----");
 }
 
 bool SerialPort::WriteLine(char inArray[]){
