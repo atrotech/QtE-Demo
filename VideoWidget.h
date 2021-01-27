@@ -15,7 +15,7 @@
 #include <cmath>
 #include <ctime>
 
-#include "SerialPort.h"
+#include "serialPort.h"
 
 using namespace cv;
 
