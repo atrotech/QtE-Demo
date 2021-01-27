@@ -2,6 +2,8 @@
 
 
 
+SerialPort::SerialPort(){};
+
 
 speed_t SerialPort::changeSpeed(int speed)
 {
