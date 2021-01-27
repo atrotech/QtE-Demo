@@ -41,7 +41,6 @@ private:
     void saveReportTest();
     void singleFrameTest();
     void DataTest();
-    serialPort Serial3;
 private:
     QTimer* mpKeepAliveTimer;
 

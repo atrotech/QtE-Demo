@@ -1,4 +1,4 @@
-#include "SerialPort.h"
+#include "serialPort.h"
 
 
 
@@ -18,12 +18,14 @@ speed_t serialPort::changeSpeed(int speed)
     }
 }
 
+
 bool serialPort::Open(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
     char *DeviceName = "/dev/ttyAMA";
     sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
+    printf("-2-----");
     printf("%s\n",DeviceName);
 
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
