@@ -129,10 +129,9 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::DataTest()
 {
-  SerialPort *Serial = new SerialPort();
-  Serial->Open(3);
-  Serial->WriteLine("parsa");
-  Serial->Close();
+  SerialOpen(3);
+  SerialWriteLine("parsa");
+  SerialClose();
 }
 
 
