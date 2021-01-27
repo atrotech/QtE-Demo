@@ -3,29 +3,10 @@
 
 
 
-speed_t SerialChangeSpeed(int speed)
+bool SerialOpen()
 {
-    switch (speed)
-    {
-        case 0:return B0;
-        case 1200:return B1200;
-        case 2400:return B2400;
-        case 4800:return B4800;
-        case 9600:return B9600;
-        case 38400:return B38400;
-        case 115200:return B115200;
-        default:return B9600;
-    }
-}
 
-
-bool SerialOpen(int ComPortNum)
-{
-    speed_t baudStruct = SerialChangeSpeed(baudrate);
-
-    char *DeviceName = "/dev/ttyAMA";
-    sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
-    printf("%s\n",DeviceName);
+    char *DeviceName = "/dev/ttyAMA3";
 
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
@@ -37,8 +18,6 @@ bool SerialOpen(int ComPortNum)
     options.c_iflag = IGNPAR;
     options.c_oflag = 0;
     options.c_lflag = 0;
-    cfsetospeed(&options,baudStruct);
-    cfsetispeed(&options,baudStruct);
     tcflush(SerialFileStream, TCIFLUSH);
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
