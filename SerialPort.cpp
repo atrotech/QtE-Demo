@@ -21,16 +21,16 @@ speed_t SerialPort::changeSpeed(int speed)
 
 bool SerialPort::Open(int ComPortNum)
 {
-    printf("----**----");
+    printf("----*1----");
     speed_t baudStruct = changeSpeed(baudrate);
 
     char *DeviceName = "/dev/ttyAMA";
     sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
-    printf("----*2----");
 
     SerialFileStream = open(DeviceName, O_RDWR | O_NOCTTY | O_NDELAY);
 
     if (fcntl(SerialFileStream, F_SETFL, O_NONBLOCK) < 0)return false;
+    printf("----*2----");
 
     struct termios options;
     tcgetattr(SerialFileStream, &options);
