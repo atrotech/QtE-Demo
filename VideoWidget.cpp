@@ -131,7 +131,7 @@ void TVideoWidget::DataTest()
 {
 
   SerialPort *Serial3;
-  //Serial3->Open(3);
+  Serial3->Open(3);
   //Serial3->WriteLine("parsa");
   //Serial3->Close();
 }
