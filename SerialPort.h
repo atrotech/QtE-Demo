@@ -5,20 +5,13 @@
 # include <fcntl.h>
 
 
-class SerialPort{
-
-  public:
-    SerialPort();
-    bool Open(int ComPortNum);
-    void Close();
+    bool SerialOpen(int ComPortNum);
+    void SerialClose();
     int baudrate = 38400;
-    bool WriteLine(char inArray[]);
-    int ReadLine(char* outArray);
+    bool SerialWriteLine(char inArray[]);
+    int SerialReadLine(char* outArray);
 
-
-  private:
     void WaitFdWriteable(int Fd);
-    speed_t changeSpeed(int speed);
+    speed_t SerialChangeSpeed(int speed);
     int SerialFileStream = -1;
 
-};

@@ -2,10 +2,8 @@
 
 
 
-SerialPort::SerialPort(){};
 
-
-speed_t SerialPort::changeSpeed(int speed)
+speed_t SerialChangeSpeed(int speed)
 {
     switch (speed)
     {
@@ -21,7 +19,7 @@ speed_t SerialPort::changeSpeed(int speed)
 }
 
 
-bool SerialPort::Open(int ComPortNum)
+bool SerialOpen(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
@@ -47,7 +45,7 @@ bool SerialPort::Open(int ComPortNum)
     return true;
 }
 
-bool SerialPort::WriteLine(char inArray[]){
+bool SerialWriteLine(char inArray[]){
     char* chr = inArray;
     for (; *chr != '\0'; ++chr)
     {
@@ -57,7 +55,7 @@ bool SerialPort::WriteLine(char inArray[]){
     return true;
 }
 
-int SerialPort::ReadLine(char* outArray){
+int SerialReadLine(char* outArray){
     char chr = 0;
     int index = 0;
      while (read(SerialFileStream, &chr, 1) == 1)
@@ -69,7 +67,7 @@ int SerialPort::ReadLine(char* outArray){
     return -1;
 }
 
-void SerialPort::WaitFdWriteable(int Fd)
+void WaitFdWriteable(int Fd)
 {
     fd_set WriteSetFD;
     FD_ZERO(&WriteSetFD);
@@ -77,6 +75,6 @@ void SerialPort::WaitFdWriteable(int Fd)
     if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) { }
 }
 
-void SerialPort::Close(){
+void SerialClose(){
     close(SerialFileStream);
 }
