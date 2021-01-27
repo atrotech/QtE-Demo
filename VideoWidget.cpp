@@ -132,8 +132,8 @@ void TVideoWidget::DataTest()
   serialPort Serial3;
   printf("------");
   Serial3.Open(3);
-  Serial3.WriteLine("parsa");
-  Serial3.Close();
+  //Serial3.WriteLine("parsa");
+  //Serial3.Close();
 }
 
 
