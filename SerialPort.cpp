@@ -32,7 +32,6 @@ bool SerialPort::Open(int ComPortNum)
 
     if (fcntl(SerialFileStream, F_SETFL, O_NONBLOCK) < 0)return false;
 
-
     struct termios options;
     tcgetattr(SerialFileStream, &options);
     options.c_cflag = B9600 | CS8 | CLOCAL | CREAD;		//<Set baud rate
@@ -45,7 +44,6 @@ bool SerialPort::Open(int ComPortNum)
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
     return true;
-    printf("----*3----");
 }
 
 bool SerialPort::WriteLine(char inArray[]){
