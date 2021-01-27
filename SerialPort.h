@@ -5,7 +5,7 @@
 # include <fcntl.h>
 
 
-class serialPort{
+class SerialPort{
 
   public:
     bool Open(int ComPortNum);

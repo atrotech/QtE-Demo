@@ -1,9 +1,9 @@
-#include "serialPort.h"
+#include "SerialPort.h"
 
 
 
 
-speed_t serialPort::changeSpeed(int speed)
+speed_t SerialPort::changeSpeed(int speed)
 {
     switch (speed)
     {
@@ -19,7 +19,7 @@ speed_t serialPort::changeSpeed(int speed)
 }
 
 
-bool serialPort::Open(int ComPortNum)
+bool SerialPort::Open(int ComPortNum)
 {
     speed_t baudStruct = changeSpeed(baudrate);
 
@@ -47,7 +47,7 @@ bool serialPort::Open(int ComPortNum)
     return true;
 }
 
-bool serialPort::WriteLine(char inArray[]){
+bool SerialPort::WriteLine(char inArray[]){
     char* chr = inArray;
     for (; *chr != '\0'; ++chr)
     {
@@ -57,7 +57,7 @@ bool serialPort::WriteLine(char inArray[]){
     return true;
 }
 
-int serialPort::ReadLine(char* outArray){
+int SerialPort::ReadLine(char* outArray){
     char chr = 0;
     int index = 0;
      while (read(SerialFileStream, &chr, 1) == 1)
@@ -69,7 +69,7 @@ int serialPort::ReadLine(char* outArray){
     return -1;
 }
 
-void serialPort::WaitFdWriteable(int Fd)
+void SerialPort::WaitFdWriteable(int Fd)
 {
     fd_set WriteSetFD;
     FD_ZERO(&WriteSetFD);
@@ -77,6 +77,6 @@ void serialPort::WaitFdWriteable(int Fd)
     if (select(Fd + 1, NULL, &WriteSetFD, NULL, NULL) < 0) { }
 }
 
-void serialPort::Close(){
+void SerialPort::Close(){
     close(SerialFileStream);
 }
