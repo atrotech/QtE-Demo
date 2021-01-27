@@ -21,7 +21,7 @@ speed_t SerialChangeSpeed(int speed)
 
 bool SerialOpen(int ComPortNum)
 {
-    speed_t baudStruct = changeSpeed(baudrate);
+    speed_t baudStruct = SerialChangeSpeed(baudrate);
 
     char *DeviceName = "/dev/ttyAMA";
     sprintf(DeviceName,"%s%d",DeviceName,ComPortNum);
