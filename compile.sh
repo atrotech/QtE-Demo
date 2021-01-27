@@ -16,7 +16,5 @@ echo "set environment..."
 . setqt5env
 echo "compiling completed! Thank you for your patience"
 echo "running"
-echo "running."
-echo "running.."
-echo "running..."
+
 ./QtE-Demo
