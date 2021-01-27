@@ -21,7 +21,6 @@ speed_t SerialPort::changeSpeed(int speed)
 
 bool SerialPort::Open(int ComPortNum)
 {
-    printf("rrrrrrrrr");
     speed_t baudStruct = changeSpeed(baudrate);
 
     char *DeviceName = "/dev/ttyAMA";

@@ -129,6 +129,9 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::DataTest()
 {
+     char *DeviceName = "/dev/ttyAMA";
+    sprintf(DeviceName,"%s%d",DeviceName,3);
+    printf("%s\n",DeviceName);
 
   SerialPort *Serial3;
   Serial3->Open(3);
