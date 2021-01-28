@@ -11,5 +11,5 @@
     int SerialReadLine(char* outArray);
 
     void WaitFdWriteable(int Fd);
-    extern int SerialFileStream = -1;
+  
 
