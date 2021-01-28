@@ -135,8 +135,7 @@ void TVideoWidget::DataTest()
   SerialOpen();
   SerialWriteLine("parsa");
   len = SerialReadLine(str);
-  printf("%d Line: %s",len,str);
-  SerialWriteLine(str);
+  printf("%d Line",len);
   SerialClose();
 }
 
