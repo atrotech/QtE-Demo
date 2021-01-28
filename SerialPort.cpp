@@ -38,13 +38,12 @@ bool SerialWriteLine(char inArray[]){
 int SerialReadLine(char* outArray){
     char chr = 0;
     int index = 0;
-     while (read(SerialFileStream, &chr, 1))
+     while (chr!='\n')
       {
-        outArray[index] = chr;
-        index++;
-        if(chr=='\n')return index;
+        read(SerialFileStream, &chr, 1);
+        outArray[index++] = chr;
       }
-    return -1;
+    return index;
 }
 
 void WaitFdWriteable(int Fd)
