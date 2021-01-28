@@ -40,8 +40,10 @@ int SerialReadLine(char* outArray){
     int index = 0;
      while (chr!='\n')
       {
-        read(SerialFileStream, &chr, 1);
-        outArray[index++] = chr;
+        if(read(SerialFileStream, &chr, 1)==1)
+        {
+            outArray[index++] = chr;
+        }
       }
     return index;
 }
