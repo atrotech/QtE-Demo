@@ -136,6 +136,7 @@ void TVideoWidget::DataTest()
   SerialWriteLine("parsa");
   len = SerialReadLine(str);
   printf("%d Line: %s",len,str);
+  SerialWriteLine("nima-e GAV-e Khar");
   SerialClose();
 }
 
