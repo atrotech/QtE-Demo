@@ -25,11 +25,12 @@ bool SerialOpen()
 }
 
 bool SerialWriteLine(char inArray[]){
-    char* chr = inArray;
-    for (; *chr != '\0'; ++chr)
+    int i = 0;
+    while(inArray[i]!=0)
     {
         WaitFdWriteable(SerialFileStream);
-        if (write(SerialFileStream, &chr, 1) < 0)return false;
+        if (write(SerialFileStream, &inArray[i], 1) < 0)return false;
+        i++;
     }
     return true;
 }
