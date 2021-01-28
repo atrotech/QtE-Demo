@@ -1,7 +1,7 @@
 #include "SerialPort.h"
 
 
-
+extern int SerialFileStream = -1;
 
 bool SerialOpen()
 {
