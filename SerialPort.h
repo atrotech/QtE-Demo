@@ -8,7 +8,7 @@
     bool SerialOpen();
     void SerialClose();
     bool SerialWriteLine(char inArray[]);
-    int SerialReadLine(char* outArray);
+    char* SerialReadLine();
 
     void WaitFdWriteable(int Fd);
   

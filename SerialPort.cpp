@@ -35,17 +35,14 @@ bool SerialWriteLine(char inArray[]){
     return true;
 }
 
-int SerialReadLine(char* outArray){
-    char chr = 0;
-    int index = 0;
-     while (chr!='\n')
+char* SerialReadLine(){
+    char chr[100] = 0;
+    int i = 0;
+     while (chr[i]!='\n')
       {
-        if(read(SerialFileStream, &chr, 1)==1)
-        {
-            outArray[index++] = chr;
-        }
+        if(read(SerialFileStream, &chr[i], 1)==1)i++;
       }
-    return index;
+    return chr;
 }
 
 void WaitFdWriteable(int Fd)

@@ -131,11 +131,10 @@ void TVideoWidget::DataTest()
 {
   char str[20];
   int len = 0;
-
+  printf("%d Line",len);
   SerialOpen();
   SerialWriteLine("parsa");
-  len = SerialReadLine(str);
-  printf("%d Line",len);
+  printf("%s Line",SerialReadLine());
   SerialClose();
 }
 
