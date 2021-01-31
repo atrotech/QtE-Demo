@@ -1,6 +1,7 @@
 #include "SerialPort.h"
 
 
+
 extern int SerialFileStream = -1;
 
 bool SerialOpen()
@@ -23,6 +24,7 @@ bool SerialOpen()
 
     return true;
 }
+
 
 bool SerialWriteLine(char inArray[]){
     int i = 0;
@@ -56,3 +58,4 @@ void WaitFdWriteable(int Fd)
 void SerialClose(){
     close(SerialFileStream);
 }
+
