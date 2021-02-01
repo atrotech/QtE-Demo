@@ -14,11 +14,10 @@
 #include <string>
 #include <cmath>
 #include <ctime>
-
 #include "SerialPort.h"
 
-using namespace cv;
 
+using namespace cv;
 
 
 

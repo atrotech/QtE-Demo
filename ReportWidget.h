@@ -19,6 +19,7 @@
 #include "TestViewerWidget.h"
 
 
+
 using namespace cv;
 using namespace std;
 using std::vector;
@@ -60,9 +61,7 @@ private:
     QPixmap downImg = QPixmap(":/img/down.png");
     QPixmap tapImg = QPixmap(":/img/tap.png");
     QPixmap testTableImg = QPixmap(":/img/testTable.png");
-
     TTestViewerWidget *TestViewerWindow = new TTestViewerWidget(0);
-
     bool ViewerIsOpen = false;
     int StartListIndex = 0;
     int LastListIndex = 9;
