@@ -5,9 +5,9 @@
 # include <fcntl.h>
 
 
-    bool SerialOpen();
-    void SerialClose();
-    bool SerialWriteLine(char inArray[]);
-    char* SerialReadLine();
 
-    void WaitFdWriteable(int Fd);
+bool SerialOpen();
+void SerialClose();
+bool SerialWriteLine(char inArray[]);
+char* SerialReadLine();
+void WaitFdWriteable(int Fd);
