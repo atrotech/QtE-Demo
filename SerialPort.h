@@ -12,4 +12,3 @@
 
     void WaitFdWriteable(int Fd);
     int SerialFileStream = -1;
-
