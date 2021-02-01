@@ -2,6 +2,7 @@
 
 
 
+extern int SerialFileStream = -1;
 
 bool SerialOpen()
 {
@@ -24,26 +25,26 @@ bool SerialOpen()
     return true;
 }
 
+
 bool SerialWriteLine(char inArray[]){
-    char* chr = inArray;
-    for (; *chr != '\0'; ++chr)
+    int i = 0;
+    while(inArray[i]!=0)
     {
         WaitFdWriteable(SerialFileStream);
-        if (write(SerialFileStream, &chr, 1) < 0)return false;
+        if (write(SerialFileStream, &inArray[i], 1) < 0)return false;
+        i++;
     }
     return true;
 }
 
-int SerialReadLine(char* outArray){
-    char chr = 0;
-    int index = 0;
-     while (read(SerialFileStream, &chr, 1) == 1)
+char* SerialReadLine(){
+    char chr[100] = 0;
+    int i = 0;
+     while (chr[i]!='\n')
       {
-        outArray[index] = chr;
-        index++;
-        if(chr=='\n')return index;
+        if(read(SerialFileStream, &chr[i], 1)==1)i++;
       }
-    return -1;
+    return chr;
 }
 
 void WaitFdWriteable(int Fd)
@@ -57,3 +58,4 @@ void WaitFdWriteable(int Fd)
 void SerialClose(){
     close(SerialFileStream);
 }
+

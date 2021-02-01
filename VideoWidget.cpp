@@ -129,8 +129,12 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::DataTest()
 {
+  char str[20];
+  int len = 0;
+  printf("%d Line",len);
   SerialOpen();
   SerialWriteLine("parsa");
+  printf("%s Line",SerialReadLine());
   SerialClose();
 }
 
