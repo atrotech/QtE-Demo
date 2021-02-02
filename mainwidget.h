@@ -48,6 +48,11 @@ private:
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11
     int ButtonC_pin = GPIO_PIN(13);   //GPIOB30 = pin13
     int ButtonD_pin = GPIO_PIN(15);   //GPIOB31 = pin15
+    int VGAPowerPin = GPIO_PIM(18);
+    int LCDPowerPin = GPIO_PIM(22);
+    int ModemAPowerPin = GPIO_PIM(24);
+    int ModemBPowerPin = GPIO_PIM(26);
+    int ModemCPowerPin = GPIO_PIM(28);
 
 };
 

@@ -31,6 +31,16 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonB_pin,GPIO_IN);
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
+    exportGPIOPin(VGAPowerPin);
+    exportGPIOPin(LCDPowerPin);
+    exportGPIOPin(ModemAPowerPin);
+    exportGPIOPin(ModemBPowerPin);
+    exportGPIOPin(ModemCPowerPin);
+    setGPIODirection(VGAPowerPin,GPIO_OUT);
+    setGPIODirection(LCDPowerPin,GPIO_OUT);
+    setGPIODirection(ModemAPowerPin,GPIO_OUT);
+    setGPIODirection(ModemBPowerPin,GPIO_OUT);
+    setGPIODirection(ModemCPowerPin,GPIO_OUT);
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
     ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
@@ -41,6 +51,8 @@ TMainWidget::TMainWidget(QWidget *parent) :
     mpKeepAliveTimer->setSingleShot(false);
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(333);
+
+    setGPIOValue(setGPIODirection,1);
 
 
 }
