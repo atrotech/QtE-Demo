@@ -52,7 +52,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(333);
 
-    setGPIOValue(setGPIODirection,1);
+    setGPIOValue(LCDPowerPin,1);
 
 
 }
