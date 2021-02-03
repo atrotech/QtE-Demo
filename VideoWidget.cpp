@@ -132,10 +132,8 @@ void TVideoWidget::DataTest()
   SerialOpen();
   SerialWriteLine("parsa");
   unsigned char* ptr = SerialReadLine();
-  cout << ptr[0] << " " << ptr[1];
+  printf("Data: %c",ptr[0]);
   delete[] ptr; //allocated memory must be deleted*/
-  
-  
 
   SerialClose();
 }
