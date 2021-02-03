@@ -133,11 +133,17 @@ void TVideoWidget::DataTest()
   SerialOpen();
   SerialWriteLine("parsa");
   p = SerialReadLine();
-  while (*p != 0)
+  /*while (*p != 0)
   {
-    cout << *(p);
+    cout << *(p)
     p++;
-  }
+  }*/
+  
+  for ( int i = 0; i < 10; i++ ) {
+      cout << "*(p + " << i << ") : ";
+      cout << *(p + i) << endl;
+   }
+  
   SerialClose();
 }
 
