@@ -148,7 +148,7 @@ void TVideoWidget::DataTest()
       {
         i++;
         j=0;
-        cout < "new value";
+        printf("new value");
       }
       else
       {
@@ -158,7 +158,7 @@ void TVideoWidget::DataTest()
       }
     }
   }
-  cout < "Recived Complete";
+  printf("Recived Complete");
   SerialClose();
 }
 
