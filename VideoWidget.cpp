@@ -137,7 +137,7 @@ void TVideoWidget::DataTest()
   delete[] ptr; //allocated memory must be deleted*/
   
     unsigned char rx_buffer[256];
-		int rx_length = read(uart0_filestream, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
+		int rx_length = read(SerialFileStream, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
 		if (rx_length < 0)
 		{
 			cout << "error";
