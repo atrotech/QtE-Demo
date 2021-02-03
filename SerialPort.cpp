@@ -40,7 +40,7 @@ bool SerialWriteLine(char inArray[]){
 char* SerialReadLine(){
     char* chr = new char[30];
     int i = 1;
-     while (chr[i]!='\n')
+     while (chr[i-1]!='\n')
       {
         if(read(SerialFileStream, &chr[i], 1)==1)i++;
       }
