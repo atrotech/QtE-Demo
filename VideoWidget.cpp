@@ -135,7 +135,7 @@ void TVideoWidget::DataTest()
   p = SerialReadLine();
   while (*p != 0)
   {
-    cout << *(p)
+    cout << *(p);
     p++;
   }
   SerialClose();
