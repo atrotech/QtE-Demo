@@ -129,10 +129,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::DataTest()
 {
-  char *p;
+  char* p;
   SerialOpen();
   SerialWriteLine("parsa");
-  //p = SerialReadLine();
+  p = SerialReadLine();
   for ( int i = 0; i < 10; i++ ) {
       cout << "*(p + " << i << ") : ";
       cout << *(p + i) << endl;
