@@ -44,7 +44,7 @@ char * SerialReadLine(){
       {
         if(read(SerialFileStream, &chr[i-1], 1)==1)i++;
       }
-    chr[i-1]=0
+    chr[i-1]=0;
     return chr;
 }
 
