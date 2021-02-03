@@ -11,4 +11,4 @@ void SerialClose();
 bool SerialWriteLine(char inArray[]);
 void SerialReadLine();
 void WaitFdWriteable(int Fd);
-char SerialRead();
+unsigned char SerialRead();
