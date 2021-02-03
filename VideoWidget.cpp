@@ -133,15 +133,21 @@ void TVideoWidget::DataTest()
   SerialWriteLine("parsa");
   unsigned char str[30];
   unsigned char chr = 0;
-  unsigned char i = 1;
+  unsigned char i = 0;
   bool isReciving = true;
   while (isReciving)
   {
     if(read(fs, &chr, 1)>=1)
     {
-      if(chr=='#')isReciving = false;
-      str[i++] = chr;
-      printf("%d >> %c \n",i,chr);
+      if(chr=='#')
+      {
+        isReciving = false;
+        str[i] = 0;
+      }else
+      {
+        str[i++] = chr;
+        printf("%d >> %c \n",i,chr);
+      }
       if(i==30)break;
     }
   }
