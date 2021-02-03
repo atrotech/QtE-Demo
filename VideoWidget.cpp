@@ -138,12 +138,12 @@ void TVideoWidget::DataTest()
     cout << *(p)
     p++;
   }*/
-  
+
   for ( int i = 0; i < 10; i++ ) {
       cout << "*(p + " << i << ") : ";
       cout << *(p + i) << endl;
    }
-  
+
   SerialClose();
 }
 
