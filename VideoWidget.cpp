@@ -131,7 +131,7 @@ void TVideoWidget::DataTest()
 {
   int fs = SerialOpen();
   SerialWriteLine("parsa");
-  char chr[20];
+  static char chr[20];
   int i = 1;
   //while (chr[i-1]!='\n'){if(read(fs, &chr[i], 1)>=1)i++;}
   printf("data : %s",chr);
