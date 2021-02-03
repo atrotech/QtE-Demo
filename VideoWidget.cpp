@@ -131,27 +131,27 @@ void TVideoWidget::DataTest()
 {
   char* p;
   SerialOpen();
-  SerialWriteLine("parsa");
+  int fs = SerialWriteLine("parsa");
   /*char* ptr = SerialReadLine();
   cout << ptr[0] << " " << ptr[1];
   delete[] ptr; //allocated memory must be deleted*/
   
-    unsigned char rx_buffer[256];
-		int rx_length = read(SerialFileStream, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
-		if (rx_length < 0)
-		{
-			cout << "error";
-		}
-		else if (rx_length == 0)
-		{
-			cout << "no data waiting";
-		}
-		else
-		{
-			//Bytes received
-			rx_buffer[rx_length] = '\0';
-			printf("%i bytes read : %s\n", rx_length, rx_buffer);
-		}
+  unsigned char rx_buffer[256];
+  int rx_length = read(fs, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
+  if (rx_length < 0)
+  {
+    cout << "error";
+  }
+  else if (rx_length == 0)
+  {
+    cout << "no data waiting";
+  }
+  else
+  {
+    //Bytes received
+    rx_buffer[rx_length] = '\0';
+    printf("%i bytes read : %s\n", rx_length, rx_buffer);
+  }
 
   SerialClose();
 }

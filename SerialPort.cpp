@@ -4,7 +4,7 @@
 
 extern int SerialFileStream = -1;
 
-bool SerialOpen()
+int SerialOpen()
 {
 
     char *DeviceName = "/dev/ttyAMA3";
@@ -22,7 +22,7 @@ bool SerialOpen()
     tcflush(SerialFileStream, TCIFLUSH);
     tcsetattr(SerialFileStream, TCSANOW, &options);
 
-    return true;
+    return SerialFileStream;
 }
 
 

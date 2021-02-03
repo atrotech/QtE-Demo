@@ -6,7 +6,7 @@
 
 
 
-bool SerialOpen();
+int SerialOpen();
 void SerialClose();
 bool SerialWriteLine(char inArray[]);
 char* SerialReadLine();
