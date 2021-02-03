@@ -139,7 +139,7 @@ void TVideoWidget::DataTest()
   {
     if(read(fs, &chr, 1)>=1)
     {
-      if(chr=='\n')isReciving = false;
+      if(chr=='#')isReciving = false;
       str[i++] = chr;
     }
     }
