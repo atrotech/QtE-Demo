@@ -130,8 +130,8 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::DataTest()
 {
   char* p;
-  SerialOpen();
-  int fs = SerialWriteLine("parsa");
+  int fs = SerialOpen();
+  SerialWriteLine("parsa");
   /*char* ptr = SerialReadLine();
   cout << ptr[0] << " " << ptr[1];
   delete[] ptr; //allocated memory must be deleted*/
