@@ -37,34 +37,15 @@ bool SerialWriteLine(char inArray[]){
     return true;
 }
 
-unsigned char SerialRead(){
-    unsigned char chr;
-    while (read(SerialFileStream, &chr, 1)!=0);
+char* SerialReadLine(){
+    static char* chr = new char[30];
+    int i = 1;
+     while (chr[i]!='\n')
+      {
+        if(read(SerialFileStream, &chr[i], 1)==1)i++;
+      }
     return chr;
 }
-
-void SerialReadLine(){
-// Read up to 255 characters from the port if they are there
-		unsigned char rx_buffer[256];
-		int rx_length = read(SerialFileStream, (void*)rx_buffer, 255);		//Filestream, buffer to store in, number of bytes to read (max)
-		if (rx_length < 0)
-		{
-			//An error occured (will occur if there are no bytes)
-		}
-		else if (rx_length == 0)
-		{
-			//No data waiting
-		}
-		else
-		{
-			//Bytes received
-			rx_buffer[rx_length] = '\0';
-			printf("%i bytes read : %s\n", rx_length, rx_buffer);
-		}
-
-}
-
-
 
 void WaitFdWriteable(int Fd)
 {
