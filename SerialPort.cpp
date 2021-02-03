@@ -38,7 +38,7 @@ bool SerialWriteLine(char inArray[]){
 }
 
 char* SerialReadLine(){
-    static char* chr = new char[30];
+    char* chr = new char[30];
     int i = 1;
      while (chr[i]!='\n')
       {
