@@ -42,8 +42,9 @@ char * SerialReadLine(){
     int i = 1;
      while (chr[i-1]!='\n')
       {
-        if(read(SerialFileStream, &chr[i], 1)==1)i++;
+        if(read(SerialFileStream, &chr[i-1], 1)==1)i++;
       }
+    chr[i-1]=0
     return chr;
 }
 
