@@ -148,7 +148,7 @@ void TVideoWidget::DataTest()
       {
         i++;
         j=0;
-        printf("new value");
+        printf("new value\n");
       }
       else
       {
@@ -158,7 +158,7 @@ void TVideoWidget::DataTest()
       }
     }
   }
-  printf("Recived Complete");
+  printf("Recived Complete\n");
   SerialClose();
 }
 
