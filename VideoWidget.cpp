@@ -142,7 +142,7 @@ void TVideoWidget::DataTest()
       if(chr=='#')
       {
         isReciving = false;
-        str[i] = 0;
+        str[i] = '\0';
       }else
       {
         str[i++] = chr;
