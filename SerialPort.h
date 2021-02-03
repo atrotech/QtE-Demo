@@ -9,5 +9,6 @@
 bool SerialOpen();
 void SerialClose();
 bool SerialWriteLine(char inArray[]);
-char* SerialReadLine();
+void SerialReadLine();
 void WaitFdWriteable(int Fd);
+char SerialRead();
