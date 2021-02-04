@@ -11,10 +11,10 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
 {
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
 
-    //mpKeepAliveTimer = new QTimer();
-    //mpKeepAliveTimer->setSingleShot(false);
-    //QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-    //mpKeepAliveTimer->start(100);
+    mpKeepAliveTimer = new QTimer();
+    mpKeepAliveTimer->setSingleShot(false);
+    QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
+    mpKeepAliveTimer->start(100);
     update();
 }
 
@@ -43,7 +43,12 @@ void TTestViewerWidget::UpdateTable()
 
 
 void TTestViewerWidget::onKeepAlive() {
-    update();
+  if(Button==4){this->hide();Button=0;}
+  if(Button==1){this->hide();Button=0;remove(FileName);}
+  if(Button==2){Button=0;}
+  if(Button==3){Button=0;}
+  update();
+    
 }
 
 
@@ -54,10 +59,6 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
 
   int SpaceHeight = 160;
   int HeightOffset = 60;
-  if(Button==4){}
-  if(Button==1){}
-  if(Button==2){}
-  if(Button==3){}
 
    p.fillRect(0,0,width(),height(),QBrush(QColor(169,150,169)));
 
@@ -105,12 +106,4 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
   p.drawText( width()/3+40 , height()/1.2 , QString(" %1 ").arg("none"));
   p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg("none"));
   p.drawText( width()/1.3-20 , height()/1.2 , QString(" %1 ").arg("none"));
-
-
-
-  if(Button==4){this->hide();Button=0;}
-  if(Button==1){this->hide();Button=0;remove(FileName);}
-  if(Button==2){Button=0;}
-  if(Button==3){Button=0;}
-
 }

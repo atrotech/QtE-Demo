@@ -4,10 +4,6 @@
 #include <signal.h>
 #include <opencv2/opencv.hpp>
 
-
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/imgcodecs.hpp>
-
 #include <iostream>
 #include <fstream>
 #include <string>
