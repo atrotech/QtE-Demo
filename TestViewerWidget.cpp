@@ -11,10 +11,11 @@ TTestViewerWidget::TTestViewerWidget(QWidget *parent) :
 {
     const QString qwsDisplay = QString(qgetenv("QWS_DISPLAY"));
 
-    mpKeepAliveTimer = new QTimer();
-    mpKeepAliveTimer->setSingleShot(false);
-    QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
-    mpKeepAliveTimer->start(100);
+    //mpKeepAliveTimer = new QTimer();
+    //mpKeepAliveTimer->setSingleShot(false);
+    //QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
+    //mpKeepAliveTimer->start(100);
+    update();
 }
 
 
