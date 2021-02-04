@@ -155,7 +155,7 @@ void TVideoWidget::DataTest()
       {
         str[i][j] = chr;
         j++;
-        printf("%d,%d, %s \n",i,j,str[i][j] );
+        printf("%d,%d\n",i,j);
       }
     }
   }
