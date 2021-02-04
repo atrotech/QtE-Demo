@@ -160,7 +160,7 @@ void TVideoWidget::DataTest()
     }
   }
   printf("Recived Complete\n");
-  printf("str0: %str[0]\n",str[0]);
+  printf("str0: %s \n",str[0]);
   SerialClose();
 }
 
