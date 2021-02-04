@@ -130,7 +130,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::DataTest()
 {
   int fs = SerialOpen();
-  SerialWriteLine("parsa");
+  SerialWriteLine("Please Enter Value: ");
   unsigned char str[8][5];
   unsigned char chr = 0;
   int i = 0;
