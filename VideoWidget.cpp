@@ -131,7 +131,7 @@ void TVideoWidget::DataTest()
 {
   int fs = SerialOpen();
   SerialWriteLine("Please Enter Value: ");
-  unsigned char str[8][5];
+  unsigned char str[8][6];
   unsigned char chr = 0;
   int i = 0;
   int j = 0;
