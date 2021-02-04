@@ -131,7 +131,7 @@ void TVideoWidget::DataTest()
 {
   int fs = SerialOpen();
   SerialWriteLine("Please Enter Value: ");
-  unsigned char str[8][5];
+  unsigned char str[6][5];
   unsigned char chr = 0;
   int i = 0;
   int j = 0;
@@ -146,6 +146,7 @@ void TVideoWidget::DataTest()
       }
       else if(chr==',')
       {
+        str[i][j] = '\0';
         i++;
         j=0;
         printf("new value\n");
