@@ -21,7 +21,6 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 
-
 void TVideoWidget::onKeepAlive() {
     update();
 }
@@ -168,7 +167,6 @@ void TVideoWidget::DataTest()
   printf("Voltage: %s\n",str[5]);
 
 
-
   SerialClose();
 }
 
@@ -218,8 +216,6 @@ void TVideoWidget::videoTest()
 
   if(measuredError[2]<5)StatusIcon3 = tickImg;
   else StatusIcon3 = cancelImg;
-
-
 
 
 
