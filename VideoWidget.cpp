@@ -160,7 +160,15 @@ void TVideoWidget::DataTest()
     }
   }
   printf("Recived Complete\n");
-  printf("str0: %s \n",str[0]);
+  printf("Serial-1 Error: %s\n",str[0]);
+  printf("Serial-2 Error: %s\n",str[1]);
+  printf("Max Current: %s\n",str[2]);
+  printf("Max Time: %s\n",str[3]);
+  printf("Avg Current: %s\n",str[4]);
+  printf("Voltage: %s\n",str[5]);
+
+
+
   SerialClose();
 }
 
