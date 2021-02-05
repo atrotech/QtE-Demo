@@ -1,5 +1,6 @@
 #ifndef WIDGET_H
 #define WIDGET_H
+#include <opencv2/highgui/highgui.hpp>
 #include <QtCore/QtGlobal>
 #include <QtWidgets>
 #include "VideoWidget.h"
@@ -7,6 +8,7 @@
 #include <sys/time.h>
 #include "lib/gpio.h"
 #include "lib/common.h"
+
 
 
 class TMainWidget : public QWidget
