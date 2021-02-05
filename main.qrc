@@ -22,5 +22,6 @@
         <file>img/testTable.png</file>
         <file>img/remove.png</file>
         <file>img/print.png</file>
+        <file>img/source.png</file>
     </qresource>
 </RCC>

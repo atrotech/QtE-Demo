@@ -35,10 +35,10 @@ private:
     QPixmap reportImg = QPixmap(":/img/report.png");
     QPixmap dataImg = QPixmap(":/img/data.png");
     QPixmap BatteryImg = QPixmap(":/img/battery.png");
+    QPixmap sourceImg = QPixmap(":/img/source.png");
 
     TVideoWidget *VideoWindow = new TVideoWidget(0);
     TReportWidget *ReportWindow = new TReportWidget(0);
-
 
 
 
