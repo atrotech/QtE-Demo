@@ -112,7 +112,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
 
 
-     p.setPen(Qt::black);                      //  source
+     p.setPen(Qt::black);          //  source
      p.setFont(QFont("Arial", 18));
      p.fillRect((FrameMap.width()/2)-148, height()-15 ,300,20,QBrush(QColor(255,255,255)));
      p.drawText( width()/2.3 , height()-30 , QString("Source: %1").arg(InputSource));
