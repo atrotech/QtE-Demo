@@ -102,7 +102,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
      p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);
 
      p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, videoImg);
-     p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, dataImg);
+     p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, sourceImg);
      p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, reportImg);
      p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, powerImg);
 
