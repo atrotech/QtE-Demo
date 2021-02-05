@@ -114,7 +114,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
 
      p.setPen(Qt::black);          //  source
      p.setFont(QFont("Arial", 18));
-     p.fillRect((FrameMap.width()/2)-148, height()-15 ,300,20,QBrush(QColor(255,255,255)));
+     p.fillRect((width()/2.3)-40, height()-30 ,300,20,QBrush(QColor(255,255,255)));
      p.drawText( width()/2.3 , height()-30 , QString("Source: %1").arg(InputSource));
 
 
@@ -139,7 +139,6 @@ char TMainWidget::CheckButtons()
             VideoWindow->show();
             break;
             case 2:
-            ActiveWindow = 2;
             setGPIOValue(VGASelectPin,InputSource);
             setGPIOValue(CaptureSelectPin,InputSource);
             InputSource = !InputSource;
