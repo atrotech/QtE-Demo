@@ -44,6 +44,8 @@ private:
 
     char ActiveWindow = 0;
 
+    bool toggle = false;
+
     int ButtonA_pin = GPIO_PIN(7);    //GPIOD8  = pin7
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11
     int ButtonC_pin = GPIO_PIN(13);   //GPIOB30 = pin13
@@ -53,6 +55,8 @@ private:
     int ModemAPowerPin = GPIO_PIN(36);
     int ModemBPowerPin = GPIO_PIN(37);
     int ModemCPowerPin = GPIO_PIN(35);
+    int VGASelectPin = GPIO_PIN(16);
+    int CaptureSelectPin = GPIO_PIN(18);
 
 };
 

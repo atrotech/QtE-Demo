@@ -41,6 +41,10 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ModemAPowerPin,GPIO_OUT);
     setGPIODirection(ModemBPowerPin,GPIO_OUT);
     setGPIODirection(ModemCPowerPin,GPIO_OUT);
+    exportGPIOPin(VGASelectPin);
+    exportGPIOPin(CaptureSelectPin);
+    setGPIODirection(VGASelectPin,GPIO_OUT);
+    setGPIODirection(CaptureSelectPin,GPIO_OUT);
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
     ReportWindow->setWindowFlags(Qt::FramelessWindowHint);
@@ -137,6 +141,17 @@ char TMainWidget::CheckButtons()
             break;
             case 2:
             ActiveWindow = 2;
+            if (toggle == true)
+            {
+              setGPIOValue(VGASelectPin,1);
+              setGPIOValue(CaptureSelectPin,1);
+            }
+            else
+            {
+              setGPIOValue(VGASelectPin,0);
+              setGPIOValue(CaptureSelectPin,0);
+            }
+            toggle = !toggle;
             break;
             case 3:
             ActiveWindow = 3;
