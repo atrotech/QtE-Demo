@@ -57,6 +57,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     mpKeepAliveTimer->start(333);
 
     setGPIOValue(LCDPowerPin,1);
+    setGPIOValue(VGAPowerPin,1);
 
 
 }
