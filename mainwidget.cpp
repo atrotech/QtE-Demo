@@ -141,16 +141,8 @@ char TMainWidget::CheckButtons()
             break;
             case 2:
             ActiveWindow = 2;
-            if (toggle == true)
-            {
-              setGPIOValue(VGASelectPin,1);
-              setGPIOValue(CaptureSelectPin,1);
-            }
-            else
-            {
-              setGPIOValue(VGASelectPin,0);
-              setGPIOValue(CaptureSelectPin,0);
-            }
+            setGPIOValue(VGASelectPin,InputSource);
+            setGPIOValue(CaptureSelectPin,InputSource);
             toggle = !toggle;
             break;
             case 3:
