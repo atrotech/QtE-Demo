@@ -53,7 +53,7 @@ private:
     int ButtonD_pin = GPIO_PIN(15);   //GPIOB31 = pin15
     int VGAPowerPin = GPIO_PIN(40);
     int LCDPowerPin = GPIO_PIN(38);
-    int ModemAPowerPin = GPIO_PIN(36);
+    int SwitcherPin = GPIO_PIN(36);
     int ModemBPowerPin = GPIO_PIN(37);
     int ModemCPowerPin = GPIO_PIN(35);
     int VGASelectPin = GPIO_PIN(16);
