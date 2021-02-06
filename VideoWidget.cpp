@@ -1,4 +1,5 @@
 #include "VideoWidget.h"
+#include "lib/gpio.h"
 
 using namespace cv;
 using namespace std;
@@ -138,6 +139,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::SourceDelay()
 {
+  boardInit();
+  exportGPIOPin(CaptureSelectPin);
+  setGPIODirection(CaptureSelectPin,GPIO_OUT);
+  setGPIOValue(CaptureSelectPin,1);
 
 
 
