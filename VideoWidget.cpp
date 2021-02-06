@@ -116,7 +116,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       }
     }
 
-    if(Button==1){Button=0;videoTest();DataTest();}
+    if(Button==1){Button=0;SerialWriteLine("A");videoTest();DataTest();}
     if(Button==2){Button=0;saveReportTest();}
     if(Button==3){Button=0;DataTest();}
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
@@ -128,9 +128,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::DataTest()
 {
+
   int fs = SerialOpen();
-  SerialWriteLine("Please Enter Value: ");
-  unsigned char chr = 0;
+  SerialWriteLine("B");
+  char chr = 0;
   int i = 0;
   int j = 0;
   bool isReciving = true;
