@@ -3,13 +3,13 @@
 #include <sys/time.h>
 #include <signal.h>
 #include <opencv2/opencv.hpp>
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cmath>
 #include <ctime>
 #include "SerialPort.h"
+#include "lib/gpio.h"
 
 
 using namespace cv;
@@ -67,6 +67,8 @@ private:
 
     char MessageString[40];
     int t = 0; // time for delay popup
+
+    int CaptureSelectPin = GPIO_PIN(18);
 
     unsigned char str[6][5]={"0","0","0","0","0","0"};
 
