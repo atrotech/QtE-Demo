@@ -128,10 +128,17 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
 
 
-
 }
 
 
+
+
+
+
+
+
+
+// ------------------------------ Data Test -----------------------------------
 void TVideoWidget::DataTest()
 {
 
@@ -176,6 +183,12 @@ void TVideoWidget::DataTest()
 
   SerialClose();
 }
+
+
+
+
+
+
 
 
 
