@@ -35,6 +35,7 @@ private:
     void saveReportTest();
     void singleFrameTest();
     void DataTest();
+    void SourceDelay();
 private:
     QTimer* mpKeepAliveTimer;
 

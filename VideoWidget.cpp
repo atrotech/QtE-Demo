@@ -120,6 +120,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     {
       Button=0;
       SerialWriteLine("A");
+      SourceDelay()
       videoTest();
       DataTest();
     }
@@ -133,7 +134,15 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 
 
+// ---------------------------- Source Delay ----------------------------------
 
+void TVideoWidget::SourceDelay()
+{
+
+
+
+
+}
 
 
 
