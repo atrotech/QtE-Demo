@@ -59,6 +59,9 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIOValue(LCDPowerPin,1);
     setGPIOValue(VGAPowerPin,1);
     setGPIOValue(SwitcherPin,1);
+    setGPIOValue(ModemBPowerPin,1);
+    setGPIOValue(ModemCPowerPin,1);
+
 
 
 
