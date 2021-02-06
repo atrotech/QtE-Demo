@@ -131,7 +131,7 @@ void TVideoWidget::DataTest()
 
   int fs = SerialOpen();
   SerialWriteLine("B");
-  char chr = 0;
+  unsigned char chr = 0;
   int i = 0;
   int j = 0;
   bool isReciving = true;
