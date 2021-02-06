@@ -83,19 +83,19 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     p.drawText( width()/2+60 , height()/2-20 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/2.3 , StatusIcon4);
 // ----------------------
-    p.drawText( width()/6 , height()/1.7+20    , QString(" %1 ").arg(str[0]));
+    p.drawText( width()/6 , height()/1.7+20    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.7+20 , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.7+20 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.82 , StatusIcon5);
 
-    p.drawText( width()/6 , height()/1.5+10    , QString(" %1 ").arg(str[1]));
+    p.drawText( width()/6 , height()/1.5+10    , QString(" %1 ").arg("none"));
     p.drawText( width()/3+40 , height()/1.5+10   , QString(" %1 ").arg("none"));
     p.drawText( width()/2+60 , height()/1.5+10   , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.55  , StatusIcon6);
 // ----------------------
-    p.drawText( width()/6 , height()/1.2    , QString(" %1 ").arg(str[4]));
-    p.drawText( width()/3+40 , height()/1.2 , QString(" %1 ").arg(str[3]));
-    p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg(str[2]));
+    p.drawText( width()/6 , height()/1.2    , QString(" %1 ").arg("none"));
+    p.drawText( width()/3+40 , height()/1.2 , QString(" %1 ").arg("none"));
+    p.drawText( width()/2+60 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawText( width()/1.3-20 , height()/1.2 , QString(" %1 ").arg("none"));
     p.drawPixmap( width()/15  , height()/1.27 , StatusIcon7);
 
