@@ -57,11 +57,11 @@ TMainWidget::TMainWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(333);
 
-    setGPIOValue(LCDPowerPin,1);
+    //setGPIOValue(LCDPowerPin,1);
     setGPIOValue(VGAPowerPin,1);
-    //setGPIOValue(SwitcherPin,1);
+    setGPIOValue(SwitcherPin,1);
     setGPIOValue(ModemBPowerPin,1);
-    //setGPIOValue(ModemCPowerPin,1);
+    setGPIOValue(ModemCPowerPin,1);
 
 
 
