@@ -31,6 +31,7 @@ TMainWidget::TMainWidget(QWidget *parent) :
     setGPIODirection(ButtonB_pin,GPIO_IN);
     setGPIODirection(ButtonC_pin,GPIO_IN);
     setGPIODirection(ButtonD_pin,GPIO_IN);
+
     exportGPIOPin(VGAPowerPin);
     exportGPIOPin(LCDPowerPin);
     exportGPIOPin(SwitcherPin);
@@ -58,8 +59,8 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
     setGPIOValue(LCDPowerPin,1);
     setGPIOValue(VGAPowerPin,1);
-    setGPIOValue(SwitcherPin,1);
-    //setGPIOValue(ModemBPowerPin,1);
+    //setGPIOValue(SwitcherPin,1);
+    setGPIOValue(ModemBPowerPin,1);
     //setGPIOValue(ModemCPowerPin,1);
 
 
