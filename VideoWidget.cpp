@@ -120,10 +120,10 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     if(Button==1)
     {
       Button=0;
-      SerialWriteLine("A");
+      //SerialWriteLine("A");
       SourceDelay();
       videoTest();
-      DataTest();
+      //DataTest();
     }
     if(Button==2){Button=0;saveReportTest();}
     if(Button==3){Button=0;DataTest();}
@@ -139,7 +139,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::SourceDelay()
 {
-  
+
   exportGPIOPin(CaptureSelectPin);
   setGPIODirection(CaptureSelectPin,GPIO_OUT);
   setGPIOValue(CaptureSelectPin,0);
