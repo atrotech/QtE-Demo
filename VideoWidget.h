@@ -68,8 +68,6 @@ private:
     char MessageString[40];
     int t = 0; // time for delay popup
 
-    bool InputSource = false;
-
     unsigned char str[6][5]={"0","0","0","0","0","0"};
 
 };
