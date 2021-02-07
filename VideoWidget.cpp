@@ -136,8 +136,9 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::FlashSave()
 {
-
-  printf("FlashSave\n");
+  system("sudo mount -t vfat -o uid=pi,gid=pi /dev/sda1 /media/usb");
+  system("ls /media/usb");
+  system("sudo umount /media/usb");
 
 }
 
