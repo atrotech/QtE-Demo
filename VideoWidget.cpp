@@ -140,8 +140,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 void TVideoWidget::SourceDelay()
 {
   unsigned int FrameCount = 0;
-  setGPIOValue(CaptureSelectPin,InputSource);
-  InputSource = !InputSource;
+  setGPIOValue(CaptureSelectPin,0);
   while (CheckBlackColor()==false )
   {
     FrameCount++;
