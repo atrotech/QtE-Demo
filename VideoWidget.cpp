@@ -171,7 +171,7 @@ bool TVideoWidget::CheckBlackColor()
 {
   int CheckColor[3];
   int pixQuantity = 0;
-
+  IsFrameUpdated = false;
   for (int x=50; x<InputFrame.cols-50; x++)
   {
     for (int y=50; y<InputFrame.rows-50; y++)
