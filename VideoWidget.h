@@ -28,6 +28,7 @@ public:
     ~TVideoWidget() {}
     int Button = 0;
     Mat InputFrame;
+    bool IsFrameUpdated = false;
 
 private slots:
     void onKeepAlive();

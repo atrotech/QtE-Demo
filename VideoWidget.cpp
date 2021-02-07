@@ -162,6 +162,8 @@ bool TVideoWidget::CheckBlackColor()
   {
     for (int y=50; y<InputFrame.rows-50; y++)
     {
+      while (!IsFrameUpdated);
+      IsFrameUpdated=false;
       cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
       CheckColor[0]+=rgb[0];
       CheckColor[1]+=rgb[1];
