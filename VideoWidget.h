@@ -8,8 +8,10 @@
 #include <string>
 #include <cmath>
 #include <ctime>
+#include <chrono>
 #include "SerialPort.h"
 #include "lib/gpio.h"
+
 
 
 using namespace cv;
@@ -36,6 +38,7 @@ private:
     void singleFrameTest();
     void DataTest();
     void SourceDelay();
+    bool CheckBlackColor();
 private:
     QTimer* mpKeepAliveTimer;
 

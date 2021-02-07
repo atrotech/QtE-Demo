@@ -139,13 +139,26 @@ void TVideoWidget::paintEvent(QPaintEvent *)
 
 void TVideoWidget::SourceDelay()
 {
-
-  exportGPIOPin(CaptureSelectPin);
-  setGPIODirection(CaptureSelectPin,GPIO_OUT);
+  unsigned double FrameCount = 0;
   setGPIOValue(CaptureSelectPin,0);
+  while (CheckBlackColor()==false )
+  {
+    FrameCount++;
+  }
+  printf("black frame resived ( %d )\n",FrameCount);
 
+}
+
+
+
+
+
+
+bool CheckBlackColor()
+{
   int CheckColor[3];
   int pixQuantity = 0;
+
   for (int x=50; x<InputFrame.cols-50; x++)
   {
     for (int y=50; y<InputFrame.rows-50; y++)
@@ -163,14 +176,17 @@ void TVideoWidget::SourceDelay()
   if ( ((CheckColor[0]+CheckColor[1]+CheckColor[2])/3) < 30 )
   {
     printf("Black screen checked ✅\n");
+    return true;
   }
-
-
-
-
-
+  else return false;
 
 }
+
+
+
+
+
+
 
 
 
