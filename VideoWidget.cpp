@@ -145,7 +145,7 @@ void TVideoWidget::SourceDelay()
   setGPIOValue(CaptureSelectPin,0);
   printf("nimaaaaa\n");
 
-  //CheckColor = 0;
+  CheckColor = 0;
   //pixQuantity = 0;
   for (int x=50; x<InputFrame.cols-50; x++)
   {
