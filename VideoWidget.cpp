@@ -145,7 +145,7 @@ void TVideoWidget::SourceDelay()
   setGPIOValue(CaptureSelectPin,0);
 
   int CheckColor[3];
-  pixQuantity = 0;
+  int pixQuantity = 0;
   for (int x=50; x<InputFrame.cols-50; x++)
   {
     for (int y=50; y<InputFrame.rows-50; y++)
