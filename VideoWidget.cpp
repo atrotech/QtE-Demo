@@ -154,7 +154,7 @@ void TVideoWidget::SourceDelay()
 
 
 
-bool CheckBlackColor()
+bool TVideoWidget::CheckBlackColor()
 {
   int CheckColor[3];
   int pixQuantity = 0;
