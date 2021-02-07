@@ -121,7 +121,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     {
       Button=0;
       //SerialWriteLine("A");
-      //SourceDelay();
+      SourceDelay();
       videoTest();
       //DataTest();
     }
