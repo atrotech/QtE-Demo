@@ -123,7 +123,7 @@ void TMainWidget::paintEvent(QPaintEvent *)
      p.setPen(Qt::black);          //  source
      p.setFont(QFont("Arial", 18));
      p.fillRect((width()/2.3)-40, height()-30 ,300,30,QBrush(QColor(255,255,255)));
-     p.drawText( width()/2.3 , height()-20 , QString("Source: %1").arg((InputSource ? "Modem A":"Modem B")));
+     p.drawText( width()/2.3 , height()-10 , QString("Source: %1").arg((InputSource ? "Modem A":"Modem B")));
 
 
 
