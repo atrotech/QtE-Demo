@@ -143,19 +143,28 @@ void TVideoWidget::SourceDelay()
   exportGPIOPin(CaptureSelectPin);
   setGPIODirection(CaptureSelectPin,GPIO_OUT);
   setGPIOValue(CaptureSelectPin,0);
-  printf("nimaaaaa\n");
 
-  //int CheckColor = 0;
-  //pixQuantity = 0;
+  int CheckColor[3];
+  pixQuantity = 0;
   for (int x=50; x<InputFrame.cols-50; x++)
   {
     for (int y=50; y<InputFrame.rows-50; y++)
     {
       cv::Vec3b rgb = InputFrame.at<cv::Vec3b>(y,x);
-      //CheckColor += rgb[2]; pixQuantity++ ;
-      printf("%d %d : ( %d,%d,%d )\n",y,x ,rgb[0],rgb[1],rgb[2]);
+      CheckColor[0]+=rgb[0];
+      CheckColor[1]+=rgb[1];
+      CheckColor[2]+=rgb[2];
+      pixQuantity++;
     }
   }
+  CheckColor[0] /= pixQuantity;
+  CheckColor[1] /= pixQuantity;
+  CheckColor[2] /= pixQuantity;
+  if ( ((CheckColor[0]+CheckColor[1]+CheckColor[2])/3) < 30 )
+  {
+    printf("Black screen checked ✅\n");
+  }
+
 
 
 
