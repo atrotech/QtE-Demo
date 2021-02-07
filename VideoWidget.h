@@ -72,6 +72,7 @@ private:
     int t = 0; // time for delay popup
 
     int CaptureSelectPin = GPIO_PIN(18);
+    bool InputSource = false;
 
     unsigned char str[6][5]={"0","0","0","0","0","0"};
 
