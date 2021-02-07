@@ -170,8 +170,6 @@ void TVideoWidget::SourceDelay()
 
 
 
-
-
 }
 
 
