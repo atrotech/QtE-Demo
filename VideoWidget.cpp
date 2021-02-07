@@ -121,16 +121,29 @@ void TVideoWidget::paintEvent(QPaintEvent *)
     {
       Button=0;
       //SerialWriteLine("A");
-      SourceDelay();
+      //SourceDelay();
       videoTest();
       //DataTest();
     }
     if(Button==2){Button=0;saveReportTest();}
-    if(Button==3){Button=0;DataTest();}
+    if(Button==3){Button=0;FlashSave();}
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
 
 
 }
+
+// ---------------------------- Save to flash ---------------------------------
+
+void TVideoWidget::FlashSave()
+{
+
+  printf("FlashSave\n");
+
+}
+
+
+
+
 
 
 

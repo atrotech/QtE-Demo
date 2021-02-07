@@ -40,6 +40,7 @@ private:
     void DataTest();
     void SourceDelay();
     bool CheckBlackColor();
+    void FlashSave();
 private:
     QTimer* mpKeepAliveTimer;
 
