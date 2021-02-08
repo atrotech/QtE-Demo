@@ -147,8 +147,6 @@ void TVideoWidget::FlashSave()
 
 
 
-
-
 // ---------------------------- Source Delay ----------------------------------
 
 void TVideoWidget::SourceDelay()
@@ -196,9 +194,6 @@ bool TVideoWidget::CheckBlackColor()
   else return false;
 
 }
-
-
-
 
 
 
