@@ -22,6 +22,7 @@ TVideoWidget::TVideoWidget(QWidget *parent) :
 
 
 
+
 void TVideoWidget::onKeepAlive() {
     update();
 }
@@ -194,7 +195,6 @@ bool TVideoWidget::CheckBlackColor()
   else return false;
 
 }
-
 
 
 
