@@ -206,43 +206,16 @@ void TVideoWidget::DataTest()
 {
 
   int fs = SerialOpen();
-  SerialWriteLine("B");
-  unsigned char chr = 0;
-  int i = 0;
-  int j = 0;
-  bool isReciving = true;
-  while (isReciving)
+  SerialWriteLine("$9600,9600,0,12");
+  unsigned char chr[7010] ;
+  
+  int len = 0;
+  while (len<100)
   {
-    if(read(fs, &chr, 1)==1)
-    {
-      if(chr=='#')
-      {
-        isReciving = false;
-      }
-      else if(chr==',')
-      {
-        str[i][j] = '\0';
-        i++;
-        j=0;
-        printf("new value\n");
-      }
-      else
-      {
-        str[i][j] = chr;
-        j++;
-        printf("%d,%d\n",i,j);
-      }
-    }
+    len = read(fs, &chr, 7010);
   }
-  printf("Recived Complete\n");
 
-  printf("Serial-1 Error: %s\n",str[0]);
-  printf("Serial-2 Error: %s\n",str[1]);
-  printf("Max Current: %s\n",str[2]);
-  printf("pick time: %s\n",str[3]);
-  printf("Avg Current: %s\n",str[4]);
-  printf("Voltage: %s\n",str[5]);
-
+  printf("Recived Complete %d \n",len);
 
   SerialClose();
 }

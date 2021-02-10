@@ -1,3 +1,31 @@
-94
-250
-17
+bool isReciving = true;
+  while (isReciving)
+  {
+    if(read(fs, &chr, 7010)==1)
+    {
+      if(chr=='#')
+      {
+        isReciving = false;
+      }
+      else if(chr==',')
+      {
+        str[i][j] = '\0';
+        i++;
+        j=0;
+        printf("new value\n");
+      }
+      else
+      {
+        str[i][j] = chr;
+        j++;
+        printf("%d,%d\n",i,j);
+      }
+    }
+  }
+
+  printf("Serial-1 Error: %s\n",str[0]);
+  printf("Serial-2 Error: %s\n",str[1]);
+  printf("Max Current: %s\n",str[2]);
+  printf("pick time: %s\n",str[3]);
+  printf("Avg Current: %s\n",str[4]);
+  printf("Voltage: %s\n",str[5]);
