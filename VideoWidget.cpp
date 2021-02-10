@@ -127,7 +127,7 @@ void TVideoWidget::paintEvent(QPaintEvent *)
       //DataTest();
     }
     if(Button==2){Button=0;saveReportTest();}
-    if(Button==3){Button=0;FlashSave();}
+    if(Button==3){Button=0;DataTest();}
     if(Button==4){this->hide();Button=0;MessageString[0]=0;}
 
 
