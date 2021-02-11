@@ -207,13 +207,13 @@ void TVideoWidget::DataTest()
 
   int fs = SerialOpen();
   SerialWriteLine("$9600,9600,0,12");
-  unsigned char chr[7010] ;
+  unsigned char str[10] ;
   
   int len = 0;
-  while (len<100)
+  while (len==2>)
   {
-    len = read(fs, &chr, 7010);
-    printf("Recived Complete %d \n",len);
+    len = read(fs, &str, 10);
+    cout len << str;
   }
 
   printf("Recived Complete %d \n",len);
