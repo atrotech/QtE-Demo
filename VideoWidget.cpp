@@ -213,6 +213,7 @@ void TVideoWidget::DataTest()
   while (len<100)
   {
     len = read(fs, &chr, 7010);
+    printf("Recived Complete %d \n",len);
   }
 
   printf("Recived Complete %d \n",len);
