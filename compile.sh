@@ -1,20 +1,19 @@
-echo "starting..."
-sudo rm -rf QtE-Demo
-echo "environment cleared"
-echo "cloning..."
-sudo git clone https://github.com/atrotech/QtE-Demo.git
-echo "cloning completed !"
-cd QtE-Demo
-echo "building..."
-mkdir build
-cd build
-echo "making..."
-qmake-qt5 ../
-make -j4
+
+sudo rm QtE-Demo/*
+
+sudo git clone https://github.com/atrotech/QtE-Demo.git temp
+
+sudo mv temp/* QtE-Demo/
+
+sudo rm -rf temp/
+
+cd QtE-Demo/build
+
+sudo qmake-qt5 ../
+sudo make
+
 cd ../
-echo "set environment..."
+
 . setqt5env
-echo "compiling completed! Thank you for your patience"
-echo "running"
 
 ./QtE-Demo

@@ -213,7 +213,7 @@ void TVideoWidget::DataTest()
   while (len==2>)
   {
     len = read(fs, &str, 10);
-    cout len << str;
+    cout << len << str;
   }
 
   printf("Recived Complete %d \n",len);
