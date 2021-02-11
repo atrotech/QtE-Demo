@@ -58,6 +58,15 @@ void TReportWidget::ViewDataTable()
   TestViewerWindow->setGeometry(0,0,width(),height());
   TestViewerWindow->show();
   ViewerIsOpen = true;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  char FileName[] = files[SelectedIndex];
+
+=======
+  TestViewerWindow->refrenceValue[];
+>>>>>>> 11681fd77a068e2674664ed7811c2a291445eaac
+>>>>>>> Stashed changes
 
   sprintf (TestViewerWindow->FileName, "reports/%s", files[SelectedIndex]);
   TestViewerWindow->UpdateTable();

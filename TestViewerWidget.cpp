@@ -67,8 +67,13 @@ void TTestViewerWidget::paintEvent(QPaintEvent *)
    p.drawPixmap( width()-150 , 2 * SpaceHeight + HeightOffset , btnPush);
    p.drawPixmap( width()-150 , 3 * SpaceHeight + HeightOffset , btnPush);
 
+<<<<<<< Updated upstream
    p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, removeImg);
    p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, printImg);
+=======
+   p.drawPixmap( width()-142 , 0 * SpaceHeight + HeightOffset + 7, deleteImg);
+   p.drawPixmap( width()-142 , 1 * SpaceHeight + HeightOffset + 7, printerImg);
+>>>>>>> Stashed changes
    p.drawPixmap( width()-142 , 2 * SpaceHeight + HeightOffset + 7, flashImg);
    p.drawPixmap( width()-142 , 3 * SpaceHeight + HeightOffset + 7, returnImg);
 
