@@ -21,11 +21,7 @@
         <file>img/tap.png</file>
         <file>img/testTable.png</file>
         <file>img/remove.png</file>
-<<<<<<< Updated upstream
         <file>img/print.png</file>
         <file>img/source.png</file>
-=======
-        <file>img/printer.png</file>
->>>>>>> Stashed changes
     </qresource>
 </RCC>
