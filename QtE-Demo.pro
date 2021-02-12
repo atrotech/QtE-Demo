@@ -11,7 +11,7 @@ INCLUDEPATH += /usr/local/include/opencv4 \
 
 # -lopencv_cudaimgproc -lopencv_cudaobjdetect
 
-LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_objdetect -lopencv_video -lopencv_videoio -lopencv_videostab
+LIBS += -L/usr/local/lib -I/usr/local/include/opencv -lopencv_core -lopencv_imgcodecs -lopencv_imgproc -lopencv_video -lopencv_videoio -lopencv_videostab
 
 # Input
 HEADERS += lib/common.h lib/gpio.h mainwidget.h VideoWidget.h TestViewerWidget.h ReportWidget.h SerialPort.h
