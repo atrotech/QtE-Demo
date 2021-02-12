@@ -70,18 +70,18 @@ void TMainWidget::resizeEvent(QResizeEvent*) {
 
 
 void TMainWidget::onKeepAlive() {
-    Mat frame;
-    cap.read(frame); // read a new frame from video
+    // Mat frame;
+    // cap.read(frame); // read a new frame from video
 
-    FrameMap = QPixmap::fromImage(QImage((unsigned char*) frame.data,
-                                   frame.cols,
-                                   frame.rows,
-                                   QImage::Format_RGB888));
-    VideoWindow->IsFrameUpdated=true;
-    if(ActiveWindow==1)VideoWindow->InputFrame = frame;
+    // FrameMap = QPixmap::fromImage(QImage((unsigned char*) frame.data,
+    //                                frame.cols,
+    //                                frame.rows,
+    //                                QImage::Format_RGB888));
+    // VideoWindow->IsFrameUpdated=true;
+    // if(ActiveWindow==1)VideoWindow->InputFrame = frame;
     CheckButtons();
 
-    //update();
+    update();
 }
 
 void TMainWidget::paintEvent(QPaintEvent *)
