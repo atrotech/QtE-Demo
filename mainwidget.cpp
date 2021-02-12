@@ -33,17 +33,11 @@ TMainWidget::TMainWidget(QWidget *parent) :
 
     exportGPIOPin(VGAPowerPin);
     exportGPIOPin(LCDPowerPin);
-    exportGPIOPin(SwitcherPin);
-    exportGPIOPin(ModemBPowerPin);
-    exportGPIOPin(ModemCPowerPin);
-    setGPIODirection(VGAPowerPin,GPIO_OUT);
-    setGPIODirection(LCDPowerPin,GPIO_OUT);
-    setGPIODirection(SwitcherPin,GPIO_OUT);
-    setGPIODirection(ModemBPowerPin,GPIO_OUT);
-    setGPIODirection(ModemCPowerPin,GPIO_OUT);
-    exportGPIOPin(VGASelectPin);
+
+    setGPIODirection(ModemAPin,GPIO_OUT);
+    setGPIODirection(ModemBPin,GPIO_OUT);
+
     exportGPIOPin(CaptureSelectPin);
-    setGPIODirection(VGASelectPin,GPIO_OUT);
     setGPIODirection(CaptureSelectPin,GPIO_OUT);
 
     VideoWindow->setWindowFlags(Qt::FramelessWindowHint);
@@ -56,16 +50,12 @@ TMainWidget::TMainWidget(QWidget *parent) :
     QObject::connect(mpKeepAliveTimer, SIGNAL(timeout()), this, SLOT(onKeepAlive()));
     mpKeepAliveTimer->start(333);
 
-    setGPIOValue(LCDPowerPin,1);
-    setGPIOValue(VGAPowerPin,1);
-    setGPIOValue(SwitcherPin,1);
-    setGPIOValue(ModemBPowerPin,1);
-    setGPIOValue(ModemCPowerPin,1);
+
+    setGPIOValue(ModemAPin,0);
+    setGPIOValue(ModemBPin,0);
 
 
-
-
-
+    update();
 }
 
 
@@ -91,7 +81,7 @@ void TMainWidget::onKeepAlive() {
     if(ActiveWindow==1)VideoWindow->InputFrame = frame;
     CheckButtons();
 
-    update();
+    //update();
 }
 
 void TMainWidget::paintEvent(QPaintEvent *)

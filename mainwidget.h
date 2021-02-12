@@ -51,12 +51,9 @@ private:
     int ButtonB_pin = GPIO_PIN(11);   //GPIOB29 = pin11
     int ButtonC_pin = GPIO_PIN(13);   //GPIOB30 = pin13
     int ButtonD_pin = GPIO_PIN(15);   //GPIOB31 = pin15
-    int VGAPowerPin = GPIO_PIN(40);
-    int LCDPowerPin = GPIO_PIN(38);
-    int SwitcherPin = GPIO_PIN(36);
-    int ModemBPowerPin = GPIO_PIN(37);
-    int ModemCPowerPin = GPIO_PIN(35);
-    int VGASelectPin = GPIO_PIN(16);
+
+    int ModemAPin = GPIO_PIN(38);
+    int ModemBPin = GPIO_PIN(36);
     int CaptureSelectPin = GPIO_PIN(18);
 
 };
