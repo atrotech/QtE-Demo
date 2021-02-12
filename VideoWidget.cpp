@@ -210,7 +210,7 @@ void TVideoWidget::DataTest()
   unsigned char str[10] ;
   
   int len = 0;
-  while (len==0)
+  while (len<5)
   {
     len = read(fs, &str, 10);
     cout << len << str;
